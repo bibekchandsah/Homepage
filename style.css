@@ -1,0 +1,380 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: "";
+    background-image: url("https://source.unsplash.com/1080x720/?tech,code,laptop,developer,ai,chatgpt,firefly");
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(10px);
+    /* Adjust the value to control the blur intensity */
+    z-index: -1000;
+}
+
+/*========== SCROLL BAR ==========*/
+::-webkit-scrollbar {
+    width: .60rem;
+    background-color: hsla(259, 100%, 50%, 0.58);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsl(259, 100%, 50%);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(247, 100%, 50%);
+}
+
+/* online status toast */
+#toast {
+    position: fixed;
+    bottom: 85px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.hide-toast {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.show-toast {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.icon {
+    display: inline-block;
+    width: 27px;
+    height: 24px;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.close-icon {
+    background-image: url("https://icon-library.com/images/close-icon-png/close-icon-png-22.jpg");
+    cursor: pointer;
+    margin-left: auto;
+}
+
+#wifi-icon {
+    background-image: url("https://purepng.com/public/uploads/large/purepng.com-wifi-icon-blackwifi-iconwifiiconwireless-connection-170152843612675ih6.png");
+}
+
+#toast-message {
+    flex-grow: 1;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* search box */
+.search-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #5a42f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5a42f4;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #3005f2;
+}
+
+/* chat buttons */
+.bing-container {
+    position: absolute;
+    top: 90px;
+    left: 30px;
+}
+
+.bing-container button, .browser-container button {
+    cursor: pointer !important;
+}
+
+.browser-container {
+    position: absolute;
+    top: 150px;
+    left: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5a42f4;
+    color: #fff;
+    cursor: pointer !important;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3005f2;
+    color: #fff;
+}
+
+/* Developer */
+.image-container {
+    position: absolute;
+    top: 2.5px;
+    right: 10px;
+    overflow: hidden;
+    z-index: 2;
+    /* Set z-index for developer container */
+}
+
+.image-container .developer {
+    font-weight: bold;
+    background: linear-gradient(-45deg, #00eaff, #4800ff, #0105fa, #000000);
+    background-size: 400% 400%;
+    /* fallback animation in case JavaScript does not load */
+    animation: gradient 8s ease infinite;
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: 2;
+    /* Set z-index for developer container */
+}
+
+.image-container #developerPhoto {
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    /* Set z-index for developer container */
+}
+
+.image-container:hover #developerPhoto {
+    top: 30px;
+    right: 30px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+/* profile image */
+.profile-pic-div {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    /* Set z-index for developer container */
+}
+
+#photo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#file {
+    display: none;
+}
+
+#uploadBtn {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(51, 0, 255, 0.5);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+/* greeting and date */
+h1, #dateDisplay {
+    margin: 30px auto;
+    font-size: 36px;
+    text-align: center;
+    /* color: #4000ff; */
+    font-weight: bold;
+    background: linear-gradient(-45deg, #00eaff, #4800ff, #0105fa, #000000);
+    background-size: 400% 400%;
+    /* fallback animation in case JavaScript does not load */
+    animation: gradient 8s ease infinite;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* gradient animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* flip-flop clock */
+.clock {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -10;
+}
+
+.flip-clock-dot {
+    background: #d6d3e2
+}
+
+.flip-clock-meridium a {
+    color: #d6d3e2
+}
+
+.flip-clock-meridium a:hover {
+    color: #d6d3e2
+}
+
+.flip-clock-wrapper ul li a div div.inn {
+    background-color: #4e2bda;
+}
+
+.flip-clock-wrapper ul li a div div.inn {
+    color: #d6d3e2;
+}
+
+/* most visited websites */
+.most-visited-container {
+    text-align: center;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+.most-visited-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(86, 29, 255);
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.icon-item {
+    text-align: center;
+}
+
+.icon-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10%;
+    /* background-color: #4b4852; */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.icon-item img:hover {
+    transform: scale(1.2);
+    /* Increase the scale on hover (zoom in) */
+}
+
+.icon-name {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #4000ff;
+    font-weight: bold;
+}
+
+/* category bar */
+.accordion {
+    margin: 10px;
+}
+
+.accordion-button {
+    background-color: #5a42f4;
+    color: #fff;
+}
+
+.accordion-collapse {
+    background: rgb(54, 77, 187);
+    background: linear-gradient(42deg, rgba(54, 77, 187, 1) 0%, rgba(114, 41, 222, 1) 51%, rgba(76, 0, 255, 1) 98%);
+}
+
+.accordion-collapse .icon-name {
+    color: #ffffff !important;
+}

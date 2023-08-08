@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- flip flop clock css file -->
+    <link rel="stylesheet" href="flipFlopClock.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body title="Developed by Bibek sah" oncontextmenu="return false">
+    <!-- online status toast -->
+    <div id="toast" class="hide-toast">
+        <div class="toast-content">
+            <span id="wifi-icon" class="icon"></span>
+            <p id="toast-message"></p>
+            <span id="close-icon" class="icon close-icon"></span>
+        </div>
+    </div>
+
+    <!-- search box -->
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search anything here" onkeydown="searchOnEnter(event)">
+        <button class="search-button" onclick="searchGoogle()">Search</button>
+    </div>
+
+    <!-- chat buttons -->
+    <div class="bing-container">
+        <a href="https://bing.com/chat?form=WSBCTB" target="_blank">
+            <button>Chat with AI</button>
+        </a>
+        <a href="https://labs.openai.com/" target="_blank">
+            <button>AI image generator</button>
+        </a>
+    </div>
+
+    <!-- windows button -->
+    <div class="browser-container">
+        <a href="ms-settings:windowsupdate?activationSource=SMC-IA-4028685">
+            <button>Update window</button>
+        </a>
+        <a href="ms-calculator://home">
+            <button>Calculator</button>
+        </a>
+        <a href="ms-windows-store://home">
+            <button>Store</button>
+        </a>
+    </div>
+
+    <!-- Developer -->
+    <div class="image-container">
+        <a href="https://bibek10550.github.io/bibek/" title="Bibek sah" target="_blank" class="developer">
+            Developed by Bibek</a>
+        <a href="https://bibek10550.github.io/bibek/" target="_blank">
+            <img src="image.jpg" id="developerPhoto" alt="Developer image" title="Bibek sah"></a>
+
+    </div>
+
+    <!-- profile image -->
+    <div class="profile-pic-div">
+        <img src="image.jpg" title="Developed by Bibek sah" id="photo">
+        <input type="file" id="file">
+        <label for="file" id="uploadBtn">Choose image</label>
+    </div>
+
+    <!-- greeting text -->
+    <h1 id="greeting"></h1>
+    <div id="username-input" style="display: none;">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username" />
+        <button onclick="saveUsername()">Submit</button>
+    </div>
+
+    <!-- flip-flop clock -->
+    <div id="updateArea" class="clock"></div>
+
+    <!-- Date -->
+    <div id="dateDisplay"></div>
+
+    <!-- most visited websites -->
+    <div class="most-visited-container">
+        <div class="most-visited-title">Most Visited</div>
+        <div class="icon-grid">
+            <div class="icon-item">
+                <a href="https://www.youtube.com/">
+                    <img src="https://www.youtube.com/s/desktop/dd76c683/img/favicon_96x96.png" alt="Youtube">
+                    <div class="icon-name">Youtube</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://mail.google.com/mail/u/1/#inbox">
+                    <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail">
+                    <div class="icon-name">Gmail</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://classroom.google.com/u/1/?pli=1">
+                    <img src="https://ssl.gstatic.com/classroom/ic_product_classroom_96.png" alt="Classroom">
+                    <div class="icon-name">Classroom</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://photos.google.com/?tab=Cq&pageId=none&pli=1">
+                    <img src="https://ssl.gstatic.com/social/photosui/images/logo/1x/photos_512dp.png" alt="Photos">
+                    <div class="icon-name">Photos</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://chat.openai.com/">
+                    <img src="https://chat.openai.com/apple-touch-icon.png" alt="ChatGPT">
+                    <div class="icon-name">ChatGPT</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://www.office.com/?auth=1">
+                    <img src="https://res.cdn.office.net/officehub/images/content/images/favicon_m365-67350a08e8.ico"
+                        alt="MS-365">
+                    <div class="icon-name">MS-365</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://github.com/">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">
+                    <div class="icon-name">GitHub</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://kiitportal.kiituniversity.net/">
+                    <img src="https://kiit.ac.in/wp-content/uploads/2022/10/KIIT-Logo-500x500-1.png" alt="KIIT SAP">
+                    <div class="icon-name">KIIT SAP</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://tempmail.email/">
+                    <img src="https://tempmail.email/images/favicon.png" alt="Temp mail">
+                    <div class="icon-name">Temp mail</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://www.facebook.com/">
+                    <img src="https://cdn.iconscout.com/icon/free/png-128/facebook-1693591-1442632.png" alt="Facebook">
+                    <div class="icon-name">Facebook</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://www.instagram.com/">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yG/r/De-Dwpd5CHc.png" alt="Instagram">
+                    <div class="icon-name">Instagram</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://web.snapchat.com/">
+                    <img src="https://cf-st.sc-cdn.net/dw/favicons/e9b6d2d3/apple-touch-icon-1024x1024.png"
+                        alt="Snapchat">
+                    <div class="icon-name">Snapchat</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://updatefaker.com/windows11/index.html">
+                    <img src="https://icon-library.com/images/convert-icon/convert-icon-0.jpg" alt="F-update">
+                    <div class="icon-name">F-update</div>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="https://www.1337x.tw/">
+                    <img src="https://cdn.elgrupoinformatico.com/img/w720/Noticias/2016/10/1337x-logo-720x389.png"
+                        alt="1337x">
+                    <div class="icon-name">1337x</div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- AI -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    AI
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a href="https://www.futurepedia.io/">
+                                <img src="https://www.futurepedia.io/futurepedia-small.svg" alt="All in 1 AI">
+                                <div class="icon-name">All in 1 AI</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://chat.openai.com/">
+                                <img src="https://chat.openai.com/apple-touch-icon.png" alt="ChatGPT">
+                                <div class="icon-name">ChatGPT</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://bard.google.com/">
+                                <img src="https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg"
+                                    alt="Bard">
+                                <div class="icon-name">Bard</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://firefly.adobe.com/">
+                                <img src="https://firefly.adobe.com/adobe_android_192.png" alt="Firefly">
+                                <div class="icon-name">Firefly</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://labs.openai.com/">
+                                <img src="https://openailabs-site.azureedge.net/public-assets/d/3aca25711c/apple-touch-icon.png"
+                                    alt="DALL-E">
+                                <div class="icon-name">DALL-E</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://app.leonardo.ai/">
+                                <img src="https://leonardo-cdn.b-cdn.net/wp-content/uploads/2022/12/cropped-fav-leonardo-logo-192x192.png"
+                                    alt="Leonardo">
+                                <div class="icon-name">Leonardo</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://slidesgo.com/ai-presentations">
+                                <img src="https://slidesgo.com/apple-touch-icon-152x152.png" alt="Slidesgo">
+                                <div class="icon-name">Slidesgo</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://otter.ai/home">
+                                <img src="https://otter.ai/favicon.ico" alt="Voice to text">
+                                <div class="icon-name">Voice to text</div>
+                            </a>
+                        </div>
+
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Microsoft and Google -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    Microsoft and Google
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a href="https://www.office.com/launch/word?auth=1">
+                                <img src="https://www.drware.com/wp-content/uploads/2020/10/Word.png" alt="Word">
+                                <div class="icon-name">Word</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.office.com/launch/excel?auth=1">
+                                <img src="https://www.drware.com/wp-content/uploads/2020/10/Excel.png" alt="Excel">
+                                <div class="icon-name">Excel</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.office.com/launch/powerpoint?auth=1">
+                                <img src="https://www.drware.com/wp-content/uploads/2020/10/PowerPoint.png"
+                                    alt="PowerPoint">
+                                <div class="icon-name">PowerPoint</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://onedrive.live.com/?sw=bypass&gologin=1">
+                                <img src="https://www.drware.com/wp-content/uploads/2020/10/OneDrive.png"
+                                    alt="OneDrive">
+                                <div class="icon-name">OneDrive</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home">
+                                <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logo-iconlogobrand-logoiconslogos-251519939091wmudn.png"
+                                    alt="Edge Add-ons">
+                                <div class="icon-name">Edge Add-ons</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.google.com/">
+                                <img src="https://th.bing.com/th/id/R.0fa3fe04edf6c0202970f2088edea9e7?rik=joOK76LOMJlBPw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoogle-logo-png-open-2000.png&ehk=0PJJlqaIxYmJ9eOIp9mYVPA4KwkGo5Zob552JPltDMw%3d&risl=&pid=ImgRaw&r=0"
+                                    alt="Google">
+                                <div class="icon-name">Google</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://translate.google.com.np/?hl=en&tab=oT">
+                                <img src="https://ssl.gstatic.com/translate/favicon.ico" alt="Google Translate">
+                                <div class="icon-name">Google Translate</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://chrome.google.com/webstore/category/extensions">
+                                <img src="https://ssl.gstatic.com/chrome/webstore/images/icon_144px.png"
+                                    alt="Chrome webStore">
+                                <div class="icon-name">Chrome webStore</div>
+                            </a>
+                        </div>
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Edit -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    Edit
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a href="https://www.photopea.com/">
+                                <img src="https://www.photopea.com/promo/icon512.png" alt="Photoshop">
+                                <div class="icon-name">Photoshop</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.remove.bg/">
+                                <img src="https://www.remove.bg/apple-touch-icon.png?v=YAXaAv7pao"
+                                    alt="Remove Background">
+                                <div class="icon-name">Remove Background</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://tinywow.com/">
+                                <img src="https://tinywow.com/v3/img/favicon-tinywow.svg" alt="Tiny wow">
+                                <div class="icon-name">Tiny wow</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.reduceimages.com/">
+                                <img src="https://www.reduceimages.com/img/app-icons/new-icon.png" alt="Resize Image">
+                                <div class="icon-name">Resize Image</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://magicstudio.com/magiceraser/">
+                                <img src="https://static.magicstudio.com/favicon.ico" alt="Magic Eraser">
+                                <div class="icon-name">Magic Eraser</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.watermarkremover.io/">
+                                <img src="https://www.watermarkremover.io/static/assets/images/favicon.0aad398..ico"
+                                    alt="Watermark Remover">
+                                <div class="icon-name">Watermark Remover</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.upscale.media/">
+                                <img src="https://cdn.pixelbin.io/v2/dummy-cloudname/original/upscalemedia_assets/logo/favicon.png?f_auto=true"
+                                    alt="Image Upscalar">
+                                <div class="icon-name">Image Upscalar</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.freeconvert.com/image-converter">
+                                <img src="https://www.freeconvert.com/favicon.ico" alt="Image Converter">
+                                <div class="icon-name">Image Converter</div>
+                            </a>
+                        </div>
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Technology -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                    Technology
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a href="https://www.calligraphr.com/en/accounts/login/?next=/en/webapp/app_home/%3F/">
+                                <img src="https://www.calligraphr.com/static/website/img/favicons/apple-touch-icon-152x152.png"
+                                    alt="Caligraphr">
+                                <div class="icon-name">Caligraphr</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://jimpl.com/">
+                                <img src="https://jimpl.com/assets/logo-7140b31ff082690f0eb7d51de90174f086901434c51a29375817936efda630b8.svg"
+                                    alt="Pic hidden data">
+                                <div class="icon-name">Pic hidden data</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://facecheck.id/">
+                                <img src="https://facecheck.id/img/favicon.svg" alt="Face Check">
+                                <div class="icon-name">Face Check</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://grabify.link/">
+                                <img src="https://grabify.link/images/favicon.svg" alt="IP Logger">
+                                <div class="icon-name">IP Logger</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://proxyium.com/">
+                                <img src="https://cdn.proxyium.com/img/favicon/favicon.ico?v=4" alt="Proxyium">
+                                <div class="icon-name">Proxyium</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://saymineapp.com/overview">
+                                <img src="https://static.saymine.com/app/app/icon.png" alt="Footprint">
+                                <div class="icon-name">Footprint</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://urlscan.io/">
+                                <img src="https://urlscan.io/img/urlscan_256.png" alt="UrlScanner">
+                                <div class="icon-name">UrlScanner</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://wheregoes.com/">
+                                <img src="https://wheregoes.com/c/themes/custom-theme/img/favicon.svg"
+                                    alt="URL where goes">
+                                <div class="icon-name">URL where goes</div>
+                            </a>
+                        </div>
+
+
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Education -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    Education
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a href="https://www.programiz.com/c-programming/online-compiler/">
+                                <img src="https://avatars.githubusercontent.com/u/25499428?s=200&v=4" alt="C-compiler">
+                                <div class="icon-name">C-compiler</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://kiitarchives.in/">
+                                <img src="https://play-lh.googleusercontent.com/ZeHcsQwEEx-nmRJjpKI_O0dwn3wfos9Wg4opkl-6ci0lczsd3-beJX92Ele0rSB8XGo=w240-h480-rw"
+                                    alt="KIIT archive">
+                                <div class="icon-name">KIIT archive</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.kiitconnect.live/">
+                                <img src="https://www.kiitconnect.live/_next/image?url=%2Flogo.png&w=48&q=75"
+                                    alt="KIIT connect">
+                                <div class="icon-name">KIIT connect</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://kiitmoodle.in/course/index.php">
+                                <img src="https://kiitmoodle.in/theme/image.php?theme=boost&component=theme&rev=1674119251&image=favicon"
+                                    alt="KIIT Moodle">
+                                <div class="icon-name">KIIT Moodle</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.integral-calculator.com/">
+                                <img src="https://www.integral-calculator.com/layout/xintegral-calculator.png,q1473621695.pagespeed.ic.UCzXaOzHTl.webp"
+                                    alt="Integration">
+                                <div class="icon-name">Integration</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.derivative-calculator.net/">
+                                <img src="https://www.derivative-calculator.net/layout/xderivative-calculator.png,q1473621370.pagespeed.ic.fO-LSMkmJ3.webp"
+                                    alt="Derivative">
+                                <div class="icon-name">Derivative</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://freesoff.com/">
+                                <img src="https://freesoff.com/uploads/default/optimized/2X/f/f810d7dde449a2a3c8eb2261094adf92c12c2c81_2_180x180.png"
+                                    alt="Free Courses">
+                                <div class="icon-name">Free Courses</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.dedigger.com/#gsc.tab=0">
+                                <img src="https://www.dedigger.com/favicon.ico" alt="Public in G-Drive">
+                                <div class="icon-name">Public in G-Drive</div>
+                            </a>
+                        </div>
+
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--==================== Chat Bot ====================-->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="(A.Hajur)-Made-by-Bibek" agent-id="8b57ec3c-f86d-43a3-87d7-00413525338f"
+        language-code="en">
+    </df-messenger>
+
+    <!-- flip flop clock javascript file -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="flipFlopClock.js"></script>
+    <script src="flipFlopClockScriptMin.js"></script>
+
+    <!-- bootstrap javascript file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- javascript file -->
+    <script src="profileChange.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
