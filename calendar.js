@@ -1,9 +1,25 @@
 // side button for calendar website
+
 document.addEventListener("DOMContentLoaded", function () {
     const colorSwitcher = document.getElementById("color-switcher");
     const themeContainer = document.getElementById("theme-buttons-container");
 
-    colorSwitcher.addEventListener("click", function () {
+    // Function to close the website (remove the iframe)
+    function closeWebsite() {
+        // Check if the theme container is not empty
+        if (themeContainer.childElementCount !== 0) {
+            // Remove the iframe
+            themeContainer.innerHTML = "";
+
+            // Remove the "active" class from color-switcher for styling
+            colorSwitcher.classList.remove("active");
+        }
+    }
+
+    colorSwitcher.addEventListener("click", function (event) {
+        // Prevent the click event from propagating to the document
+        event.stopPropagation();
+
         // Check if the theme container is already populated
         if (themeContainer.childElementCount === 0) {
             // Create an iframe element
@@ -20,5 +36,15 @@ document.addEventListener("DOMContentLoaded", function () {
         // Toggle the active class on color-switcher for styling
         colorSwitcher.classList.toggle("active");
     });
+
+    // Event listener to close the website when clicking outside of specified elements
+    document.addEventListener("click", function (event) {
+        const target = event.target;
+        if (!colorSwitcher.contains(target) && !themeContainer.contains(target)) {
+            closeWebsite();
+        }
+    });
 });
+
+
 
