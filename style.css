@@ -241,7 +241,7 @@ button:hover {
     color: var(--main-color);
     backdrop-filter: blur(10px);
     background: hsl(0deg 0% 100% / 23%);
-    padding: 0px 4px;
+    padding: 2px 4px 4px 4px;
     cursor: pointer;
     font-size: 35px;
     border-radius: 8px 0 0 8px;
