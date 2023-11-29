@@ -265,6 +265,10 @@ button:hover {
     height: 630px;
 }
 
+.fa-solid, .fas {
+        color: #4e2bda;
+}
+
 /* profile image */
 .profile-pic-div {
     position: absolute;
