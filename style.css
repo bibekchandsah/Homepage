@@ -236,7 +236,7 @@ button:hover {
 
 .color-switcher .switcher-btn {
     position: absolute;
-    top: 0;
+    top: 20%;
     left: -63px;
     color: var(--main-color);
     backdrop-filter: blur(10px);
