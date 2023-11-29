@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homepage</title>
+    <!-- ==================== font-awesome CDN Link fax (https://fontawesome.com/icons) ====================-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'>
    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
@@ -76,6 +78,14 @@
         <label for="file" id="uploadBtn">Choose image</label>
     </div>
 
+     <!-- side button for calendar website -->
+    <div class="color-switcher" id="color-switcher">
+        <div class="switcher-btn" title="calendar">
+            <i class="fas fa-calendar change-color"></i>
+        </div>
+        <div class="theme-buttons-container" id="theme-buttons-container"></div>
+    </div>
+    
     <!-- greeting text -->
     <h1 id="greeting"></h1>
     <div id="username-input" style="display: none;">
