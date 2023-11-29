@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
             // Create an iframe element
             const iframe = document.createElement("iframe");
             iframe.src = "https://bibek10550.github.io/calander/";
-            iframe.width = "453";
-            iframe.height = "693";
+            iframe.width = "459";
+            iframe.height = "628";
             iframe.style.border = "none";
 
             // Append the iframe to the theme container
