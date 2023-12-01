@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (themeContainer.childElementCount === 0) {
             // Create an iframe element
             const iframe = document.createElement("iframe");
-            iframe.src = "https://bibek10550.github.io/calander/";
+            iframe.src = "https://bibek10550.github.io/calendar/";
             iframe.width = "459";
             iframe.height = "628";
             iframe.style.border = "none";
