@@ -73,9 +73,17 @@ function resizeImage(inputDataURL, maxWidth, maxHeight, callback) {
 // clean the local storage
 // Add a click event listener to the button
 document.getElementById('clearLocalStorageBtn').addEventListener('click', function () {
+    // Change button color to green
+    this.style.backgroundColor = '#2ecc71';
+
     // Clear the local storage
     localStorage.clear();
 
     // Optionally, you can provide feedback to the user
     console.log('Local storage cleared!');
+
+    // Revert button color after 5 seconds
+    setTimeout(() => {
+        this.style.backgroundColor = '#ff0202';
+    }, 5000);
 });
