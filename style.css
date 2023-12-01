@@ -271,7 +271,8 @@ button:hover {
 
 /* side button for social media */
 #switcher {
-    position: fixed;
+    position: absolute;
+/*     position: fixed; */
     top: 240px;
     left: 20px;
     display: flex;
