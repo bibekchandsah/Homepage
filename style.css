@@ -94,6 +94,26 @@ body::before {
     justify-content: center;
 }
 
+/* clear local storage */
+#clearLocalStorageBtn {
+    position: absolute;
+    /* bottom: 10px; */
+    top: 0px;
+    left: 0px;
+    padding: 5px;
+    background-color: rgb(255, 2, 2);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#clearLocalStorageBtn:hover i {
+    font-size: larger;
+}
+
 /* search box */
 .search-container {
     position: absolute;
