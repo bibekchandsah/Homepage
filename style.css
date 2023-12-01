@@ -238,7 +238,7 @@ button:hover {
     position: absolute;
     top: 40%;
     left: -40px;
-    color: var(--main-color);
+    color: #4e2bda;
     backdrop-filter: blur(10px);
     background: hsl(0deg 0% 100% / 23%);
     padding: 2px 4px 4px 4px;
@@ -250,8 +250,8 @@ button:hover {
 }
 
 .color-switcher .switcher-btn:hover {
-    background: var(--main-color);
-    color: rgb(230, 223, 223);
+    background: hsl(0deg 0% 100% / 23%);
+    color: #4e2bda;
     font-size: 30px;
     left: -30px;
     transition: all .3s ease;
