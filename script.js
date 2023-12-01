@@ -150,6 +150,16 @@ const currentDate = getCurrentDate();
 greetingElement.textContent = greeting;
 currentDateElement.textContent = currentDate;
 
+// clean the local storage
+// Add a click event listener to the button
+document.getElementById('clearLocalStorageBtn').addEventListener('click', function () {
+    // Clear the local storage
+    localStorage.clear();
+
+    // Optionally, you can provide feedback to the user
+    console.log('Local storage cleared!');
+});
+
 
 // search box
 function searchOnEnter(event) {
