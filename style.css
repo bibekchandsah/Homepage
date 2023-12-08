@@ -241,7 +241,7 @@ button:hover {
 
 .widget-container {
     position: fixed;
-    top: 135px;
+    top: 60px;
     right: 0px;
     /* transition: all .2s linear; */
     transition: right 0.3s ease;
@@ -394,8 +394,8 @@ button:hover {
 /* profile image */
 .profile-pic-div {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 35px;
+    right: 40px;
     width: 250px;
     height: 250px;
     border-radius: 50%;
