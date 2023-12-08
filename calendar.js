@@ -1,50 +1,67 @@
-// side button for calendar website
-
 document.addEventListener("DOMContentLoaded", function () {
-    const colorSwitcher = document.getElementById("color-switcher");
-    const themeContainer = document.getElementById("theme-buttons-container");
+    const widgetContainer = document.getElementById("widget-container");
+    const themeContainers = {
+        calendar: { container: document.getElementById("theme-buttons-container-calendar"), url: "https://bibek10550.github.io/calendar/", width: 453, height: 630 },
+        commenting: { container: document.getElementById("theme-buttons-container-commenting"), url: "https://bibek10550.github.io/dailyQuote/", width: 622, height: 322 },
+        music: { container: document.getElementById("theme-buttons-container-music"), url: "https://bibek10550.github.io/bibeksha/music.html", width: 420, height: 762 },
+    };
 
-    // Function to close the website (remove the iframe)
-    function closeWebsite() {
-        // Check if the theme container is not empty
-        if (themeContainer.childElementCount !== 0) {
-            // Remove the iframe
-            themeContainer.innerHTML = "";
+    // Function to close all theme containers
+    function closeAllThemeContainers() {
+        Object.values(themeContainers).forEach(containerInfo => {
+            containerInfo.container.style.display = 'none';
+            containerInfo.container.style.right = '0px';
+            containerInfo.container.style.transition = 'all .3s linear';
 
-            // Remove the "active" class from color-switcher for styling
-            colorSwitcher.classList.remove("active");
-        }
+        });
     }
 
-    colorSwitcher.addEventListener("click", function (event) {
+    // Function to handle icon click
+    function handleIconClick(icon) {
+        // Close all theme containers
+        closeAllThemeContainers();
+
+        // Show the corresponding theme container
+        const containerInfo = themeContainers[icon];
+        containerInfo.container.style.display = 'flex';
+        // containerInfo.container.style.right = '-640px';
+        // containerInfo.container.style.transition = 'all .3s linear';
+
+        // Check if the iframe already exists
+        const existingIframe = containerInfo.container.querySelector('iframe');
+        if (!existingIframe) {
+            // Create iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = containerInfo.url;
+            iframe.width = `${containerInfo.width}px`;
+            iframe.height = `${containerInfo.height}px`;
+            containerInfo.container.appendChild(iframe);
+            iframe.style.border = "none";
+        }
+
+        // Toggle the active class on widget-container for styling
+        widgetContainer.classList.toggle("active");
+    }
+
+    widgetContainer.addEventListener("click", function (event) {
         // Prevent the click event from propagating to the document
         event.stopPropagation();
 
         // Check if the theme container is already populated
-        if (themeContainer.childElementCount === 0) {
-            // Create an iframe element
-            const iframe = document.createElement("iframe");
-            iframe.src = "https://bibek10550.github.io/calendar/";
-            iframe.width = "459";
-            iframe.height = "628";
-            iframe.style.border = "none";
-
-            // Append the iframe to the theme container
-            themeContainer.appendChild(iframe);
+        const clickedIcon = event.target.closest('.switcher-btn');
+        if (clickedIcon) {
+            const iconTitle = clickedIcon.getAttribute('title');
+            handleIconClick(iconTitle);
         }
-
-        // Toggle the active class on color-switcher for styling
-        colorSwitcher.classList.toggle("active");
     });
 
     // Event listener to close the website when clicking outside of specified elements
     document.addEventListener("click", function (event) {
         const target = event.target;
-        if (!colorSwitcher.contains(target) && !themeContainer.contains(target)) {
-            closeWebsite();
+        if (!widgetContainer.contains(target)) {
+            closeAllThemeContainers();
+            // Remove the "active" class from color-switcher for styling
+            widgetContainer.classList.remove("active");
         }
     });
 });
-
-
-
