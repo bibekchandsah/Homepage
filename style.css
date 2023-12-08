@@ -240,7 +240,7 @@ button:hover {
 }
 
 .widget-container {
-    position: fixed;
+    position: absolute;
     top: 60px;
     right: 0px;
     /* transition: all .2s linear; */
