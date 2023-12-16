@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         calendar: { container: document.getElementById("theme-buttons-container-calendar"), url: "https://bibek10550.github.io/calendar/", width: 453, height: 630 },
         commenting: { container: document.getElementById("theme-buttons-container-commenting"), url: "https://bibek10550.github.io/dailyQuote/", width: 622, height: 322 },
         music: { container: document.getElementById("theme-buttons-container-music"), url: "https://bibek10550.github.io/bibeksha/music.html", width: 420, height: 762 },
-        linksaver: { container: document.getElementById("theme-buttons-container-linksaver"), url: "https://bibek10550.github.io/linksaver/", width: 326, height: 456 },
+        linksaver: { container: document.getElementById("theme-buttons-container-linksaver"), url: "https://bibek10550.github.io/linksaver/", width: 330, height: 456 },
     };
 
     // Function to close all theme containers
