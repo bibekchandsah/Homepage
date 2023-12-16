@@ -346,9 +346,9 @@ button:hover {
     padding: 10px 0px;
 }
 #theme-buttons-container-linksaver {
-    width: 437px;
-    right: -437px;
-    height: 782px;
+    width: 343px;
+    right: -343px;
+    height: 476px;
     backdrop-filter: blur(10px);
     background: hsl(0deg 0% 100% / 23%);
     padding: 10px 0px;
