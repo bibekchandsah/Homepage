@@ -329,9 +329,9 @@ button:hover {
 }
 
 #theme-buttons-container-commenting {
-    width: 658px;
-    right: -658px;
-    height: 396px;
+    width: 660px;
+    right: -660px;
+    height: 450px;
     backdrop-filter: blur(10px);
     background: hsl(0deg 0% 100% / 23%);
     padding: 10px 0px;
