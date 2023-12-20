@@ -157,14 +157,30 @@ function searchOnEnter(event) {
         searchGoogle();
     }
 }
-
+// search on google
 function searchGoogle() {
     const searchInput = document.querySelector(".search-input");
     const query = searchInput.value.trim();
     if (query !== "") {
         const searchUrl = "https://www.bing.com/search?q=" + encodeURIComponent(query);
         window.open(searchUrl, "_blank");
+        // Select the text inside the input after the search button is pressed
+        searchInput.select();
     }
+}
+// toggle the clear icon
+function toggleClearIcon() {
+    var input = document.querySelector('.search-input');
+    var clearIcon = document.querySelector('.clear-icon');
+
+    // If there's text in the input, show the cross icon; otherwise, hide it
+    clearIcon.style.display = input.value.trim() !== '' ? 'block' : 'none';
+}
+// clear the search input
+function clearSearchInput() {
+    var input = document.querySelector('.search-input');
+    input.value = '';
+    toggleClearIcon(); // Hide the cross icon after clearing the input
 }
 
 
