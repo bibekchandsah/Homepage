@@ -397,6 +397,22 @@ ul {
     background-color: #3005f2;
 }
 
+.clear-icon {
+    cursor: pointer;
+    right: 85px;
+    position: absolute;
+    padding: 10px;
+    border-radius: 8px;
+    color: #3005f2;
+    font-weight: bolder;
+    transition: color 0.3s;
+    display: none; /* Initially hide the cross icon */
+}
+
+.clear-icon:hover {
+    background-color: #dddaf5;
+}
+
 /* chat buttons */
 .bing-container {
     position: absolute;
