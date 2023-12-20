@@ -101,7 +101,8 @@
 
     <!-- search box -->
     <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search anything here" onkeydown="searchOnEnter(event)">
+        <input type="text" class="search-input" placeholder="Search anything here" oninput="toggleClearIcon()" onkeydown="searchOnEnter(event)">
+        <i class="fa fa-times clear-icon" aria-hidden="true" onclick="clearSearchInput()"></i>
         <button class="search-button" onclick="searchGoogle()">Search</button>
     </div>
 
