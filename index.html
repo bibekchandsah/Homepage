@@ -94,39 +94,40 @@
         </div>
     </div>
 
-     <!-- Button to clear local storage -->
-    <button id="clearLocalStorageBtn" title="clear local storage">
+    <!-- Button to clear local storage -->
+    <button anim="ripple" id="clearLocalStorageBtn" title="clear local storage">
         <i class="fa fa-archive" aria-hidden="true"></i>
     </button>
 
     <!-- search box -->
     <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search anything here" oninput="toggleClearIcon()" onkeydown="searchOnEnter(event)">
+        <input type="text" class="search-input" placeholder="Search anything here" oninput="toggleClearIcon()"
+            onkeydown="searchOnEnter(event)">
         <i class="fa fa-times clear-icon" aria-hidden="true" onclick="clearSearchInput()"></i>
-        <button class="search-button" onclick="searchGoogle()">Search</button>
+        <button anim="ripple" class="search-button" onclick="searchGoogle()">Search</button>
     </div>
 
     <!-- chat buttons -->
     <div class="bing-container">
-<!--         <a href="https://bing.com/chat?form=WSBCTB" target="_blank"> -->
+        <!--         <a href="https://bing.com/chat?form=WSBCTB" target="_blank"> -->
         <a href="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx" target="_blank">
-            <button>Chat with AI</button>
+            <button anim="ripple">Chat with AI</button>
         </a>
         <a href="https://labs.openai.com/" target="_blank">
-            <button>AI image generator</button>
+            <button anim="ripple">AI image generator</button>
         </a>
     </div>
 
     <!-- windows button -->
     <div class="browser-container">
         <a href="ms-settings:windowsupdate?activationSource=SMC-IA-4028685">
-            <button>Update window</button>
+            <button anim="ripple">Update window</button>
         </a>
         <a href="ms-calculator://home">
-            <button>Calculator</button>
+            <button anim="ripple">Calculator</button>
         </a>
         <a href="ms-windows-store://home">
-            <button>Store</button>
+            <button anim="ripple">Store</button>
         </a>
     </div>
 
@@ -207,92 +208,92 @@
     <!-- Date -->
     <div id="dateDisplay"></div>
 
-    <!-- most visited websites -->
+        <!-- most visited websites -->
     <div class="most-visited-container">
         <div class="most-visited-title">Most Visited</div>
         <div class="icon-grid">
             <div class="icon-item">
-                <a href="https://www.youtube.com/">
+                <a anim="ripple" href="https://www.youtube.com/">
                     <img src="https://www.youtube.com/s/desktop/dd76c683/img/favicon_96x96.png" alt="Youtube">
                     <div class="icon-name">Youtube</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://mail.google.com/mail/u/1/#inbox">
+                <a anim="ripple" href="https://mail.google.com/mail/u/1/#inbox">
                     <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail">
                     <div class="icon-name">Gmail</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://classroom.google.com/u/1/?pli=1">
+                <a anim="ripple" href="https://classroom.google.com/u/1/?pli=1">
                     <img src="https://ssl.gstatic.com/classroom/ic_product_classroom_96.png" alt="Classroom">
                     <div class="icon-name">Classroom</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://photos.google.com/?tab=Cq&pageId=none&pli=1">
+                <a anim="ripple" href="https://photos.google.com/?tab=Cq&pageId=none&pli=1">
                     <img src="https://ssl.gstatic.com/social/photosui/images/logo/1x/photos_512dp.png" alt="Photos">
                     <div class="icon-name">Photos</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://chat.openai.com/">
+                <a anim="ripple" href="https://chat.openai.com/">
                     <img src="https://chat.openai.com/apple-touch-icon.png" alt="ChatGPT">
                     <div class="icon-name">ChatGPT</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://www.office.com/?auth=1">
+                <a anim="ripple" href="https://www.office.com/?auth=1">
                     <img src="https://res.cdn.office.net/officehub/images/content/images/favicon_m365-67350a08e8.ico"
                         alt="MS-365">
                     <div class="icon-name">MS-365</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://github.com/">
+                <a anim="ripple" href="https://github.com/">
                     <img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">
                     <div class="icon-name">GitHub</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://kiitportal.kiituniversity.net/">
+                <a anim="ripple" href="https://kiitportal.kiituniversity.net/">
                     <img src="https://kiit.ac.in/wp-content/uploads/2022/10/KIIT-Logo-500x500-1.png" alt="KIIT SAP">
                     <div class="icon-name">KIIT SAP</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://tempmail.email/">
+                <a anim="ripple" href="https://tempmail.email/">
                     <img src="https://tempmail.email/images/favicon.png" alt="Temp mail">
                     <div class="icon-name">Temp mail</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://www.facebook.com/">
+                <a anim="ripple" href="https://www.facebook.com/">
                     <img src="https://cdn.iconscout.com/icon/free/png-128/facebook-1693591-1442632.png" alt="Facebook">
                     <div class="icon-name">Facebook</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://www.instagram.com/">
+                <a anim="ripple" href="https://www.instagram.com/">
                     <img src="https://static.cdninstagram.com/rsrc.php/v3/yG/r/De-Dwpd5CHc.png" alt="Instagram">
                     <div class="icon-name">Instagram</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://web.snapchat.com/">
+                <a anim="ripple" href="https://web.snapchat.com/">
                     <img src="https://cf-st.sc-cdn.net/dw/favicons/e9b6d2d3/apple-touch-icon-1024x1024.png"
                         alt="Snapchat">
                     <div class="icon-name">Snapchat</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://updatefaker.com/windows11/index.html">
+                <a anim="ripple" href="https://updatefaker.com/windows11/index.html">
                     <img src="https://icon-library.com/images/convert-icon/convert-icon-0.jpg" alt="F-update">
                     <div class="icon-name">F-update</div>
                 </a>
             </div>
             <div class="icon-item">
-                <a href="https://www.1337x.tw/">
+                <a anim="ripple" href="https://www.1337x.tw/">
                     <img src="https://cdn.elgrupoinformatico.com/img/w720/Noticias/2016/10/1337x-logo-720x389.png"
                         alt="1337x">
                     <div class="icon-name">1337x</div>
@@ -307,8 +308,8 @@
 
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
+                <button anim="ripple" class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     AI
                 </button>
             </h2>
@@ -319,21 +320,21 @@
                     <div class="icon-grid">
 
                         <div class="icon-item">
-                            <a href="https://www.futurepedia.io/">
+                            <a anim="ripple" href="https://www.futurepedia.io/">
                                 <img src="https://www.futurepedia.io/futurepedia-small.svg" alt="All in 1 AI">
                                 <div class="icon-name">All in 1 AI</div>
                             </a>
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://chat.openai.com/">
+                            <a anim="ripple" href="https://chat.openai.com/">
                                 <img src="https://chat.openai.com/apple-touch-icon.png" alt="ChatGPT">
                                 <div class="icon-name">ChatGPT</div>
                             </a>
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://bard.google.com/">
+                            <a anim="ripple" href="https://bard.google.com/">
                                 <img src="https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg"
                                     alt="Bard">
                                 <div class="icon-name">Bard</div>
@@ -341,14 +342,14 @@
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://firefly.adobe.com/">
+                            <a anim="ripple" href="https://firefly.adobe.com/">
                                 <img src="https://firefly.adobe.com/adobe_android_192.png" alt="Firefly">
                                 <div class="icon-name">Firefly</div>
                             </a>
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://labs.openai.com/">
+                            <a anim="ripple" href="https://labs.openai.com/">
                                 <img src="https://openailabs-site.azureedge.net/public-assets/d/d4da796015/mask-icon.svg"
                                     alt="DALL-E">
                                 <div class="icon-name">DALL-E</div>
@@ -356,7 +357,7 @@
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://app.leonardo.ai/">
+                            <a anim="ripple" href="https://app.leonardo.ai/">
                                 <img src="https://leonardo-cdn.b-cdn.net/wp-content/uploads/2022/12/cropped-fav-leonardo-logo-192x192.png"
                                     alt="Leonardo">
                                 <div class="icon-name">Leonardo</div>
@@ -364,14 +365,14 @@
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://slidesgo.com/ai-presentations">
+                            <a anim="ripple" href="https://slidesgo.com/ai-presentations">
                                 <img src="https://slidesgo.com/apple-touch-icon-152x152.png" alt="Slidesgo">
                                 <div class="icon-name">Slidesgo</div>
                             </a>
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://otter.ai/home">
+                            <a anim="ripple" href="https://otter.ai/home">
                                 <img src="https://otter.ai/favicon.ico" alt="Voice to text">
                                 <div class="icon-name">Voice to text</div>
                             </a>
@@ -392,7 +393,7 @@
 
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                <button anim="ripple" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     Microsoft and Google
                 </button>
@@ -404,21 +405,21 @@
                     <div class="icon-grid">
 
                         <div class="icon-item">
-                            <a href="https://www.office.com/launch/word?auth=1">
+                            <a anim="ripple" href="https://www.office.com/launch/word?auth=1">
                                 <img src="https://www.drware.com/wp-content/uploads/2020/10/Word.png" alt="Word">
                                 <div class="icon-name">Word</div>
                             </a>
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://www.office.com/launch/excel?auth=1">
+                            <a anim="ripple" href="https://www.office.com/launch/excel?auth=1">
                                 <img src="https://www.drware.com/wp-content/uploads/2020/10/Excel.png" alt="Excel">
                                 <div class="icon-name">Excel</div>
                             </a>
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://www.office.com/launch/powerpoint?auth=1">
+                            <a anim="ripple" href="https://www.office.com/launch/powerpoint?auth=1">
                                 <img src="https://www.drware.com/wp-content/uploads/2020/10/PowerPoint.png"
                                     alt="PowerPoint">
                                 <div class="icon-name">PowerPoint</div>
@@ -426,7 +427,7 @@
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://onedrive.live.com/?sw=bypass&gologin=1">
+                            <a anim="ripple" href="https://onedrive.live.com/?sw=bypass&gologin=1">
                                 <img src="https://www.drware.com/wp-content/uploads/2020/10/OneDrive.png"
                                     alt="OneDrive">
                                 <div class="icon-name">OneDrive</div>
@@ -434,7 +435,8 @@
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home">
+                            <a anim="ripple"
+                                href="https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home">
                                 <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logo-iconlogobrand-logoiconslogos-251519939091wmudn.png"
                                     alt="Edge Add-ons">
                                 <div class="icon-name">Edge Add-ons</div>
@@ -442,7 +444,7 @@
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://www.google.com/">
+                            <a anim="ripple" href="https://www.google.com/">
                                 <img src="https://th.bing.com/th/id/R.0fa3fe04edf6c0202970f2088edea9e7?rik=joOK76LOMJlBPw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoogle-logo-png-open-2000.png&ehk=0PJJlqaIxYmJ9eOIp9mYVPA4KwkGo5Zob552JPltDMw%3d&risl=&pid=ImgRaw&r=0"
                                     alt="Google">
                                 <div class="icon-name">Google</div>
@@ -450,14 +452,14 @@
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://translate.google.com.np/?hl=en&tab=oT">
+                            <a anim="ripple" href="https://translate.google.com.np/?hl=en&tab=oT">
                                 <img src="https://ssl.gstatic.com/translate/favicon.ico" alt="Google Translate">
                                 <div class="icon-name">Google Translate</div>
                             </a>
                         </div>
 
                         <div class="icon-item">
-                            <a href="https://chrome.google.com/webstore/category/extensions">
+                            <a anim="ripple" href="https://chrome.google.com/webstore/category/extensions">
                                 <img src="https://ssl.gstatic.com/chrome/webstore/images/icon_144px.png"
                                     alt="Chrome webStore">
                                 <div class="icon-name">Chrome webStore</div>
@@ -472,7 +474,6 @@
         </div>
 
     </div>
-
     <!-- Edit -->
     <div class="accordion" id="accordionExample">
 
@@ -756,6 +757,19 @@
     <!-- javascript file -->
     <script src="profileChange.js"></script>
     <script src="script.js"></script>
+        <script>
+        // ripple effect
+        "use strict";
+        [].map.call(document.querySelectorAll('[anim="ripple"]'), el => {
+            el.addEventListener('click', e => {
+                e = e.touches ? e.touches[0] : e;
+                const r = el.getBoundingClientRect(), d = Math.sqrt(Math.pow(r.width, 2) + Math.pow(r.height, 2)) * 2;
+                el.style.cssText = `--s: 0; --o: 1;`;
+                el.offsetTop;
+                el.style.cssText = `--t: 1; --o: 0; --d: ${d}; --x:${e.clientX - r.left}; --y:${e.clientY - r.top};`;
+            });
+        });
+    </script>
 </body>
 
 </html>
