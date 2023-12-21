@@ -413,6 +413,53 @@ ul {
     background-color: #dddaf5;
 }
 
+/* ripple effect */
+[anim=ripple] {
+    position: relative;
+    overflow: hidden;
+}
+
+[anim=ripple]:before {
+    content: "";
+    position: absolute;
+    display: block;
+    background: var(--ripple-background, rgb(255, 255, 255));
+    border-radius: 50%;
+    pointer-events: none;
+    top: calc(var(--y) * 1px);
+    left: calc(var(--x) * 1px);
+    width: calc(var(--d) * 1px);
+    height: calc(var(--d) * 1px);
+    opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+    transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
+    transform: translate(-50%, -50%) scale(var(--s, 1));
+    transform-origin: center;
+}
+
+button {
+    --ripple-background: white;
+    --ripple-opacity: 0.3;
+    --ripple-duration: 600ms;
+    border: 1px solid #5a42f4;
+    background: #5a42f4;
+    color: white;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+button:active{
+    transform: scale(0.96);
+}
+
+a {
+  --ripple-background: black;
+  --ripple-opacity: 0.1;
+  --ripple-duration: 600ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 /* chat buttons */
 .bing-container {
     position: absolute;
