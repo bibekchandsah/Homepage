@@ -932,4 +932,17 @@ h1, #dateDisplay {
     .profile-pic-div {
         top: 220px;
     }
+
+     #theme-buttons-container-calendar {
+        width: 387px;
+    }
+
+    #theme-buttons-container-music {
+        width: 383px;
+    }
+
+    #theme-buttons-container-commenting {
+        width: 395px;
+        height: 590px;
+    }
 }
