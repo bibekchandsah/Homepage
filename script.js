@@ -1,10 +1,26 @@
 // Function to reload the page
-function reloadPage() {
-    location.reload();
-}
+// function reloadPage() {
+//     location.reload();
+// }
 
 // Reload the page every 1 minute (60,000 milliseconds)
-setInterval(reloadPage, 60000);
+// setInterval(reloadPage, 60000);
+
+
+// detect mouse movement for reload
+var lastMouseActivity = new Date().getTime();
+function handleMouseActivity() {
+    lastMouseActivity = new Date().getTime();
+}
+function checkAndReloadPage() {
+    var currentTime = new Date().getTime();
+    var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
+    // Check if there has been no mouse movement for 1 minute (60 seconds)
+    if (timeDifferenceInSeconds > 60) {
+        // Reload the page
+        location.reload();
+    }
+}
 
 
 // online status toast 
