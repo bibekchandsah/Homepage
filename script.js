@@ -6,6 +6,10 @@
 // Reload the page every 1 minute (60,000 milliseconds)
 // setInterval(reloadPage, 60000);
 
+//Execute after the page loaded
+window.addEventListener("load", () => {
+    setWhatsappLink();
+});
 
 // detect mouse movement for reload
 var lastMouseActivity = new Date().getTime();
@@ -198,6 +202,39 @@ function clearSearchInput() {
     input.value = '';
     toggleClearIcon(); // Hide the cross icon after clearing the input
 }
+
+
+// show different link of whatsapp according to device
+// Function to detect whether the user is on a mobile device
+// Function to set the appropriate link based on the device
+// function setWhatsappLink() {
+//     const whatsappLink = document.getElementById('whatsappLink');
+//     if (window.innerWidth <= 768) {
+//         // Assuming a screen width of 768 pixels or less is considered a mobile device
+//         console.log("mobile device");
+//         whatsappLink.href = 'qrcode.png';
+//     } else {
+//         console.log("pc devices");
+//         whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
+//     }
+// }
+// Function to detect whether the user is on a mobile device
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+// Function to set the appropriate link based on the device
+function setWhatsappLink() {
+    const whatsappLink = document.getElementById('whatsappLink');
+    if (isMobileDevice()) {
+        console.log("mobile devices");
+        whatsappLink.href = 'qrcode.png';
+    } else {
+        console.log("pc devices");
+        whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
+    }
+}
+// Call the function on page load
+// setWhatsappLink();
 
 
 // icon images stored locally
