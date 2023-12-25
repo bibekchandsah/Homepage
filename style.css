@@ -707,6 +707,10 @@ button:hover {
     transition: font-size 0.3s ease; /* Smooth transition for font-size */
 }
 
+.social-media-btn a .share{
+    padding-top: 5px;
+}
+
 .social-media-btn:hover i {
     font-size: 24px; /* Increase the font-size on hover */
 }
