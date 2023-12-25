@@ -922,6 +922,10 @@ h1, #dateDisplay {
     .most-visited-title {
         margin-top: 190px;
     }
+
+    #switcher {
+        top: 203px;
+    }
 }
 
 @media (max-width: 540px) {
@@ -948,5 +952,11 @@ h1, #dateDisplay {
     #theme-buttons-container-commenting {
         width: 395px;
         height: 590px;
+    }
+}
+
+@media (max-width: 380px) {
+    .widget-container {
+        right: -57px;
     }
 }
