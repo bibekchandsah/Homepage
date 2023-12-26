@@ -222,28 +222,36 @@ function clearSearchInput() {
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
+
 // Function to set the appropriate link based on the device
 function setWhatsappLink() {
     const whatsappLink = document.getElementById('whatsappLink');
     const imagePreview = document.getElementById('imagePreview');
+    const shareIcon = document.querySelector(".whatsappLink");
 
     if (isMobileDevice()) {
         console.log("mobile devices");
-        whatsappLink.addEventListener('click', () => {
-            // Display image preview when clicked
+        whatsappLink.addEventListener('click', (event) => {
             imagePreview.innerHTML = '<img src="qrcode.png" alt="QR Code">';
-            imagePreview.style.display = 'block';
-            console.log("clicked");
+            event.stopPropagation(); // Prevent the click event from reaching the document
+            // Toggle display of image preview
+            imagePreview.style.display = imagePreview.style.display === 'none' ? 'block' : 'none';
         });
-        imagePreview.addEventListener("click", () => {
-            imagePreview.style.display = 'none';
-            console.log("clicked");
+
+        document.addEventListener('click', () => {
+            // Close the image preview when clicked outside
+            imagePreview.style.animation = "disappear 0.3s ease-out";
+            setTimeout(() => {
+                imagePreview.style.display = 'none';
+                imagePreview.style.animation = ""; // Reset animation property
+            }, 300); // Adjust the timeout to match the animation duration
         });
     } else {
         console.log("pc devices");
         whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
         // Hide image preview if it's visible
         imagePreview.style.display = 'none';
+        // imagePreview.style.animation = "zoomOut 0.3s ease-in";
     }
 }
 // Call the function on page load
