@@ -734,7 +734,28 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow */
     z-index: 1;
     border-radius: 25px;
-} 
+    animation: zoom 0.5s forwards;
+}
+
+@keyframes zoom {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+#imagePreview img{
+    border-radius: 25px;
+    max-width: 80vw;
+    max-height: 80%;
+    min-width: 40vw;
+    min-height: 40%;
+}
 
 #imagePreview img{
     border-radius: 25px;
