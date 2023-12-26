@@ -955,8 +955,48 @@ h1, #dateDisplay {
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 407px) {
     .widget-container {
-        right: -57px;
+        right: -10px;
+        top: 40px;
     }
+
+    .image-container {
+        right: -10px;
+    }
+
+    .search-container {
+        top: 37px;
+    }
+
+    .search-input {
+        width: 230px;
+    }
+}
+
+
+@media (max-width: 378px) {
+    .profile-pic-div {
+        top: 247px;
+    }
+}
+@media (max-width: 336px) {
+    .search-container {
+        left: 10px
+    }
+    .bing-container {
+        left: 8px;
+    }
+
+    .profile-pic-div {
+        top: 247px;
+    }
+
+    .bing-container {
+        left: 10px;
+    }
+}
+
+@media (max-width: 315px) {
+    
 }
