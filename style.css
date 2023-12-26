@@ -720,6 +720,31 @@ button:hover {
 }
 
 
+/* Add a class for the image preview */
+#imagePreview {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80vh;
+    max-height: 80vh;
+    /* border: 2px solid #fff;  */
+    /* Optional: Add a border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow */
+    z-index: 1;
+    border-radius: 25px;
+} 
+
+#imagePreview img{
+    border-radius: 25px;
+    max-width: 80vw;
+    max-height: 80vh;
+    min-width: 40vw;
+    min-height: 40vh;
+}
+
+
 /* profile image */
 .profile-pic-div {
     position: absolute;
