@@ -225,14 +225,25 @@ function isMobileDevice() {
 // Function to set the appropriate link based on the device
 function setWhatsappLink() {
     const whatsappLink = document.getElementById('whatsappLink');
+    const imagePreview = document.getElementById('imagePreview');
+
     if (isMobileDevice()) {
         console.log("mobile devices");
-        whatsappLink.href = 'qrcode.png';
-        // Set target attribute for mobile devices
-        whatsappLink.setAttribute('target', '_blank');
+        whatsappLink.addEventListener('click', () => {
+            // Display image preview when clicked
+            imagePreview.innerHTML = '<img src="qrcode.png" alt="QR Code">';
+            imagePreview.style.display = 'block';
+            console.log("clicked");
+        });
+        imagePreview.addEventListener("click", () => {
+            imagePreview.style.display = 'none';
+            console.log("clicked");
+        });
     } else {
         console.log("pc devices");
         whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
+        // Hide image preview if it's visible
+        imagePreview.style.display = 'none';
     }
 }
 // Call the function on page load
