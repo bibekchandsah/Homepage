@@ -944,6 +944,60 @@ h1, #dateDisplay {
     color: #ffffff !important;
 }
 
+/* image generator */
+.imageCardText {
+    margin: 10px;
+}
+
+.col:hover{
+    transform: scale(1.05) ;
+    transition: all ease-in-out;
+}
+
+.card {
+    position: relative;
+}
+
+.card-img-overlay {
+    position: absolute;
+    /* top: 25%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-title{
+    font-weight: bolder;
+}
+
+.text-center {
+    color: #5a42f400;
+}
+
+.text-center button {
+    visibility: hidden;
+}
+
+.text-center:hover {
+    /* color: #3213fb; */
+    color: #2200ff;
+    font-weight: bolder;
+    font-size: medium;
+    background: #4000ff1e;
+}
+
+.text-center:hover button {
+    visibility: visible;
+}
+
+.imageCardText .card:hover .card-img-top {
+    filter: blur(10px); /* Adjust the blur strength as needed */
+}
+
+
+
+
 /* Add media query for screen width less than 1310px */
 @media (max-width: 1310px) {
 
@@ -957,6 +1011,22 @@ h1, #dateDisplay {
     /* Adjust margin for the greeting and date */
     h1 {
         margin-top: 300px;
+    }
+    .text-center:hover {
+        font-size: small;
+    }
+}
+
+@media (max-width: 1110px) {
+    
+    .card-text {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    
+    .card-text {
+        display: block;
     }
 }
 
