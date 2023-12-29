@@ -30,7 +30,7 @@ body {
 
 body::before {
     content: "";
-    background-image: url("https://source.unsplash.com/1080x720/?tech,code,laptop,developer,ai,chatgpt,firefly");
+    background-image: url("https://source.unsplash.com/1080x720/?tech,code,laptop,developer,ai,chatgpt,firefly,automation, artificial intelligence, big data, blockchain, cloud computing, cybersecurity, data mining, encryption, internet of things (IoT), machine learning, mobile computing, network, open source, operating system, quantum computing, robotics, software, virtual reality, web development");
     background-size: cover;
     position: fixed;
     top: 0;
