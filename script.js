@@ -27,6 +27,105 @@ function checkAndReloadPage() {
 }
 
 
+// popup update display
+jQuery(document).ready(function ($) {
+    // Function to check if the popup should be displayed
+    function shouldDisplayPopup() {
+        var popupStatus = localStorage.getItem('popupStatus');
+        var lastPopupTime = localStorage.getItem('lastPopupTime');
+
+        if (!popupStatus || popupStatus === 'not visited' || isPopupStale(lastPopupTime)) {
+            return true;
+        }
+        return false;
+    }
+
+    // Function to set the popup status as visited
+    function setPopupVisited() {
+        localStorage.setItem('popupStatus', 'visited');
+    }
+
+    // Function to set the popup status as not visited
+    function setPopupNotVisited() {
+        localStorage.setItem('popupStatus', 'not visited');
+    }
+
+    // Function to set the last popup time
+    function setLastPopupTime() {
+        var currentTime = new Date().getTime();
+        localStorage.setItem('lastPopupTime', currentTime);
+    }
+
+    // Function to clear the stored popup status and time
+    function clearPopupStatus() {
+        localStorage.removeItem('popupStatus');
+        localStorage.removeItem('lastPopupTime');
+    }
+
+    // Function to check if the stored popup status is stale (older than 7 days)
+    function isPopupStale(lastPopupTime) {
+        if (!lastPopupTime) {
+            return true;
+        }
+
+        var currentTime = new Date().getTime();
+        var sevenDaysInMillis = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+
+        return currentTime - lastPopupTime > sevenDaysInMillis;
+    }
+
+    // Function to show the popup
+    function showPopup() {
+        $('.bts-popup').addClass('is-visible');
+    }
+
+    // Function to hide the popup
+    function hidePopup() {
+        $('.bts-popup').removeClass('is-visible');
+    }
+
+    // Check if the popup should be displayed
+    if (shouldDisplayPopup()) {
+        // Display the popup after a delay
+        setTimeout(function () {
+            showPopup();
+        }, 1000);
+    }
+
+    // Open popup when trigger is clicked
+    $('.bts-popup-trigger').on('click', function (event) {
+        event.preventDefault();
+        showPopup();
+    });
+
+    // Close popup when clicking the close button or outside the popup
+    $('.bts-popup').on('click', function (event) {
+        if ($(event.target).is('.bts-popup-close') || $(event.target).is('.bts-popup')) {
+            event.preventDefault();
+            hidePopup();
+
+            // Set popup status as visited and update last popup time when the popup is closed
+            setPopupVisited();
+            setLastPopupTime();
+        }
+    });
+
+    // Close popup when clicking the esc keyboard button
+    $(document).keyup(function (event) {
+        if (event.which == '27') {
+            hidePopup();
+
+            // Set popup status as visited and update last popup time when the popup is closed
+            setPopupVisited();
+            setLastPopupTime();
+        }
+    });
+
+    // Example usage: call clearPopupStatus() to clear stored status and time
+    // clearPopupStatus();
+});
+
+
 // online status toast 
 const toastElement = document.getElementById("toast");
 const toastMessageElement = document.getElementById("toast-message");
