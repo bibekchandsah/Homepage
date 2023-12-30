@@ -76,6 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (query !== "") {
                 const searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
                 window.open(searchUrl, "_blank");
+            // Select the text inside the input after the search button is pressed
+            inputBox.select();
             }
         }
     });
@@ -95,11 +97,11 @@ document.addEventListener("DOMContentLoaded", function () {
             ResultsBox.style.display = "block";
             ResultsBox.style.animation = "to-bottom 0.3s ease-in";
         } else {
-            ResultsBox.style.animation = "to-top 0.3s ease-in";
-            setTimeout(() => {
-                ResultsBox.style.display = "none";
-                ResultsBox.style.animation = ""; // Reset animation property
-            }, 300);
+            // ResultsBox.style.animation = "to-top 0.3s ease-in";
+            // setTimeout(() => {
+            //     ResultsBox.style.display = "none";
+            //     ResultsBox.style.animation = ""; // Reset animation property
+            // }, 300);
         }
     });
 });
