@@ -201,6 +201,8 @@ function clearSearchInput() {
     var input = document.querySelector('.search-input');
     input.value = '';
     toggleClearIcon(); // Hide the cross icon after clearing the input
+    // select the input box after clearing the text
+    input.select();
 }
 
 
