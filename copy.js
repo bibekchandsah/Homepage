@@ -31,7 +31,7 @@ window.onload = function () {
     // var SearchResult = document.getElementById("ResultBox");
     var SearchResult = document.getElementById("ResultBox");
     document.onclick = function (event) {
-        if (event.target.id !== "ResultBox") {
+        if (event.target.id == "input-box") {
             SearchResult.style.display = "block";
             resultsBox.style.animation = "to-bottom 0.3s ease-in"
         }
