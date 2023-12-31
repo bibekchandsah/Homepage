@@ -109,7 +109,8 @@ body::before {
     width: 90%;
     max-width: 400px;
     margin: 4em auto;
-    background: #5a42f4;
+/*     background: #5a42f4; */
+    background: #19123b;
     border-radius: none;
     text-align: center;
     border-radius: 15px;
