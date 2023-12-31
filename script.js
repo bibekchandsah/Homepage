@@ -7,24 +7,61 @@
 // setInterval(reloadPage, 60000);
 
 //Execute after the page loaded
+// check either qr or link should be displayed
 window.addEventListener("load", () => {
     setWhatsappLink();
 });
 
 // detect mouse movement for reload
+// var lastMouseActivity = new Date().getTime();
+// function handleMouseActivity() {
+//     lastMouseActivity = new Date().getTime();
+// }
+// function checkAndReloadPage() {
+//     var currentTime = new Date().getTime();
+//     var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
+//     // Check if there has been no mouse movement for 1 minute (60 seconds)
+//     if (timeDifferenceInSeconds > 60) {
+//         // Reload the page
+//         location.reload();
+//     }
+// }
+// // Add event listeners to detect mouse movement
+// document.addEventListener('mousemove', handleMouseActivity);
+// document.addEventListener('mousedown', handleMouseActivity);
+// // Check and reload the page every 10 seconds (adjust as needed)
+// setInterval(checkAndReloadPage, 10000); // Check every 10 seconds
+
 var lastMouseActivity = new Date().getTime();
-function handleMouseActivity() {
+var excludeReload = false;
+function handleMouseActivity(event) {
     lastMouseActivity = new Date().getTime();
+    // Check if the mouse is over an iframe
+    if (event.target.tagName.toLowerCase() === 'iframe') {
+        excludeReload = true;
+    } else {
+        excludeReload = false;
+    }
 }
 function checkAndReloadPage() {
+    if (excludeReload) {
+        // If mouse is over an iframe, exclude the reload
+        return;
+    }
     var currentTime = new Date().getTime();
     var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
+    console.log(timeDifferenceInSeconds);
     // Check if there has been no mouse movement for 1 minute (60 seconds)
     if (timeDifferenceInSeconds > 60) {
         // Reload the page
         location.reload();
     }
 }
+// Add event listeners to detect mouse movement
+document.addEventListener('mousemove', handleMouseActivity);
+document.addEventListener('mousedown', handleMouseActivity);
+// Check and reload the page every 10 seconds (adjust as needed)
+setInterval(checkAndReloadPage, 10000); // Check every 10 seconds
 
 
 // popup update display
