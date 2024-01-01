@@ -52,7 +52,8 @@ function checkAndReloadPage() {
     var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
     console.log(timeDifferenceInSeconds);
     // Check if there has been no mouse movement for 1 minute (60 seconds)
-    if (timeDifferenceInSeconds > 60) {
+    // if (timeDifferenceInSeconds > 60) {
+    if (timeDifferenceInSeconds > 1800) {
         // Reload the page
         location.reload();
     }
