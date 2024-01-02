@@ -14,14 +14,27 @@ window.addEventListener("load", () => {
 
 // detect mouse movement for reload
 // var lastMouseActivity = new Date().getTime();
-// function handleMouseActivity() {
+// var excludeReload = false;
+// function handleMouseActivity(event) {
 //     lastMouseActivity = new Date().getTime();
+//     // Check if the mouse is over an iframe
+//     if (event.target.tagName.toLowerCase() === 'iframe') {
+//         excludeReload = true;
+//     } else {
+//         excludeReload = false;
+//     }
 // }
 // function checkAndReloadPage() {
+//     if (excludeReload) {
+//         // If mouse is over an iframe, exclude the reload
+//         return;
+//     }
 //     var currentTime = new Date().getTime();
 //     var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
+//     console.log(timeDifferenceInSeconds);
 //     // Check if there has been no mouse movement for 1 minute (60 seconds)
-//     if (timeDifferenceInSeconds > 60) {
+//     // if (timeDifferenceInSeconds > 60) {
+//     if (timeDifferenceInSeconds > 1800) {
 //         // Reload the page
 //         location.reload();
 //     }
@@ -36,8 +49,11 @@ var lastMouseActivity = new Date().getTime();
 var excludeReload = false;
 function handleMouseActivity(event) {
     lastMouseActivity = new Date().getTime();
-    // Check if the mouse is over an iframe
-    if (event.target.tagName.toLowerCase() === 'iframe') {
+    // Check if the mouse is over an iframe or audio element
+    if (
+        event.target.tagName.toLowerCase() === 'iframe' ||
+        (event.target.tagName.toLowerCase() === 'audio' && !event.target.paused)
+    ) {
         excludeReload = true;
     } else {
         excludeReload = false;
@@ -45,15 +61,16 @@ function handleMouseActivity(event) {
 }
 function checkAndReloadPage() {
     if (excludeReload) {
-        // If mouse is over an iframe, exclude the reload
+        // If the mouse is over an iframe with music playing, exclude the reload
+        console.log(excludeReload);
+        console.log("page shouldn't be reload");
         return;
     }
     var currentTime = new Date().getTime();
     var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
     console.log(timeDifferenceInSeconds);
     // Check if there has been no mouse movement for 1 minute (60 seconds)
-    // if (timeDifferenceInSeconds > 60) {
-    if (timeDifferenceInSeconds > 1800) {
+    if (timeDifferenceInSeconds > 60) {
         // Reload the page
         location.reload();
     }
