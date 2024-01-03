@@ -17,7 +17,17 @@ window.addEventListener('DOMContentLoaded', function () {
     console.log("loading new icons");
     // Get all elements with class 'icon-item'
     var iconItems = document.querySelectorAll('.icon-item');
-    iconItems.forEach(function (iconItem) {
+    iconItems.forEach(function (iconItem, index) {
+        let iconURL = localStorage.getItem("iconUrl_" + (index + 1));
+        let iconIcon = localStorage.getItem("iconIcon_" + (index + 1));
+        let iconName = localStorage.getItem("iconNameContent_" + (index + 1));
+
+        if (iconURL != null) {
+            console.log(index)
+            iconItem.getElementsByClassName("imageUrl")[0].src = iconIcon;
+            iconItem.getElementsByClassName("icon-name")[0].innerHTML = iconName;
+            iconItem.getElementsByClassName("linkUrl")[0].href = iconURL;
+        }
         var editIcon = iconItem.querySelector('.edit-icon');
         var modal = createModal(iconItem);
         // Toggle the modal on edit icon click
@@ -27,7 +37,6 @@ window.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
-
     // function createInput(labelText, defaultValue, storageKey) {
     function createInput(labelText, defaultValue, storageKey) {
         var label = document.createElement('label');
@@ -41,17 +50,27 @@ window.addEventListener('DOMContentLoaded', function () {
         inputContainer.appendChild(input);
         return inputContainer;
     }
-
     function createModal(iconItem) {
         // Create the modal
         var modal = document.createElement('div');
         modal.classList.add('modal');
         // Create input fields
         var nameInput = createInput('Name', iconItem.querySelector('.icon-name').innerHTML, 'iconNameContent_' + iconItem.dataset.itemId);
+        nameInput.classList.add("nameInput");
         // Check if the element with the class '.linkUrl' exists
         var urlInput = createInput('URL', iconItem.querySelector('.linkUrl') ? iconItem.querySelector('.linkUrl').href : '', 'iconUrl_' + iconItem.dataset.itemId);
+        urlInput.classList.add("urlInput");
         // Check if the element with the class '.imageUrl' exists
         var iconInput = createInput('Icon URL', iconItem.querySelector('.imageUrl') ? iconItem.querySelector('.imageUrl').src : '', 'iconIcon_' + iconItem.dataset.itemId);
+        iconInput.classList.add("iconInput");
+
+        urlInput.addEventListener("input", (e) => {
+            let finalURL = "https://www.google.com/s2/favicons?sz=64&domain=" + e.srcElement.value;
+
+            console.log(finalURL);
+            //urlInput.placeholder = finalURL;
+            document.querySelectorAll(".iconInput")[0].querySelector("input").value = finalURL;
+        });
         // Create check icon for saving data
         var checkIcon = document.createElement('i');
         checkIcon.classList.add('fa', 'fa-check', 'check-icon');
