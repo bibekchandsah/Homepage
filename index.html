@@ -1,0 +1,1195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+    <!-- ==================== font-awesome CDN Link fax (https://fontawesome.com/v4/icons/) ====================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- flip flop clock css file -->
+    <link rel="stylesheet" href="flipFlopClock.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- js file -->
+    <script src="calendar.js" defer></script>
+    <script src="customRight.js" defer></script>
+    <!--  icon url -->
+    <!--     https://www.google.com/s2/favicons?sz=64&domain=slidesgo.com -->
+    <!--     https://www.google.com/s2/favicons?sz=64&domain=futurepedia.io -->
+    <!--     chrome-search://ntpicon/?size=48@1.000000x&url=https://mail.google.com/mail/u/0/%23inbox -->
+</head>
+
+<body title="Developed by Bibek sah" oncontextmenu="return false">
+
+    <!-- new update message -->
+    <div class="bts-popup" role="alert">
+        <div class="bts-popup-container">
+            <!-- <span class="updateAlert">!!! New update Available !!!</span> -->
+            <span class="updateAlert">Happy New Year 2024</span>
+            <!-- <img src="trash/bin/recycle/downloads/Happy-New-Year-2024.png" alt="" width="80%" /> -->
+            <img src="https://th.bing.com/th/id/OIG.0seisSk7CWGwO2hVTiZV?w=1024&h=1024&rs=1&pid=ImgDetMain" alt=""
+                width="80%" />
+            <!-- <p>New search is added. Now it has auto suggestion. It also contain some useful links in search suggestion.
+            </p>
+            <p>When you scroll down now you can see images prompt through which you can generate new images using AI.
+            </p> -->
+            <ul>
+                <!-- <li>New search is added. Now it has auto suggestion. It also contain some useful links in search suggestion.</li> -->
+                <!-- <li>When you scroll down now you can see images prompt through which you can generate new images using AI.</li> -->
+                <li>As the calendar turns, may your path be adorned with love, your days filled with laughter, and your
+                    dreams unfold into beautiful realities. Wishing you a Happy New Year filled with endless blessings
+                    and abundant happiness! 🌟🎊</li>
+            </ul>
+            <div class="bts-popup-button">
+                <a href="#updateImagePrompt">Show me</a>
+            </div>
+            <a href="#0" class="bts-popup-close img-replace">Close</a>
+        </div>
+    </div>
+
+    <!-- custom right click  -->
+    <div class="container wwrapper">
+        <!-- code here -->
+        <div class="menu context--menu ccontent" id="context-menu">
+            <ul class="menu-list menu">
+                <li class="menu-item item" onclick="window.history.back();"><i
+                        data-feather="corner-up-left"></i><span>Back</span></li>
+
+                <li class="menu-item item" onclick="window.history.forward();"><i
+                        data-feather="corner-up-right"></i><span>Forward</span></li>
+
+                <li class="menu-item item" onclick="location.reload();"><i
+                        data-feather="refresh-cw"></i><span>Refresh</span></li>
+
+                <li class="menu-list item share">
+                    <div class="arrow menu-item menu-item-status">
+                        <i data-feather="share"></i><span>Share</span><i data-feather="chevron-right"
+                            class="menu-item--right"></i>
+                    </div>
+
+                    <ul class="menu-sub-list share-menu">
+                        <li class="menu-item menu-item--blue item"
+                            onclick="window.open('https://www.facebook.com/bibek.sha.1432/');"><i
+                                data-feather="facebook"></i><span>Facebook</span></li>
+                        <li class="menu-item menu-item--pink item"
+                            onclick="window.open('https://www.instagram.com/bibeksha1432/');"><i
+                                data-feather="instagram"></i><span>Instagram</span></li>
+                        <li class="menu-item menu-item--blue item"
+                            onclick="window.open('https://twitter.com/BibekSa31789884');"><i
+                                data-feather="twitter"></i><span>Twitter</span></li>
+                        <li class="menu-item menu-item--purple item" onclick="window.open('https://t.me/connecteed');">
+                            <i data-feather="send"></i><span>Telegram</span>
+                        </li>
+                        <li class="menu-item menu-item--black item"
+                            onclick="window.open('https://github.com/bibek10550');"><i
+                                data-feather="github"></i><span>GitHub</span><i class="menu-item--checked"
+                                data-feather="check"></i></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item item" onclick="Copy();"><i data-feather="link"></i><span>Copy Link Address</span>
+                </li>
+                <li class="menu-item item" onclick="FullScreenMode()"><i data-feather="maximize"></i><span>Full
+                        Screen</span></li>
+                <li class="menu-item item" onclick="window.print()"><i data-feather="printer"></i><span>Print</span>
+                </li>
+                <li class="menu-item item"><i data-feather="folder-plus"></i><span>Move to</span></li>
+                <li class="menu-item item"><i data-feather="copy"></i><span>Copy to</span></li>
+                <li class="menu-item item"><i data-feather="lock"></i><span>Make Private</span></li>
+                <li class="menu-item item"><i data-feather="download"></i><span>Download</span></li>
+
+            </ul>
+            <div class="menu-list setting">
+                <li class="menu-item menu-item--delete item"><i data-feather="trash-2"></i><span>Delete</span></li>
+            </div>
+        </div>
+    </div>
+
+    <!-- online status toast -->
+    <div id="toast" class="hide-toast">
+        <div class="toast-content">
+            <span id="wifi-icon" class="icon"></span>
+            <p id="toast-message"></p>
+            <span id="close-icon" class="icon close-icon"></span>
+        </div>
+    </div>
+
+    <!-- Button to clear local storage -->
+    <button anim="ripple" id="clearLocalStorageBtn" title="clear local storage">
+        <i class="fa fa-archive" aria-hidden="true"></i>
+    </button>
+
+    <!-- search box -->
+    <!-- <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search anything here" oninput="toggleClearIcon()"
+            onkeydown="searchOnEnter(event)">
+        <i class="fa fa-times clear-icon" aria-hidden="true" onclick="clearSearchInput()"></i>
+        <button anim="ripple" class="search-button" onclick="searchGoogle()">Search</button>
+    </div> -->
+    <div class="search-box">
+        <div class="search-row">
+            <input type="text" class="search-input" id="input-box" placeholder="Search anything here...."
+                autocompletes="off" oninput="toggleClearIcon()" onkeydown="searchOnEnter(event)" onkeyup="search()">
+            <i class="fa fa-times clear-icon" aria-hidden="true" onclick="clearSearchInput()"></i>
+            <button anim="ripple" class="search-button" onclick="searchGoogle()">Search</button>
+        </div>
+        <div class="result-box">
+            <!-- search result dropdown box start -->
+            <ul class="SearchResult" id="ResultBox" style="display: none;">
+                <li><a href="https://bibek10550.github.io/bibek/">Bibek</a></li>
+                <li><a href="https://bibek10550.github.io/Music/">Music</a></li>
+                <li><a href="https://bibek10550.github.io/bibeksha/qr%20code%20generator.html">Qr code generator</a>
+                </li>
+                <li><a href="https://bibek10550.github.io/linksaver/">Link Manager</a></li>
+                <li><a href="https://bibek10550.github.io/event-calendar/">Event Calendar</a></li>
+                <li><a href="https://bibek10550.github.io/calendar/">Calendar</a></li>
+                <li><a href="https://bibek10550.github.io/dailyQuote/">Daily Quote</a></li>
+                <li><a href="https://github.com/bibek10550/pickupline">Pickup lines</a></li>
+                <li><a href="https://bibek10550.github.io/bibeksah48/youtube.html">Youtube videos</a></li>
+                <li><a href="https://bibek10550.github.io/bibeksah48/websites.html">Extensions</a></li>
+                <li><a href="edge://flags/">Edge new update</a></li>
+                <li><a href="https://bibek10550.github.io/documents/">Documents</a></li>
+                <li><a href="trash/bin/recycle/downloads/advance monthly expense (V 0.6) .xlsm">Advance monthly
+                        Tracker</a></li>
+                <!-- <ul><li><a href="">y</a></li>
+                <li><a href="">Y</a></li>
+                <li><a href="">Y</a></li></ul> -->
+            </ul>
+            <!-- search result dropdown box End -->
+        </div>
+    </div>
+
+
+    <!-- chat buttons -->
+    <div class="bing-container">
+        <!--         <a href="https://bing.com/chat?form=WSBCTB" target="_blank"> -->
+        <a href="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx" target="_blank">
+            <button anim="ripple">Chat with AI</button>
+        </a>
+        <a href="https://labs.openai.com/" target="_blank">
+            <button anim="ripple">AI image generator</button>
+        </a>
+    </div>
+
+    <!-- windows button -->
+    <div class="browser-container">
+        <a href="ms-settings:windowsupdate?activationSource=SMC-IA-4028685">
+            <button anim="ripple">Update window</button>
+        </a>
+        <a href="ms-calculator://home">
+            <button anim="ripple">Calculator</button>
+        </a>
+        <a href="ms-windows-store://home">
+            <button anim="ripple">Store</button>
+        </a>
+    </div>
+
+    <!-- Developer -->
+    <div class="image-container">
+        <a href="https://bibek10550.github.io/bibek/" title="Bibek sah" target="_blank" class="developer">
+            Developed by Bibek</a>
+        <a href="https://bibek10550.github.io/bibek/" target="_blank">
+            <img src="image.jpg" id="developerPhoto" alt="Developer image" title="Bibek sah"></a>
+
+    </div>
+
+    <!-- profile image -->
+    <div class="profile-pic-div">
+        <img src="image.jpg" title="Developed by Bibek sah" id="photo">
+        <input type="file" id="file">
+        <label for="file" id="uploadBtn">Choose image</label>
+    </div>
+
+    <!-- side button for calendar website -->
+    <div class="widget-container" id="widget-container">
+        <div class="switcher-column">
+            <div class="switcher-btn" title="music">
+                <i class="fa fa-music change-color"></i>
+            </div>
+            <div class="theme-buttons-container" id="theme-buttons-container-music"></div>
+        </div>
+        <div class="switcher-column">
+            <div class="switcher-btn" title="calendar">
+                <i class="fa fa-calendar change-color"></i>
+            </div>
+            <div class="theme-buttons-container" id="theme-buttons-container-calendar"></div>
+        </div>
+        <div class="switcher-column">
+            <div class="switcher-btn" title="commenting">
+                <i class="fa fa-commenting change-color"></i>
+            </div>
+            <div class="theme-buttons-container" id="theme-buttons-container-commenting"></div>
+        </div>
+        <div class="switcher-column">
+            <div class="switcher-btn" title="linksaver">
+                <i class="fa fa-list-alt change-color"></i>
+            </div>
+            <div class="theme-buttons-container" id="theme-buttons-container-linksaver"></div>
+        </div>
+    </div>
+
+    <!-- side button for social media -->
+    <div class="switcher" id="switcher">
+        <div class="social-media-btn" title="Facebook">
+            <a href="https://www.facebook.com/bibek.sha.1432/" target="_blank">
+                <i class="fa fa-facebook change-color"></i>
+            </a>
+        </div>
+        <div class="social-media-btn" title="Instagram">
+            <a href="https://www.instagram.com/bibeksha1432/" target="_blank">
+                <i class="fa fa-instagram change-color"></i></a>
+        </div>
+        <div class="social-media-btn" title="Gmail">
+            <a href="mailto:bibeksha48@gmail.com">
+                <i class="fa fa-envelope change-color"></i>
+            </a>
+            </i>
+        </div>
+        <div class="social-media-btn" title="Share">
+            <!-- <a href="https://wa.me/?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own."> -->
+            <!-- This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own. -->
+            <!-- This homepage is designed to suit your preferences and needs. It offers many features and useful items that you use every day. You can easily customize it to make it your own. -->
+            <!-- <a href="https://wa.me/?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own." target="_blank">Share on WhatsApp</a> -->
+            <!-- <i class="fa fa-whatsapp change-color"></i></a> -->
+            <!-- <a href="whatsapp://send?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.">
+                <i class="fa fa-share-square-o share change-color"></i></a> -->
+            <!-- <a href="qrcode.png" target="_blank">
+                    <i class="fa fa-share-square-o share change-color"></i></a> -->
+            <!-- <a id="whatsappLink" href="#" target="_blank"> -->
+            <div id="imagePreview" style="display: none;"></div>
+            <a href="#" id="whatsappLink" class="whatsappLink">
+                <i class="fa fa-share-square-o share change-color"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- greeting text -->
+    <h1 id="greeting"></h1>
+    <div id="username-input" style="display: none;">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username" />
+        <button onclick="saveUsername()">Submit</button>
+    </div>
+
+    <!-- flip-flop clock -->
+    <div id="updateArea" class="clock"></div>
+
+    <!-- Date -->
+    <div id="dateDisplay"></div>
+
+    <!-- most visited websites -->
+    <div class="most-visited-container">
+        <div class="most-visited-title">Most Visited</div>
+        <div class="icon-grid">
+            <div class="icon-item" data-item-id="1">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://www.youtube.com/">
+                    <img class="imageUrl" src="https://www.youtube.com/s/desktop/dd76c683/img/favicon_96x96.png"
+                        alt="Youtube">
+                    <div class="icon-name" contenteditable="false">Youtube</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="2">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://mail.google.com/mail/u/1/#inbox">
+                    <img class="imageUrl" src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail">
+                    <div class="icon-name" contenteditable="false">Gmail</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="3">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://classroom.google.com/u/1/?pli=1">
+                    <img class="imageUrl" src="https://ssl.gstatic.com/classroom/ic_product_classroom_96.png"
+                        alt="Classroom">
+                    <div class="icon-name">Classroom</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="4">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://photos.google.com/?tab=Cq&pageId=none&pli=1">
+                    <img class="imageUrl" src="https://ssl.gstatic.com/social/photosui/images/logo/1x/photos_512dp.png"
+                        alt="Photos">
+                    <div class="icon-name">Photos</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="5">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://chat.openai.com/">
+                    <img class="imageUrl" src="https://chat.openai.com/apple-touch-icon.png" alt="ChatGPT">
+                    <div class="icon-name">ChatGPT</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="6">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://www.office.com/?auth=1">
+                    <img class="imageUrl"
+                        src="https://res.cdn.office.net/officehub/images/content/images/favicon_m365-67350a08e8.ico"
+                        alt="MS-365">
+                    <div class="icon-name">MS-365</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="7">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://github.com/">
+                    <img class="imageUrl" src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">
+                    <div class="icon-name">GitHub</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="8">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://kiitportal.kiituniversity.net/">
+                    <img class="imageUrl" src="https://kiit.ac.in/wp-content/uploads/2022/10/KIIT-Logo-500x500-1.png"
+                        alt="KIIT SAP">
+                    <div class="icon-name">KIIT SAP</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="9">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://tempmail.email/">
+                    <img class="imageUrl" src="https://tempmail.email/images/favicon.png" alt="Temp mail">
+                    <div class="icon-name">Temp mail</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="10">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://www.facebook.com/">
+                    <img class="imageUrl" src="https://cdn.iconscout.com/icon/free/png-128/facebook-1693591-1442632.png"
+                        alt="Facebook">
+                    <div class="icon-name">Facebook</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="11">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://www.instagram.com/">
+                    <img class="imageUrl" src="https://static.cdninstagram.com/rsrc.php/v3/yG/r/De-Dwpd5CHc.png"
+                        alt="Instagram">
+                    <div class="icon-name">Instagram</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="12">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://web.snapchat.com/">
+                    <img class="imageUrl"
+                        src="https://cf-st.sc-cdn.net/dw/favicons/e9b6d2d3/apple-touch-icon-1024x1024.png"
+                        alt="Snapchat">
+                    <div class="icon-name">Snapchat</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="13">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://updatefaker.com/windows11/index.html">
+                    <img class="imageUrl" src="https://icon-library.com/images/convert-icon/convert-icon-0.jpg"
+                        alt="F-update">
+                    <div class="icon-name">F-update</div>
+                </a>
+            </div>
+            <div class="icon-item" data-item-id="14">
+                <div class="hover-icons">
+                    <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                </div>
+                <a anim="ripple" class="linkUrl" href="https://www.1337x.tw/">
+                    <img class="imageUrl"
+                        src="https://cdn.elgrupoinformatico.com/img/w720/Noticias/2016/10/1337x-logo-720x389.png"
+                        alt="1337x">
+                    <div class="icon-name">1337x</div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- AI -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button anim="ripple" class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    AI
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://www.futurepedia.io/">
+                                <img src="https://www.google.com/s2/favicons?sz=64&domain=futurepedia.io"
+                                    alt="All in 1 AI">
+                                <div class="icon-name">All in 1 AI</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://chat.openai.com/">
+                                <img src="https://chat.openai.com/apple-touch-icon.png" alt="ChatGPT">
+                                <div class="icon-name">ChatGPT</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://bard.google.com/">
+                                <img src="https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg"
+                                    alt="Bard">
+                                <div class="icon-name">Bard</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://firefly.adobe.com/">
+                                <img src="https://firefly.adobe.com/adobe_android_192.png" alt="Firefly">
+                                <div class="icon-name">Firefly</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://labs.openai.com/">
+                                <img src="https://openailabs-site.azureedge.net/public-assets/d/d4da796015/mask-icon.svg"
+                                    alt="DALL-E">
+                                <div class="icon-name">DALL-E</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://app.leonardo.ai/">
+                                <img src="https://leonardo-cdn.b-cdn.net/wp-content/uploads/2022/12/cropped-fav-leonardo-logo-192x192.png"
+                                    alt="Leonardo">
+                                <div class="icon-name">Leonardo</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://slidesgo.com/ai-presentations">
+                                <img src="https://slidesgo.com/favicons/apple-favicon-180x180.png" alt="Slidesgo">
+                                <div class="icon-name">Slidesgo</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://otter.ai/home">
+                                <img src="https://otter.ai/favicon.ico" alt="Voice to text">
+                                <div class="icon-name">Voice to text</div>
+                            </a>
+                        </div>
+
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Microsoft and Google -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button anim="ripple" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    Microsoft and Google
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://www.office.com/launch/word?auth=1">
+                                <img src="https://www.drware.com/wp-content/uploads/2020/10/Word.png" alt="Word">
+                                <div class="icon-name">Word</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://www.office.com/launch/excel?auth=1">
+                                <img src="https://www.drware.com/wp-content/uploads/2020/10/Excel.png" alt="Excel">
+                                <div class="icon-name">Excel</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://www.office.com/launch/powerpoint?auth=1">
+                                <img src="https://www.drware.com/wp-content/uploads/2020/10/PowerPoint.png"
+                                    alt="PowerPoint">
+                                <div class="icon-name">PowerPoint</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://onedrive.live.com/?sw=bypass&gologin=1">
+                                <img src="https://www.drware.com/wp-content/uploads/2020/10/OneDrive.png"
+                                    alt="OneDrive">
+                                <div class="icon-name">OneDrive</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple"
+                                href="https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home">
+                                <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logo-iconlogobrand-logoiconslogos-251519939091wmudn.png"
+                                    alt="Edge Add-ons">
+                                <div class="icon-name">Edge Add-ons</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://www.google.com/">
+                                <img src="https://th.bing.com/th/id/R.0fa3fe04edf6c0202970f2088edea9e7?rik=joOK76LOMJlBPw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoogle-logo-png-open-2000.png&ehk=0PJJlqaIxYmJ9eOIp9mYVPA4KwkGo5Zob552JPltDMw%3d&risl=&pid=ImgRaw&r=0"
+                                    alt="Google">
+                                <div class="icon-name">Google</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://translate.google.com.np/?hl=en&tab=oT">
+                                <img src="https://ssl.gstatic.com/translate/favicon.ico" alt="Google Translate">
+                                <div class="icon-name">Google Translate</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a anim="ripple" href="https://chrome.google.com/webstore/category/extensions">
+                                <img src="https://ssl.gstatic.com/chrome/webstore/images/icon_144px.png"
+                                    alt="Chrome webStore">
+                                <div class="icon-name">Chrome webStore</div>
+                            </a>
+                        </div>
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Edit -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    Edit
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a href="https://www.photopea.com/">
+                                <img src="https://www.photopea.com/promo/icon512.png" alt="Photoshop">
+                                <div class="icon-name">Photoshop</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.remove.bg/">
+                                <img src="https://www.remove.bg/apple-touch-icon.png?v=YAXaAv7pao"
+                                    alt="Remove Background">
+                                <div class="icon-name">Remove Background</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://tinywow.com/">
+                                <img src="https://tinywow.com/v3/img/favicon-tinywow.svg" alt="Tiny wow">
+                                <div class="icon-name">Tiny wow</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.reduceimages.com/">
+                                <img src="https://www.reduceimages.com/img/app-icons/new-icon.png" alt="Resize Image">
+                                <div class="icon-name">Resize Image</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://magicstudio.com/magiceraser/">
+                                <img src="https://static.magicstudio.com/favicon.ico" alt="Magic Eraser">
+                                <div class="icon-name">Magic Eraser</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.watermarkremover.io/">
+                                <img src="https://play-lh.googleusercontent.com/CKN0Yu5nIv0s1qvRRxeMdNzBD4Mb0XnUaAzNuO8qvWHO6AKL9ckmSUDtXwWX8NoFR-o=w240-h480-rw"
+                                    alt="Watermark Remover">
+                                <div class="icon-name">Watermark Remover</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.upscale.media/">
+                                <img src="https://cdn.pixelbin.io/v2/dummy-cloudname/original/upscalemedia_assets/logo/favicon.png?f_auto=true"
+                                    alt="Image Upscalar">
+                                <div class="icon-name">Image Upscalar</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.freeconvert.com/image-converter">
+                                <img src="https://www.freeconvert.com/favicon.ico" alt="Image Converter">
+                                <div class="icon-name">Image Converter</div>
+                            </a>
+                        </div>
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Technology -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                    Technology
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a href="https://www.calligraphr.com/en/accounts/login/?next=/en/webapp/app_home/%3F/">
+                                <img src="https://www.calligraphr.com/static/website/img/favicons/apple-touch-icon-152x152.png"
+                                    alt="Caligraphr">
+                                <div class="icon-name">Caligraphr</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://jimpl.com/">
+                                <img src="https://jimpl.com/assets/logo-7140b31ff082690f0eb7d51de90174f086901434c51a29375817936efda630b8.svg"
+                                    alt="Pic hidden data">
+                                <div class="icon-name">Pic hidden data</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://facecheck.id/">
+                                <img src="https://facecheck.id/img/favicon.svg" alt="Face Check">
+                                <div class="icon-name">Face Check</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://grabify.link/">
+                                <img src="https://www.google.com/s2/favicons?sz=64&domain=grabify.link" alt="Grabify">
+                                <div class="icon-name">Grabify</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://proxyium.com/">
+                                <img src="https://cdn.proxyium.com/img/favicon/favicon.ico?v=4" alt="Proxyium">
+                                <div class="icon-name">Proxyium</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://saymineapp.com/overview">
+                                <img src="https://static.saymine.com/app/app/icon.png" alt="Footprint">
+                                <div class="icon-name">Footprint</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://urlscan.io/">
+                                <img src="https://urlscan.io/img/urlscan_256.png" alt="UrlScanner">
+                                <div class="icon-name">UrlScanner</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://wheregoes.com/">
+                                <img src="https://wheregoes.com/c/themes/custom-theme/img/favicon.svg"
+                                    alt="URL where goes">
+                                <div class="icon-name">URL where goes</div>
+                            </a>
+                        </div>
+
+
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Education -->
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    Education
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                    <div class="icon-grid">
+
+                        <div class="icon-item">
+                            <a href="https://www.programiz.com/c-programming/online-compiler/">
+                                <img src="https://avatars.githubusercontent.com/u/25499428?s=200&v=4" alt="C-compiler">
+                                <div class="icon-name">C-compiler</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://kiitarchives.in/">
+                                <img src="https://play-lh.googleusercontent.com/ZeHcsQwEEx-nmRJjpKI_O0dwn3wfos9Wg4opkl-6ci0lczsd3-beJX92Ele0rSB8XGo=w240-h480-rw"
+                                    alt="KIIT archive">
+                                <div class="icon-name">KIIT archive</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.kiitconnect.live/">
+                                <img src="https://www.kiitconnect.live/_next/image?url=%2Flogo.png&w=48&q=75"
+                                    alt="KIIT connect">
+                                <div class="icon-name">KIIT connect</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://kiitmoodle.in/course/index.php">
+                                <img src="https://kiitmoodle.in/theme/image.php?theme=boost&component=theme&rev=1674119251&image=favicon"
+                                    alt="KIIT Moodle">
+                                <div class="icon-name">KIIT Moodle</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.integral-calculator.com/">
+                                <img src="https://www.integral-calculator.com/layout/xintegral-calculator.png,q1473621695.pagespeed.ic.UCzXaOzHTl.webp"
+                                    alt="Integration">
+                                <div class="icon-name">Integration</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.derivative-calculator.net/">
+                                <img src="https://www.derivative-calculator.net/layout/xderivative-calculator.png,q1473621370.pagespeed.ic.fO-LSMkmJ3.webp"
+                                    alt="Derivative">
+                                <div class="icon-name">Derivative</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://freesoff.com/">
+                                <img src="https://freesoff.com/uploads/default/optimized/2X/f/f810d7dde449a2a3c8eb2261094adf92c12c2c81_2_180x180.png"
+                                    alt="Free Courses">
+                                <div class="icon-name">Free Courses</div>
+                            </a>
+                        </div>
+
+                        <div class="icon-item">
+                            <a href="https://www.dedigger.com/#gsc.tab=0">
+                                <img src="https://www.dedigger.com/favicon.ico" alt="Public in G-Drive">
+                                <div class="icon-name">Public in G-Drive</div>
+                            </a>
+                        </div>
+
+
+                        <!-- Add more icon items here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Image Prompt -->
+    <!-- <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                    Education
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="icon-grid"> -->
+
+
+    <div class="imageCardText row row-cols-1 row-cols-md-4 g-4" id="updateImagePrompt">
+        
+        <!--<div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src=" src " class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title"> heading </h5>
+                    <p class="card-text"> prompt </p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div> -->
+        
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.cqkrdF_3dLS6zm9wUHZ7?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">💘 with name in beach</h5>
+                    <p class="card-text">A beautiful heart is made on the sand by the sea, and
+                        within this heart is written Bibek, and there is a beautiful flower near it
+                        sitting on a ship and visible from there.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.LBye86VUeQH69icoQVts?w=1024&h=1024&rs=1&pid=ImgDetMain"
+                    class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Girl with 💐 and name in 💘</h5>
+                    <p class="card-text">A beautiful girl has made a heart on the sand by the sea
+                        and inside this heart is written my name Bibek and beside it is a beautiful
+                        flower.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.yy5U2qGLxoghilsNB7M8?w=1024&h=1024&rs=1&pid=ImgDetMain"
+                    class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Name written in beach</h5>
+                    <p class="card-text">A beach with waves and the name Bibek written on the sand.
+                    </p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.dfER8mtBfnvZqlowhtAt?w=1024&h=1024&rs=1&pid=ImgDetMain"
+                    class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">3D name in famous building</h5>
+                    <p class="card-text">generate image of 3D realistic famous building of Nepal
+                        With words "BIBEK" in 3D style and shinny glass effect written. add flag.
+                        with white background.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.VWCGqCbZ7Jo88_1.RHGU?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Snow globe</h5>
+                    <p class="card-text">generate image of a detailed and realistic snow globe
+                        encapsulating a winter NEPAL scene. Inside the globe, globe is inside an
+                        Nepali home. "Nepal" written in-front of globe with a golden texture.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.IjqDxI3yhqQVqJhTjTru?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Boy & Girl in Lamborgini</h5>
+                    <p class="card-text">3D high detailed Photo of a boy and girl wearing Nepal
+                        clothes. Black Lamborgini 2024 in a snowy day on an Nepal city with a flag
+                        on building.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.9v7yW0dtR9OmsafR8aJx?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">name with hacker</h5>
+                    <p class="card-text">generate image of realistic photo of a hacker in a Computer
+                        room wearing hoodie and hiding his face with hacker's mask. text of "Bibek"
+                        with light green color with glow effect written on hoodie.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.TRtx5424IAH0x4FQRVN3?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">3D mini world</h5>
+                    <p class="card-text">3D realistic mini world style of Nepal, trees and river
+                        with drop shadow. on a glass table.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.cBw_vN9y2a0nfFr_D3Ll?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">3D boy & girl</h5>
+                    <p class="card-text">A realistic 3D image of a cute boy and girl big eyes
+                        smiling and wearing a bright blue hoodie with a yellow Bibek and Motii text
+                        on the front, wearing sneakers, setting on couch at Christmas night. soft
+                        light reflection.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.4Qw6gL5.EYr5H8bVbv_1?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Girl running after boy</h5>
+                    <p class="card-text">A pixar-style image of a boy child running away and the
+                        chubby girl going after him with a rose bouquet in a city setting.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.XEeIaLB2ciDK6SwHh97R?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">3D letter in capital city</h5>
+                    <p class="card-text">3D realistic letter of Nepal Capital city, real color of
+                        buildings with letter B and flag with gradient background.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.21fwOUactH5ZqYEhGQgk?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Couple with country flag</h5>
+                    <p class="card-text">3D realistic couple Standing with a Beautiful Car in a
+                        city, with a flag of Nepal and wearing Nepali dresses and black glasses.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.8FuL_l2YQnVrul.uXjAU?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">New Year Wish</h5>
+                    <p class="card-text">3D illustration of a cute boy he will be standing, Happy New Year style, "Happy
+                        New Year 2024", fire works with many lighting.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.XS2UZnnWZCr4mJ95jCT9?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Coding with Logo</h5>
+                    <p class="card-text">3D illustration featuring a realistic 18 year-old beautiful young boy busy to
+                        writing a coding on a chair in front of a 3d logo of Instagram .' The character should have
+                        black shirt with the logo "waleedcodes". The background of the image should showcase a social
+                        media profile page and the username "Bibek Sha" and a matching profile picture and modify it.
+                    </p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.CQ6hmFxdjYA6ef5mm2yd?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Sitting on social media</h5>
+                    <p class="card-text">3D illustration of an animated character sitting casually on top of a social
+                        media logo "Snapchat. The character must wear casual modern clothing such as jeans jacket and
+                        sneakers shoes. The background of the image is a social media Snapchat profile with a user name
+                        "Bibek Sha" and a profile picture that match.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.spDhYp8blAD7yHy2tqF0?w=1024&h=1024&rs=1&pid=ImgDetMain"
+                    class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Sitting on social media</h5>
+                    <p class="card-text">3D illustration of an animated character sitting casually on top of a social
+                        media "Facebook".The character must wear casual dress such as jeans jacket and Jordan shoes. The
+                        background of image is a facebook profile page with a user name "Bibek Sha"and profile picture
+                        that match.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src="https://th.bing.com/th/id/OIG.BObURg.zcV9nbJ1GSGjo?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Sitting on instagram</h5>
+                    <p class="card-text">Create a 3D illustration of an animated character of a handsome boy sitting casually on top of a social media logo "Instagram". The character must wear modern Indian clothes. The background of the character is mockup of his Instagram profile page with a profile name "Bibek Sha" and a profile picture same as character.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <!-- <img src="https://th.bing.com/th/id/OIG.RVL4itpwGQS37ZakZWLo?w=1024&h=1024&rs=1&pid=ImgDetMain" -->
+                <img src="https://th.bing.com/th/id/OIG.4Wu.UTMVE4xZko1LhEPi?pid=ImgGn" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title">Sitting on Instagram</h5>
+                    <p class="card-text">3D illustration of an animated character of a handsom boy sitting casually on top of a social media logo "Instagram". The character must wear modern western clothes. The background of the character is mockup of his Instagram profile page with a profile name "@bibeksha" and a profile picture same as character. with gradient background.</p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col">
+            <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
+                <img src=" src " class="card-img-top" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h5 class="card-title"> heading </h5>
+                    <p class="card-text"> prompt </p>
+                    <button anim="ripple" type="button" class="promptCopy">Copy</button>
+                </div>
+            </div>
+        </div> -->
+
+
+    </div>
+    <!-- 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+    <!--==================== Chat Bot ====================-->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="(A.Hajur)-Made-by-Bibek" agent-id="8b57ec3c-f86d-43a3-87d7-00413525338f"
+        language-code="en">
+    </df-messenger>
+
+    <!-- flip flop clock javascript file -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="flipFlopClock.js"></script>
+    <script src="flipFlopClockScriptMin.js"></script>
+
+    <!-- bootstrap javascript file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <!-- ==================== FEATHER ICONS JS data-feather (https://feathericons.com/)==================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.js"
+        integrity="sha512-oFCsbxZP/K+0EjvkyIHBvC3ft8LZnO+8kljz0RiJN8ffUCeX0LF1G0WlvU3jMJVaoKBrC+I2ohi4BCpKq2ZgXw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- javascript file -->
+    <script src="profileChange.js"></script>
+    <script src="copy.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="autoComplete.js"></script> -->
+    <!-- <script src="editUrl.js"></script> -->
+    <script>
+        // ripple effect
+        "use strict";
+        [].map.call(document.querySelectorAll('[anim="ripple"]'), el => {
+            el.addEventListener('click', e => {
+                e = e.touches ? e.touches[0] : e;
+                const r = el.getBoundingClientRect(), d = Math.sqrt(Math.pow(r.width, 2) + Math.pow(r.height, 2)) * 2;
+                el.style.cssText = `--s: 0; --o: 1;`;
+                el.offsetTop;
+                el.style.cssText = `--t: 1; --o: 0; --d: ${d}; --x:${e.clientX - r.left}; --y:${e.clientY - r.top};`;
+            });
+        });
+    </script>
+</body>
+
+</html>
