@@ -12,6 +12,11 @@ window.addEventListener("load", () => {
     setWhatsappLink();
 });
 
+
+// Initialize Sortable with the container ID for dragging most visited div 
+  new Sortable(document.getElementById('sortable-list'));
+
+
 // edit url
 window.addEventListener('DOMContentLoaded', function () {
     console.log("loading new icons");
