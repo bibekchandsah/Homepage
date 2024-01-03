@@ -18,6 +18,8 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- flip flop clock css file -->
     <link rel="stylesheet" href="flipFlopClock.css">
+    <!-- dragging Sortable.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     <!-- css file -->
     <link rel="stylesheet" href="style.css">
     <!-- js file -->
@@ -291,7 +293,7 @@
     <!-- most visited websites -->
     <div class="most-visited-container">
         <div class="most-visited-title">Most Visited</div>
-        <div class="icon-grid">
+        <div class="icon-grid" id="sortable-list">
             <div class="icon-item" data-item-id="1">
                 <div class="hover-icons">
                     <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
