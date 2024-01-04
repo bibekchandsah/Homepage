@@ -78,7 +78,7 @@ body {
 
 body::before {
     content: "";
-    background-image: url("https://source.unsplash.com/1080x720/?tech,code,laptop,developer,ai,chatgpt,firefly,automation, artificial intelligence, big data, blockchain, cloud computing, cybersecurity, data mining, encryption, internet of things (IoT), machine learning, mobile computing, network, open source, operating system, quantum computing, robotics, software, virtual reality, web development");
+    background-image: url("https://source.unsplash.com/1080x720/?tech,code, laptop, developer, ai, chatgpt, firefly, codebase, IDE (Integrated Development Environment), Algorithm, Version Control, Framework, API (Application Programming Interface), Machine Learning, Neural Network, Virtualization, Cloud Computing, Open Source, Backend, Frontend, Cybersecurity, API Gateway, Database, Docker, Microservices, DevOps, Continuous Integration, Continuous Deployment, Responsive Design, UI/UX, Scalability, Encryption, Data Science, Big Data, Internet of Things (IoT), Blockchain, Quantum Computing, Augmented Reality (AR), Virtual Reality (VR), Natural Language Processing (NLP), Cyber Threat Intelligence, 5G, Edge Computing, Biometrics, Robotics, Automation, Smart Contracts, Augmented Analytics, Cross-platform Development, Full Stack, Quantum Cryptography,automation, artificial intelligence, big data, blockchain, cloud computing, cybersecurity, data mining, encryption, internet of things (IoT), machine learning, mobile computing, network, open source, operating system, quantum computing, robotics, software, virtual reality, web development");
     background-size: cover;
     position: fixed;
     top: 0;
