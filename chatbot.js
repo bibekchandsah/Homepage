@@ -100,7 +100,7 @@ sendChatBtn.addEventListener("click", handleChat);
 // closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 // chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
-const chatbotContainer = document.querySelector('.chatbot'); 
+const chatbotContainer = document.querySelector('.chatbot');
 // Function to close the chatbot
 const closeChatbot = () => {
     document.body.classList.remove('show-chatbot');
@@ -108,10 +108,21 @@ const closeChatbot = () => {
 // Event listener for close button
 closeBtn.addEventListener('click', () => closeChatbot());
 // Event listener for chatbot toggler
-chatbotToggler.addEventListener('click', () => document.body.classList.toggle('show-chatbot'));
+chatbotToggler.addEventListener('click', () => {
+    document.body.classList.toggle('show-chatbot');
+    if (document.body.classList.contains('show-chatbot')) {
+        focusChatInput();
+    }
+});
 // Event listener to close chatbot when clicked outside
 document.addEventListener('click', (event) => {
     if (!chatbotContainer.contains(event.target) && !chatbotToggler.contains(event.target)) {
         closeChatbot();
     }
 });
+// Function to focus on chat input textarea
+const focusChatInput = () => {
+    if (chatInput) {
+        chatInput.focus();
+    }
+};
