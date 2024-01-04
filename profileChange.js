@@ -70,7 +70,7 @@ function resizeImage(inputFile, maxWidth, maxHeight, maxSizeInBytes, callback) {
         const ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, width, height);
 
-         // Increase the quality to 0.9 (90%) 0-1
+        // Increase the quality to 0.9 (90%) 0-1
         let outputDataURL = canvas.toDataURL('image/jpeg', 1);
 
         // Check if the size is greater than maxSizeInBytes
@@ -91,20 +91,28 @@ function resizeImage(inputFile, maxWidth, maxHeight, maxSizeInBytes, callback) {
     };
 }
 
-// clean the local storage
-// Add a click event listener to the button
+
+
+
+
+//  clear local storage
 document.getElementById('clearLocalStorageBtn').addEventListener('click', function () {
     // Change button color to green
     this.style.backgroundColor = '#2ecc71';
-
-    // Clear the local storage
-    localStorage.clear();
-
-    // Optionally, you can provide feedback to the user
-    console.log('Local storage cleared!');
-
-    // Revert button color after 5 seconds
-    setTimeout(() => {
-        this.style.backgroundColor = '#ff0202';
-    }, 5000);
+    // Ask the user for confirmation
+    const userConfirmed = window.confirm("Are you sure you want to clear the local storage?");
+    if (userConfirmed) {
+        // Clear the local storage
+        localStorage.clear();
+        // Optionally, you can provide feedback to the user
+        console.log('Local storage cleared!');
+        // Revert button color after 5 seconds
+        setTimeout(() => {
+            this.style.backgroundColor = '#02ff24';
+        }, 5000);
+        location.reload();
+    } else {
+        // If the user cancels, revert button color immediately
+        this.style.backgroundColor = '#02ff24';
+    }
 });
