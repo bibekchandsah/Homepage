@@ -1,4 +1,34 @@
 // copy image prompt
+// document.addEventListener('DOMContentLoaded', function () {
+//     const promptCopyButtons = document.querySelectorAll('.promptCopy');
+
+//     promptCopyButtons.forEach(function (button) {
+//         button.addEventListener('click', function () {
+//             const cardText = this.parentElement.querySelector('.card-text');
+//             const copiedMessage = this.parentElement.querySelector('.copied');
+
+//             navigator.clipboard.writeText(cardText.textContent).then(function () {
+//                 // Display "Copied!" message
+//                 promptCopyButtons.innerHTML = '';
+//                 setTimeout(function () {
+//                     promptCopyButtons.innerHTML = 'Copied';
+//                 }, 3000);
+//             }).catch(function (err) {
+//                 console.error('Unable to copy text to clipboard', err);
+//                 promptCopyButtons.innerHTML = 'Copied';
+//             });
+//         });
+//     });
+// });
+
+
+// const promptCopyButtons = document.querySelectorAll('.promptCopy');
+// promptCopyButtons.addEventListener('click', function (){
+//     alert("Copied!");
+// });
+
+
+// copy image prompt
 document.addEventListener('DOMContentLoaded', function () {
     const promptCopyButtons = document.querySelectorAll('.promptCopy');
 
@@ -24,11 +54,27 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// when click on search dropdown apperar
+
+
+// // Event listener for clicking outside search
+// document.addEventListener("click", function (e) {
+//     var SearchResult = document.getElementById("ResultBox");
+//     // Check if the click is outside the volume control
+//     if (!inputBox.contains(e.target)) {
+//         // Hide the volume bar with an animation
+//         resultsBox.style.animation = "to-top 0.3s ease-in";
+//         setTimeout(() => {
+//             SearchResult.style.display = "none";
+//             resultsBox.style.animation = ""; // Reset animation property
+//         }, 300); // Adjust the timeout to match the animation duration
+//     }
+// });
+
+
+// // when click on search dropdown apperar
 // const resultsBox = document.querySelector(".result-box");
 // const inputBox = document.getElementById("input-box");
 // window.onload = function () {
-//     // var SearchResult = document.getElementById("ResultBox");
 //     var SearchResult = document.getElementById("ResultBox");
 //     document.onclick = function (event) {
 //         if (event.target.id == "input-box") {
@@ -37,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         }
 //         if (event.target.id !== "input-box") {
 //             // SearchResult.style.display = "none";
-//             // Hide the volume bar with an animation
+//             // Hide the result box with an animation
 //             resultsBox.style.animation = "to-top 0.3s ease-in";
 //             setTimeout(() => {
 //                 SearchResult.style.display = "none";
@@ -46,6 +92,26 @@ document.addEventListener('DOMContentLoaded', function () {
 //         }
 //     }
 // };
+
+// filter
+const search = () => {
+    let filter = document.getElementById('input-box').value.toUpperCase();
+    let ul = document.getElementById('ResultBox');
+    let li = ul.getElementsByTagName('li');
+    for (var i = 0; i < li.length; i++) {
+        let a = li[i].getElementsByTagName('a')[0];
+        let textValue = a.textContent || a.innerHTML;
+        if (textValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = '';
+        } else {
+            li[i].style.display = 'none';
+        }
+    }
+}
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const resultsBox = document.getElementById("ResultBox");
@@ -68,25 +134,26 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 300);
         }
     });
-
     // Handle click on user-typed word to search on Google
     resultsBox.addEventListener("click", function (event) {
-        if (event.target.tagName === "A") {
-            const query = event.target.textContent.trim();
-            if (query !== "") {
-                const searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
-                window.open(searchUrl, "_blank");
-            // Select the text inside the input after the search button is pressed
-            inputBox.select();
+        console.log(event.target.href)
+        if (event.target.tagName == "a") {
+            if (event.target.href == "#") {
+                const query = event.target.textContent.trim();
+                if (query !== "") {
+                    const searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
+                    window.open(searchUrl, "_blank");
+                }
+                // Select the text inside the input after the search button is pressed
+                inputBox.select();
             }
         }
     });
-
     // Handle input changes to dynamically update the results box
-    inputBox.addEventListener("input", function () {
+    inputBox.addEventListener("input", function (e) {
         const filter = inputBox.value.trim().toLowerCase();
         // resultsBox.innerHTML = ""; // Clear the current list
-
+        console.log(e);
         if (filter !== "") {
             const newLi = document.createElement("li");
             const newA = document.createElement("a");
@@ -96,6 +163,10 @@ document.addEventListener("DOMContentLoaded", function () {
             resultsBox.appendChild(newLi);
             ResultsBox.style.display = "block";
             ResultsBox.style.animation = "to-bottom 0.3s ease-in";
+
+            newA.addEventListener("click", () => {
+                window.open("https://google.com/search?q=" + newA.textContent, "_blank");
+            })
         } else {
             // ResultsBox.style.animation = "to-top 0.3s ease-in";
             // setTimeout(() => {
@@ -108,18 +179,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// filter
-const search = () => {
-    let filter = document.getElementById('input-box').value.toUpperCase();
-    let ul = document.getElementById('ResultBox');
-    let li = ul.getElementsByTagName('li');
-    for (var i = 0; i < li.length; i++) {
-        let a = li[i].getElementsByTagName('a')[0];
-        let textValue = a.textContent || a.innerHTML;
-        if (textValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = '';
-        } else {
-            li[i].style.display = 'none';
-        }
-    }
-}
+
+
