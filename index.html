@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="flipFlopClock.css">
     <!-- css file -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
     <!-- js file -->
     <script src="calendar.js" defer></script>
     <script src="customRight.js" defer></script>
@@ -126,6 +127,28 @@
     <button anim="ripple" id="clearLocalStorageBtn" title="clear local storage">
         <i class="fa fa-archive" aria-hidden="true"></i>
     </button>
+
+    <!-- chatbot -->
+    <button anim="ripple" class="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2><a href="https://bibek10550.github.io/bibek/">ChatBot by Bibek</a></h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Hi there 👋<br>How can I help you today?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+    </div>
 
     <!-- search box -->
     <!-- <div class="search-container">
@@ -1127,10 +1150,10 @@
 
 
     <!--==================== Chat Bot ====================-->
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<!--     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger intent="WELCOME" chat-title="(A.Hajur)-Made-by-Bibek" agent-id="8b57ec3c-f86d-43a3-87d7-00413525338f"
         language-code="en">
-    </df-messenger>
+    </df-messenger> -->
 
     <!-- flip flop clock javascript file -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -1152,6 +1175,7 @@
     <script src="profileChange.js"></script>
     <script src="copy.js"></script>
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
     <script>
         // ripple effect
         "use strict";
