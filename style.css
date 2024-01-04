@@ -3,8 +3,8 @@
 
     /*========== Colors ==========*/
     /* Change favorite color */
-    --hue-color: 600;
-    /*Purple 250 - Green 142 - Blue 230 - Pink 340  - RoyalBlue 600*/
+    --hue-color: 255;
+    /*Purple 250 - Green 142 - Blue 230 - Pink 340  - RoyalBlue 600     -purple 255*/
 
     /* HSL color mode */
     --container-color: hsl(var(--hue-color), 80%, 70%);
@@ -17,7 +17,54 @@
     --red-color: #D92027;
     --pink-color: rgb(219, 23, 187);
     --blue-color: rgba(0, 103, 192);
+
+
+    /* --background-color: hsl(255, 100%, 50%); */
+    /* background-color: #4100ff; */
+    /* background-black: rgba(0, 0, 0, 0.7); */
+    --background-color: hsl(var(--hue-color), 100%, 50%);
+    --background-black: #000000b3;
+    --white: #ffffff;
+    --green: #0affd6;
+    /* --light-blue: #5a42f4; */
+    /* --light-blue: #561dff; */
+    /* --light-blue: #4000ff; */
+    --light-blue: #4e2bda;
+    --dark-blue: #19123b;
+    --hover-color: #3005f2;
+    --hover-color2: #6709ff;
+    --hover-color3: #5a42f496;
+    /* --hover-color3: #3105f258; */
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-none: 0;
+    --z-very-low: 1;
+    --z-tooltip: 10;
+    --z-flip: -10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+    --z-body: -1000;
+
+    /*========== blur ==========*/
+    --normal-blur: 10px;
+
+    /*========== border-radius ==========*/
+    --very-low-border: 5px;
+    --low-border: 8px;
+    --normal-border: 15px;
+    --perfect-border: 25px;
+    --circle-border: 50%;
+
 }
+
+
+
+
 
 html {
     scroll-behavior: smooth;
@@ -31,17 +78,21 @@ body {
 
 body::before {
     content: "";
-    background-image: url("https://source.unsplash.com/1080x720/?tech,code,laptop,developer,ai,chatgpt,firefly");
+    background-image: url("https://source.unsplash.com/1080x720/?tech,code,laptop,developer,ai,chatgpt,firefly,automation, artificial intelligence, big data, blockchain, cloud computing, cybersecurity, data mining, encryption, internet of things (IoT), machine learning, mobile computing, network, open source, operating system, quantum computing, robotics, software, virtual reality, web development");
     background-size: cover;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    filter: blur(10px);
+    filter: blur(var(--normal-blur));
     /* Adjust the value to control the blur intensity */
-    z-index: -1000;
+    z-index: var(--z-body);
 }
+
+
+
+
 
 /*========== SCROLL BAR ==========*/
 ::-webkit-scrollbar {
@@ -60,15 +111,18 @@ body::before {
 }
 
 
+
+
+
 /* update notification */
 .updateAlert {
-    color: #08ffd4;
+    color: var(--green);
     margin: 0px;
     padding: 0px;
     position: absolute;
     margin-top: 10px;
     margin-left: 55px;
-    font-weight: 700;
+    font-weight: var(--font-bold);
 }
 
 .img-replace {
@@ -86,10 +140,10 @@ body::before {
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--background-black);
     opacity: 0;
     visibility: hidden;
-    z-index: 10;
+    z-index: var(--z-tooltip);
     -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
     -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
     transition: opacity 0.3s 0s, visibility 0s 0.3s;
@@ -108,11 +162,11 @@ body::before {
     width: 90%;
     max-width: 400px;
     margin: 4em auto;
-    /* background: #5a42f4; */
-    background: #19123b;
+    /* background: var(--light-blue); */
+    background: var(--dark-blue);
     border-radius: none;
     text-align: center;
-    border-radius: 15px;
+    border-radius: var(--normal-border);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     -webkit-transform: translateY(-40px);
     -moz-transform: translateY(-40px);
@@ -132,18 +186,18 @@ body::before {
 .bts-popup-container img {
     /* padding: 20px 0 0 0; */
     margin-top: 40px;
-    border-radius: 15px;
+    border-radius: var(--normal-border);
 }
 
 /* .bts-popup-container p {
-    color: white;
+    color: var(--white);
     padding: 10px 20px;
     margin-top: 10px;
     margin-bottom: 10px;
 } */
 
 .bts-popup-container ul {
-    color: white;
+    color: var(--white);
     padding: 10px 20px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -155,14 +209,14 @@ body::before {
 }
 
 .bts-popup-container ul li:hover {
-    background: #4000ff;
-    border-radius: 8px;
+    background: var(--background-color);
+    border-radius: var(--low-border);
     cursor: pointer;
 }
 
 .bts-popup-container .bts-popup-button {
     padding: 5px 0px;
-    border: 2px solid white;
+    border: 2px solid var(--white);
     display: inline-block;
     margin-bottom: 20px;
     border-radius: 25px;
@@ -174,11 +228,11 @@ body::before {
 }
 
 .bts-popup-container .bts-popup-button:hover {
-    background: #3005f2;
+    background: var(--hover-color);
 }
 
 .bts-popup-container a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -189,12 +243,12 @@ body::before {
     right: 8px;
     width: 30px;
     height: 30px;
-    background: #4100ff;
-    border-radius: 50%;
+    background: var(--background-color);
+    border-radius: var(--circle-border);
 }
 
 .bts-popup-container .bts-popup-close:hover {
-    background: #6709ff;
+    background: var(--hover-color2);
 }
 
 .bts-popup-container .bts-popup-close::before, .bts-popup-container .bts-popup-close::after {
@@ -203,7 +257,7 @@ body::before {
     top: 12px;
     width: 16px;
     height: 3px;
-    background-color: white;
+    background-color: var(--white);
 }
 
 .bts-popup-container .bts-popup-close::before {
@@ -254,9 +308,9 @@ ul li {
     visibility: hidden;
     position: absolute;
     width: 275px;
-    border-radius: 10px;
+    border-radius: var(--low-border);
     background: var(--left-container-color);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--normal-blur));
     box-shadow: 0 10px 20px rgba(#404040, 0.15);
     z-index: 10000000000000000;
 }
@@ -273,14 +327,14 @@ ul li {
     width: 100%;
     cursor: pointer;
     align-items: center;
-    border-radius: 5px;
+    border-radius: var(--very-low-border);
     margin-bottom: -2px;
     padding: 0 5px 0 5px;
 }
 
 .ccontent .item:hover {
     background: var(--left-container-color-offset);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--normal-blur));
 }
 
 .ccontent .item span {
@@ -327,7 +381,7 @@ ul li {
 .share .share-menu {
     position: absolute;
     background: var(--left-container-color);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--normal-blur));
     width: 200px;
     right: -200px;
     top: -13px;
@@ -343,7 +397,7 @@ ul li {
 
 .share:hover .share-menu {
     opacity: 1;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--normal-blur));
     pointer-events: auto;
     height: 205px;
     transition: height 0.3s ease-out 0s;
@@ -442,7 +496,7 @@ ul li {
     width: 275px;
     background-color: var(--left-container-color);
     color: var(--left-text-color);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--normal-blur));
     box-shadow: 0px 10px 20px rgba(60, 60, 60, 0.15);
     border-radius: .625rem;
     -webkit-border-radius: .625rem;
@@ -548,15 +602,15 @@ ul li {
     position: fixed;
     bottom: 85px;
     right: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: var(--background-black);
+    color: var(--white);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: var(--very-low-border);
     transition: opacity 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 3;
+    z-index: var(--z-tooltip);
 }
 
 .hide-toast {
@@ -599,6 +653,10 @@ ul li {
     justify-content: center;
 }
 
+
+
+
+
 /* clear local storage */
 #clearLocalStorageBtn {
     position: absolute;
@@ -606,10 +664,10 @@ ul li {
     top: 0px;
     left: 0px;
     padding: 5px;
-    background-color: rgb(255, 2, 2);
-    color: #fff;
+    background-color: var(--red-color);
+    color: var(--white);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--low-border);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -619,42 +677,24 @@ ul li {
     font-size: larger;
 }
 
+
+
+
+
 /* search box */
-/* .search-container {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    display: flex;
-    align-items: center;
-    background-color: #5a42f4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-} */
-
-/* .search-input {
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    width: 300px;
-} */
-
-/* .search-input:focus {
-    outline: none;
-} */
-
 .search-button {
     padding: 10px 15px;
     border: none;
-    border-radius: 8px;
-    background-color: #5a42f4;
-    color: #fff;
+    border-radius: var(--low-border);
+    background-color: var(--light-blue);
+    color: var(--white);
     cursor: pointer;
     transition: background-color 0.3s;
     margin-right: -7px;
 }
 
 .search-button:hover {
-    background-color: #3005f2;
+    background-color: var(--hover-color);
 }
 
 .clear-icon {
@@ -662,7 +702,7 @@ ul li {
     right: 87px;
     position: absolute;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: var(--low-border);
     color: #3005f2;
     font-weight: bolder;
     transition: color 0.3s;
@@ -671,7 +711,7 @@ ul li {
 }
 
 .clear-icon:hover {
-    background-color: #dddaf5;
+    background-color: var(--white);
 }
 
 
@@ -679,12 +719,12 @@ ul li {
 .search-box {
     position: relative;
     width: 380px;
-    background: #fff;
+    background: var(--white);
     /* margin: 200px auto 0; */
-    border-radius: 5px;
+    border-radius: var(--very-low-border);
     top: 90px;
     left: 30px;
-    z-index: 1;
+    z-index: var(--z-very-low);
 }
 
 .search-row {
@@ -695,8 +735,8 @@ ul li {
     width: 380px;
     display: flex;
     align-items: center;
-    background-color: #ffffff;
-    border-radius: 8px 8px 0 0;
+    background-color: var(--white);
+    border-radius: var(--low-border) var(--low-border) 0 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px 10px;
 }
@@ -708,21 +748,21 @@ ul li {
     border: 0;
     outline: 0;
     font-size: 18px;
-    color: #333;
+    color: var(--background-black);
 }
 
 ::placeholder {
-    color: #5a42f4;
+    color: var(--light-blue);
 }
 
 .result-box ul {
-    border-top: 1px solid #999;
+    border-top: 1px solid var(--white);
     padding: 15px 10px;
 }
 
 .result-box ul li {
     list-style: none;
-    border-radius: 3px;
+    border-radius: var(--very-low-border);
     /* padding: 10px; */
     cursor: pointer;
     display: flex;
@@ -736,18 +776,18 @@ ul li {
     display: flex;
     align-items: center;
     padding: 4px 15px;
-    color: #5a42f4;
-    font-weight: 500;
+    color: var(--light-blue);
+    font-weight: var(--font-medium);
 }
 
 .result-box ul li:hover {
-    background-color: #5a42f496;
+    background-color: var(--hover-color3);
     transition: all 0.2s linear;
 }
 
 .result-box ul li:hover a {
-    color: white;
-    font-weight: 700;
+    color: var(--white);
+    font-weight: var(--font-bold);
 }
 
 .result-box {
@@ -755,9 +795,9 @@ ul li {
     overflow-y: scroll;
     position: absolute;
     width: 380px;
-    background: #fff;
+    background: var(--white);
     top: -45px;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 var(--low-border) var(--low-border);
     box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
@@ -801,21 +841,13 @@ ul li {
 }
 
 
-
-
-
-
 .search-input:focus .search-row {
-    border-radius: 8px 8px 0 0;
+    border-radius: var(--low-border) var(--low-border) 0px 0px;
 }
 
 .search-row .search-input:focus {
-    border-radius: 8px 8px 0px 0px;
+    border-radius: var(--low-border) var(--low-border) 0px 0px;
 }
-
-
-
-
 
 
 
@@ -848,9 +880,9 @@ button {
     --ripple-background: white;
     --ripple-opacity: 0.3;
     --ripple-duration: 600ms;
-    border: 1px solid #5a42f4;
-    background: #5a42f4;
-    color: white;
+    border: 1px solid var(--light-blue);
+    background: var(--light-blue);
+    color: var(--white);
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -868,6 +900,8 @@ a {
     --ripple-duration: 600ms;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+
 
 
 
@@ -896,17 +930,21 @@ button {
     padding: 12px 20px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
-    background-color: #5a42f4;
-    color: #fff;
+    border-radius: var(--very-low-border);
+    background-color: var(--light-blue);
+    color: var(--white);
     cursor: pointer !important;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #3005f2;
-    color: #fff;
+    background-color: var(--hover-color);
+    color: var(--white);
 }
+
+
+
+
 
 /* Developer */
 .image-container {
@@ -914,7 +952,7 @@ button:hover {
     top: 2.5px;
     right: 10px;
     overflow: hidden;
-    z-index: 2;
+    z-index: var(--z-very-low);
     /* Set z-index for developer container */
 }
 
@@ -926,7 +964,7 @@ button:hover {
     animation: gradient 8s ease infinite;
     -webkit-background-clip: text;
     color: transparent;
-    z-index: 2;
+    z-index: var(--z-very-low);
     /* Set z-index for developer container */
 }
 
@@ -935,9 +973,9 @@ button:hover {
     right: 0px;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: var(--circle-border);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 2;
+    z-index: var(--very-low-border);
     /* Set z-index for developer container */
 }
 
@@ -946,10 +984,13 @@ button:hover {
     right: 30px;
     width: 250px;
     height: 250px;
-    border-radius: 50%;
+    border-radius: var(--circle-border);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
 }
+
+
+
 
 
 /* side button for calendar website  */
@@ -965,7 +1006,7 @@ button:hover {
     right: 0px;
     /* transition: all .2s linear; */
     transition: right 0.3s ease;
-    z-index: 1;
+    z-index: var(--z-very-low);
 }
 
 .widget-container .switcher-btn:hover .change-color {
@@ -976,7 +1017,6 @@ button:hover {
 
 }
 
-
 .widget-container .switcher-btn {
     position: relative;
     /* Change from absolute to relative */
@@ -985,13 +1025,13 @@ button:hover {
     top: 0;
     /* Reset top value */
     margin-bottom: 5px;
-    color: #4e2bda;
-    backdrop-filter: blur(10px);
+    color: var(--light-blue);
+    backdrop-filter: blur(var(--normal-blur));
     background: hsl(0deg 0% 100% / 23%);
     padding: 4px 4px;
     cursor: pointer;
     font-size: 30px;
-    border-radius: 8px;
+    border-radius: var(--low-border);
     box-shadow: 0px -1px 10px 3px rgb(0 0 0 / 15%);
     transition: all .2s linear;
 }
@@ -1006,7 +1046,6 @@ button:hover {
     right: 0px;
     border-radius: 8px;
 }
-
 
 .widget-container.active #theme-buttons-container-calendar {
     right: 0px;
@@ -1044,7 +1083,7 @@ button:hover {
     width: 470px;
     right: -470px;
     height: 650px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--normal-blur));
     background: hsl(0deg 0% 100% / 23%);
     padding: 10px 0px;
 }
@@ -1053,7 +1092,7 @@ button:hover {
     width: 660px;
     right: -660px;
     height: 450px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--normal-blur));
     background: hsl(0deg 0% 100% / 23%);
     padding: 10px 0px;
 }
@@ -1062,7 +1101,7 @@ button:hover {
     width: 437px;
     right: -437px;
     height: 782px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--normal-blur));
     background: hsl(0deg 0% 100% / 23%);
     padding: 10px 0px;
 }
@@ -1071,7 +1110,7 @@ button:hover {
     width: 343px;
     right: -343px;
     height: 476px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--normal-blur));
     background: hsl(0deg 0% 100% / 23%);
     padding: 10px 0px;
 }
@@ -1082,6 +1121,10 @@ button:hover {
 #theme-buttons-container-linksaver {
     display: none;
 }
+
+
+
+
 
 /* side button for social media */
 #switcher {
@@ -1097,8 +1140,8 @@ button:hover {
 .social-media-btn {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    background-color: #4e2bda;
+    border-radius: var(--circle-border);
+    background-color: var(--light-blue);
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -1107,7 +1150,7 @@ button:hover {
 }
 
 .social-media-btn i {
-    color: white;
+    color: var(--white);
     font-size: 20px;
     transition: font-size 0.3s ease;
     /* Smooth transition for font-size */
@@ -1116,7 +1159,7 @@ button:hover {
 .social-media-btn a {
     display: inline;
     /* Show the link by default */
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-size: 14px;
     transition: font-size 0.3s ease;
@@ -1138,7 +1181,10 @@ button:hover {
 }
 
 
-/* Add a class for the image preview */
+
+
+
+/* Add a class for the image preview of whatsapp */
 #imagePreview {
     display: none;
     position: fixed;
@@ -1151,8 +1197,8 @@ button:hover {
     /* Optional: Add a border */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     /* Optional: Add a box shadow */
-    z-index: 1;
-    border-radius: 25px;
+    z-index: var(--z-very-low);
+    border-radius: var(--perfect-border);
     animation: appear 0.5s forwards;
 }
 
@@ -1181,12 +1227,15 @@ button:hover {
 }
 
 #imagePreview img {
-    border-radius: 25px;
+    border-radius: var(--perfect-border);
     max-width: 80vw;
     max-height: 80%;
     min-width: 40vw;
     min-height: 40%;
 }
+
+
+
 
 
 /* profile image */
@@ -1196,10 +1245,10 @@ button:hover {
     right: 40px;
     width: 250px;
     height: 250px;
-    border-radius: 50%;
+    border-radius: var(--circle-border);
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 0;
+    z-index: var(--z-none);
     /* Set z-index for developer container */
 }
 
@@ -1222,13 +1271,14 @@ button:hover {
     transform: translateX(-50%);
     text-align: center;
     background: rgba(51, 0, 255, 0.5);
-    color: wheat;
+    color: var(--white);
     line-height: 30px;
     font-family: sans-serif;
     font-size: 15px;
     cursor: pointer;
     display: none;
 }
+
 
 
 
@@ -1263,34 +1313,42 @@ h1, #dateDisplay {
     }
 }
 
+
+
+
+
 /* flip-flop clock */
 .clock {
     width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: -10;
+    z-index: var(--z-flip);
 }
 
 .flip-clock-dot {
-    background: #d6d3e2
+    background: var(--white)
 }
 
 .flip-clock-meridium a {
-    color: #d6d3e2
+    color: var(--white)
 }
 
 .flip-clock-meridium a:hover {
-    color: #d6d3e2
+    color: var(--white)
 }
 
 .flip-clock-wrapper ul li a div div.inn {
-    background-color: #4e2bda;
+    background-color: var(--light-blue);
 }
 
 .flip-clock-wrapper ul li a div div.inn {
-    color: #d6d3e2;
+    color: var(--white);
 }
+
+
+
+
 
 /* most visited websites */
 .most-visited-container {
@@ -1303,7 +1361,7 @@ h1, #dateDisplay {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #561dff;
+    color: var(--light-blue);
 }
 
 .icon-grid {
@@ -1338,7 +1396,7 @@ h1, #dateDisplay {
 .icon-name {
     margin-top: 5px;
     font-size: 12px;
-    color: #4000ff;
+    color: var(--light-blue);
     font-weight: bold;
     /* margin-bottom: -10px; */
 }
@@ -1349,7 +1407,7 @@ a.linkUrl {
     height: 100px;
     width: 100px;
     display: inline-table;
-    border-radius: 8px;
+    border-radius: var(--low-border);
     /* box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75); */
@@ -1365,11 +1423,6 @@ a.linkUrl:hover {
     transition: all ease-in-out;
 }
 
-/* .icon-item:hover{
-    background: #4000ff1f;
-    overflow: hidden;
-    border-radius: 8px;
-} */
 
 /* Add styles for hover icons */
 .hover-icons {
@@ -1377,7 +1430,7 @@ a.linkUrl:hover {
     top: 0;
     right: 0;
     display: none;
-    z-index: 11;
+    z-index: var(--z-tooltip);
 }
 
 .icon-item:hover .hover-icons {
@@ -1390,21 +1443,21 @@ a.linkUrl:hover {
     font-weight: 700;
     margin: 5px;
     cursor: pointer;
-    color: #2200ff;
+    color: var(--light-blue);
     /* Adjust color as needed */
 }
 
 .edit-icon:hover {
-    color: #4000ff;
+    color: var(--hover-color);
 }
 
 .delete-icon:hover {
-    color: red;
+    color: var(--red-color);
 }
 
 /* Add a style for the contenteditable mode */
 .icon-name[contenteditable="true"] {
-    border: 1px solid #ccc;
+    border: 1px solid var(--white);
     padding: 5px;
     cursor: text;
 }
@@ -1420,15 +1473,15 @@ a.linkUrl:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #561dff;
+    background: var(--light-blue);
     padding: 20px 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    z-index: var(--z-modal);
     display: none;
     height: 300px;
     /* width: 500px; */
     width: auto;
-    border-radius: 15px;
+    border-radius: var(--normal-border);
     box-shadow: 1px 2px 9px 1px rgba(0, 0, 0, 1);
     -webkit-box-shadow: 1px 2px 9px 1px rgba(0, 0, 0, 1);
     -moz-box-shadow: 1px 2px 9px 1px rgba(0, 0, 0, 1);
@@ -1451,15 +1504,15 @@ a.linkUrl:hover {
 .modal label {
     display: block;
     margin-bottom: 5px;
-    color: #fff;
+    color: var(--white);
 }
 
 .check-icon {
     cursor: pointer;
     font-size: 16px;
-    border-radius: 50%;
-    background: #4000ff;
-    color: #dad6e9;
+    border-radius: var(--circle-border);
+    background: var(--hover-color);
+    color: var(--white);
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -1470,28 +1523,28 @@ a.linkUrl:hover {
 }
 
 .check-icon:hover {
-    background: #3005f2;
-    color: #ffffff;
+    background: var(--hover-color3);
+    color: var(--white);
 }
 
 .modal input {
     background: transparent;
     border: 0;
     outline: 0;
-    border-radius: 8px;
+    border-radius: var(--low-border);
     min-width: 300px;
     max-width: 500px;
     height: 40px;
     margin-bottom: 15px;
     padding-left: 10px;
-    color: #fff;
+    color: var(--white);
     box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
 .modal input:focus {
-    background: #3105f258;
+    background: var(--hover-color3);
 }
 
 
@@ -1508,8 +1561,8 @@ a.linkUrl:hover {
 }
 
 .accordion-button {
-    background-color: #5a42f4;
-    color: #fff;
+    background-color: var(--light-blue);
+    color: var(--white);
 }
 
 .accordion-collapse {
@@ -1518,8 +1571,12 @@ a.linkUrl:hover {
 }
 
 .accordion-collapse .icon-name {
-    color: #ffffff !important;
+    color: var(--white) !important;
 }
+
+
+
+
 
 /* image generator */
 .imageCardText {
@@ -1557,8 +1614,7 @@ a.linkUrl:hover {
 }
 
 .text-center:hover {
-    /* color: #3213fb; */
-    color: #2200ff;
+    color: var(--hover-color);
     font-weight: bolder;
     font-size: medium;
     background: #4000ff1e;
@@ -1569,9 +1625,10 @@ a.linkUrl:hover {
 }
 
 .imageCardText .card:hover .card-img-top {
-    filter: blur(10px);
+    filter: blur(var(--normal-blur));
     /* Adjust the blur strength as needed */
 }
+
 
 
 
