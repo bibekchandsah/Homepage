@@ -2,9 +2,12 @@
 // function reloadPage() {
 //     location.reload();
 // }
-
 // // Reload the page every 1 minute (60,000 milliseconds)
 // setInterval(reloadPage, 100000);
+
+
+
+
 
 //Execute after the page loaded
 // check either qr or link should be displayed
@@ -13,13 +16,13 @@ window.addEventListener("load", () => {
 });
 
 
-// Initialize Sortable with the container ID for dragging most visited div 
-  new Sortable(document.getElementById('sortable-list'));
 
 
-// edit url
+
+
+// edit name, url and icon of most visited
 window.addEventListener('DOMContentLoaded', function () {
-    console.log("loading new icons");
+    // console.log("loading new icons");
     // Get all elements with class 'icon-item'
     var iconItems = document.querySelectorAll('.icon-item');
     iconItems.forEach(function (iconItem, index) {
@@ -28,7 +31,7 @@ window.addEventListener('DOMContentLoaded', function () {
         let iconName = localStorage.getItem("iconNameContent_" + (index + 1));
 
         if (iconURL != null) {
-            console.log(index)
+            // console.log(index)
             iconItem.getElementsByClassName("imageUrl")[0].src = iconIcon;
             iconItem.getElementsByClassName("icon-name")[0].innerHTML = iconName;
             iconItem.getElementsByClassName("linkUrl")[0].href = iconURL;
@@ -95,6 +98,25 @@ window.addEventListener('DOMContentLoaded', function () {
             // Close the modal
             closeModal(modal);
         });
+        // Add 'keydown' event listeners for handling Enter key presses
+        nameInput.querySelector('input').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                urlInput.querySelector('input').focus();
+                urlInput.querySelector('input').select(); // Select the text in urlInput
+            }
+        });
+        urlInput.querySelector('input').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                iconInput.querySelector('input').focus();
+                iconInput.querySelector('input').select(); // Select the text in iconInput
+            }
+        });
+        iconInput.querySelector('input').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                // Trigger click on checkIcon when 'Enter' is pressed in iconInput
+                checkIcon.click();
+            }
+        });
         // Append input fields and check icon to the modal
         modal.appendChild(nameInput);
         modal.appendChild(urlInput);
@@ -106,6 +128,10 @@ window.addEventListener('DOMContentLoaded', function () {
     function showModal(modal) {
         document.body.appendChild(modal);
         modal.style.display = 'block';
+        // Set focus on the first input when the modal is shown
+        const nameInput = document.querySelector(".nameInput");
+        nameInput.querySelector('input').focus();
+        nameInput.querySelector('input').select(); // Select the text in nameInput
     }
     // close popup
     function closeModal(modal) {
@@ -116,146 +142,42 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-// // detect mouse movement for reload
-// var lastMouseActivity = new Date().getTime();
-// function handleMouseActivity() {
-//     lastMouseActivity = new Date().getTime();
-// }
-// function checkAndReloadPage() {
-//     var currentTime = new Date().getTime();
-//     var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
-//     console.log(timeDifferenceInSeconds);
-
-//     // Check if there has been no mouse movement for 1 minute (60 seconds)
-//     if (timeDifferenceInSeconds > 60) {
-//         // Reload the page
-//         location.reload();
-//     }
-// }
-// // Add event listeners to detect mouse movement
-// document.addEventListener('mousemove', handleMouseActivity);
-// document.addEventListener('mousedown', handleMouseActivity);
-// // Check and reload the page every 10 seconds (adjust as needed)
-// setInterval(checkAndReloadPage, 10000); // Check every 10 seconds
-
-
-// var lastMouseActivity = new Date().getTime();
-// var excludeReload = false;
-// function handleMouseActivity(event) {
-//     lastMouseActivity = new Date().getTime();
-//     // Check if the mouse is over an iframe
-//     if (event.target.tagName.toLowerCase() === 'iframe') {
-//         excludeReload = true;
-//     } else {
-//         excludeReload = false;
-//     }
-// }
-// function checkAndReloadPage() {
-//     if (excludeReload) {
-//         // If mouse is over an iframe, exclude the reload
-//         return;
-//     }
-//     var currentTime = new Date().getTime();
-//     var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
-//     console.log(timeDifferenceInSeconds);
-//     // Check if there has been no mouse movement for 1 minute (60 seconds)
-//     if (timeDifferenceInSeconds > 60) {
-//         // Reload the page
-//         location.reload();
-//     }
-// }
-// // Add event listeners to detect mouse movement
-// document.addEventListener('mousemove', handleMouseActivity);
-// document.addEventListener('mousedown', handleMouseActivity);
-// // Check and reload the page every 10 seconds (adjust as needed)
-// setInterval(checkAndReloadPage, 10000); // Check every 10 seconds
-
-
+// detect mouse movement for reload
 // its working but there is one small issue with this code. when user mouse is in music iframe till then only it doesn't reload the page. but when user mouse is in outside of music iframe and song is playing then it reloads the page. but it shouldn't reload the page when user mouse is outside of music iframe and music is playing i.e. if music iframe is playing music in background then it shouldn't reload the page. 
-// var lastMouseActivity = new Date().getTime();
-// var excludeReload = false;
-// function handleMouseActivity(event) {
-//     lastMouseActivity = new Date().getTime();
-//     // Check if the mouse is over an iframe or audio element
-//     if (
-//         event.target.tagName.toLowerCase() === 'iframe' ||
-//         (event.target.tagName.toLowerCase() === 'audio' && !event.target.paused)
-//     ) {
-//         excludeReload = true;
-//     } else {
-//         excludeReload = false;
-//     }
-// }
-// function checkAndReloadPage() {
-//     if (excludeReload) {
-//         // If the mouse is over an iframe with music playing, exclude the reload
-//         console.log(excludeReload);
-//         console.log("page shouldn't be reload");
-//         return;
-//     }
-//     var currentTime = new Date().getTime();
-//     var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
-//     console.log(timeDifferenceInSeconds);
-//     // Check if there has been no mouse movement for 1 minute (60 seconds)
-//     if (timeDifferenceInSeconds > 60) {
-//         // Reload the page
-//         location.reload();
-//     }
-// }
-// // Add event listeners to detect mouse movement
-// document.addEventListener('mousemove', handleMouseActivity);
-// document.addEventListener('mousedown', handleMouseActivity);
-// // Check and reload the page every 10 seconds (adjust as needed)
-// setInterval(checkAndReloadPage, 10000); // Check every 10 seconds
-
-
 var lastMouseActivity = new Date().getTime();
-var isMusicPlaying = false;
-
+var excludeReload = false;
 function handleMouseActivity(event) {
     lastMouseActivity = new Date().getTime();
-
-    // Log mouse activity for debugging
-    // console.log('Mouse moved over:', event.target.tagName);
-
     // Check if the mouse is over an iframe or audio element
-    if (event.target.tagName.toLowerCase() === 'iframe') {
-        // Assuming the iframe content is from the same origin
-        var iframeDocument = event.target.contentDocument || event.target.contentWindow.document;
-        var audioElements = iframeDocument.querySelectorAll('audio');
-
-        // Check if the mouse is over an audio element inside the iframe
-        if (audioElements.length > 0) {
-            isMusicPlaying = !audioElements[0].paused;
-            // console.log('Music state:', isMusicPlaying);
-        }
+    if (
+        event.target.tagName.toLowerCase() === 'iframe' ||
+        (event.target.tagName.toLowerCase() === 'audio' && !event.target.paused)
+    ) {
+        excludeReload = true;
+    } else {
+        excludeReload = false;
     }
 }
-
 function checkAndReloadPage() {
-    if (isMusicPlaying) {
-        // If music is playing, exclude the reload
-        // console.log('Skipping reload because music is playing.');
+    if (excludeReload) {
+        // If the mouse is over an iframe with music playing, exclude the reload
+        console.log(excludeReload);
+        console.log("page shouldn't be reload");
         return;
     }
-
     var currentTime = new Date().getTime();
     var timeDifferenceInSeconds = (currentTime - lastMouseActivity) / 1000;
     console.log(timeDifferenceInSeconds);
-
     // Check if there has been no mouse movement for 1 minute (60 seconds)
-    if (timeDifferenceInSeconds > 600) {
+    // if (timeDifferenceInSeconds > 60) {
+    if (timeDifferenceInSeconds > 1200) {
         // Reload the page
-        // console.log('Reloading the page due to inactivity.');
         location.reload();
     }
 }
-
 // Add event listeners to detect mouse movement
 document.addEventListener('mousemove', handleMouseActivity);
 document.addEventListener('mousedown', handleMouseActivity);
-
 // Check and reload the page every 10 seconds (adjust as needed)
 setInterval(checkAndReloadPage, 10000); // Check every 10 seconds
 
@@ -263,36 +185,7 @@ setInterval(checkAndReloadPage, 10000); // Check every 10 seconds
 
 
 
-
-
-
-
-
-// update notification
-// jQuery(document).ready(function ($) {
-//     window.onload = function () {
-//         $(".bts-popup").delay(1000).addClass('is-visible');
-//     }
-//     //open popup
-//     $('.bts-popup-trigger').on('click', function (event) {
-//         event.preventDefault();
-//         $('.bts-popup').addClass('is-visible');
-//     });
-//     //close popup
-//     $('.bts-popup').on('click', function (event) {
-//         if ($(event.target).is('.bts-popup-close') || $(event.target).is('.bts-popup')) {
-//             event.preventDefault();
-//             $(this).removeClass('is-visible');
-//         }
-//     });
-//     //close popup when clicking the esc keyboard button
-//     $(document).keyup(function (event) {
-//         if (event.which == '27') {
-//             $('.bts-popup').removeClass('is-visible');
-//         }
-//     });
-// });
-
+// new update notification
 jQuery(document).ready(function ($) {
     // Function to check if the popup should be displayed
     function shouldDisplayPopup() {
@@ -378,49 +271,37 @@ jQuery(document).ready(function ($) {
 
 
 
-
-
-
-
-
 // online status toast 
 const toastElement = document.getElementById("toast");
 const toastMessageElement = document.getElementById("toast-message");
 const wifiIconElement = document.getElementById("wifi-icon");
 const closeIconElement = document.getElementById("close-icon");
-
 let isOffline = false; // To track offline status
 let hideTimeout; // To store the timeout reference
-
 function showToast(message, isConnected) {
     toastMessageElement.textContent = message;
     wifiIconElement.style.display = isConnected ? "inline-block" : "none";
     toastElement.classList.remove("hide-toast");
     toastElement.classList.add("show-toast");
-
     if (!isConnected) {
         isOffline = true;
         clearTimeout(hideTimeout); // Clear the timeout when offline
     }
-
     if (isConnected) {
         if (!isOffline) {
             hideTimeout = setTimeout(hideToast, 5000); // Hide after 5 seconds if online
         }
     }
 }
-
 function hideToast() {
     toastElement.classList.remove("show-toast");
     toastElement.classList.add("hide-toast");
 }
-
 function updateStatus() {
     const isConnected = navigator.onLine;
     if (isConnected) {
         showToast("You are currently online", true);
         toastElement.style.backgroundColor = "green";
-
         if (isOffline) {
             hideTimeout = setTimeout(hideToast, 5000); // Start the timer if back online
             isOffline = false; // Reset offline status
@@ -431,15 +312,15 @@ function updateStatus() {
         isOffline = true;
     }
 }
-
 updateStatus();
-
 // Listen for online and offline events
 window.addEventListener("online", updateStatus);
 window.addEventListener("offline", updateStatus);
-
 // Hide the toast when close icon is clicked
 closeIconElement.addEventListener("click", hideToast);
+
+
+
 
 
 // greeting
@@ -447,7 +328,6 @@ function getGreeting(username) {
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
     let greetingMessage;
-
     if (currentHour >= 5 && currentHour < 12) {
         greetingMessage = 'Good Morning';
     } else if (currentHour >= 12 && currentHour < 17) {
@@ -457,14 +337,13 @@ function getGreeting(username) {
     } else {
         greetingMessage = 'Good Night';
     }
-
     if (username) {
         greetingMessage += ' ' + username;
     }
-
     return greetingMessage;
 }
 
+// ask user name while loading page
 function askForUsername() {
     const username = prompt('Enter your name:');
     if (username) {
@@ -473,13 +352,14 @@ function askForUsername() {
     }
 }
 
+// show greeting according to current time
 function setGreeting() {
     const username = localStorage.getItem('username');
     const greetingElement = document.getElementById('greeting');
     const greeting = getGreeting(username);
     greetingElement.textContent = greeting;
 }
-
+// check whether the user name is in local storage or not
 document.addEventListener('DOMContentLoaded', function () {
     const username = localStorage.getItem('username');
     if (!username) {
@@ -490,13 +370,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// date
+
+
+
+// show current date
 function getOrdinalSuffix(number) {
     const suffixes = ["th", "st", "nd", "rd"];
     const remainder = number % 100;
     return suffixes[(remainder - 20) % 10] || suffixes[remainder] || suffixes[0];
 }
-
 function getCurrentDate() {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const currentDate = new Date();
@@ -504,19 +386,19 @@ function getCurrentDate() {
     const month = months[currentDate.getMonth()];
     const year = currentDate.getFullYear();
     const suffix = getOrdinalSuffix(day);
-
     return `Today is the ${day}${suffix} of ${month} ${year}`;
 }
-
 // Display the current date on page load
 document.getElementById('dateDisplay').textContent = getCurrentDate();
+
+
+
 
 
 // flip-flop clock
 var clock = $('.clock').FlipClock({
     clockFace: 'TwelveHourClock'
 })
-
 
 // Initial greeting message
 const greetingElement = document.getElementById('greeting');
@@ -525,6 +407,10 @@ const greeting = getGreeting();
 const currentDate = getCurrentDate();
 greetingElement.textContent = greeting;
 currentDateElement.textContent = currentDate;
+
+
+
+
 
 // search box
 function searchOnEnter(event) {
@@ -561,6 +447,9 @@ function clearSearchInput() {
 }
 
 
+
+
+
 // show different link of whatsapp according to device
 // Function to detect whether the user is on a mobile device
 // Function to set the appropriate link based on the device
@@ -573,37 +462,6 @@ function clearSearchInput() {
 //     } else {
 //         console.log("pc devices");
 //         whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
-//     }
-// }
-
-
-// Function to detect whether the user is on a mobile device
-function isMobileDevice() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-// Function to set the appropriate link based on the device
-// function setWhatsappLink() {
-//     const whatsappLink = document.getElementById('whatsappLink');
-//     const imagePreview = document.getElementById('imagePreview');
-
-//     if (isMobileDevice()) {
-//         console.log("mobile devices");
-//         whatsappLink.addEventListener('click', () => {
-//             // Display image preview when clicked
-//             imagePreview.innerHTML = '<img src="qrcode.png" alt="QR Code">';
-//             imagePreview.style.display = 'block';
-//             console.log("clicked");
-//         });
-//         imagePreview.addEventListener("click", () => {
-//             imagePreview.style.display = 'none';
-//             console.log("clicked");
-//         });
-//     } else {
-//         console.log("pc devices");
-//         whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
-//         // Hide image preview if it's visible
-//         imagePreview.style.display = 'none';
 //     }
 // }
 
@@ -644,17 +502,6 @@ function setWhatsappLink() {
         // imagePreview.style.animation = "zoomOut 0.3s ease-in";
     }
 }
-
-// Call the function on page load
-// setWhatsappLink();
-
-
-
-
-
-
-
-
 
 
 
@@ -709,10 +556,8 @@ Footprint   https://saymineapp.com/overview  https://static.saymine.com/app/app/
 UrlScanner  https://urlscan.io/ https://urlscan.io/img/urlscan_256.png
 URL where goes  https://wheregoes.com/ https://wheregoes.com/c/themes/custom-theme/img/favicon.svg
 `;
-
 // Parse the data and split into individual items
 const items = data.split('\n');
-
 // Function to create an icon item with given details
 function createIconItem(title, link, image) {
     const iconItem = document.createElement('div');
@@ -735,7 +580,6 @@ function createIconItem(title, link, image) {
 
     return iconItem;
 }
-
 // Load icons from local storage or create new elements
 function loadIcons() {
     const iconsContainer = document.getElementById('icons-container');
@@ -761,33 +605,7 @@ function loadIcons() {
         localStorage.setItem('websiteIcons', JSON.stringify(icons));
     }
 }
-
 loadIcons();
-
-// side button for calendar website
-document.addEventListener("DOMContentLoaded", function () {
-    const colorSwitcher = document.getElementById("color-switcher");
-    const themeContainer = document.getElementById("theme-buttons-container");
-
-    colorSwitcher.addEventListener("click", function () {
-        // Check if the theme container is already populated
-        if (themeContainer.childElementCount === 0) {
-            // Create an iframe element
-            const iframe = document.createElement("iframe");
-            iframe.src = "https://bibek10550.github.io/calander/";
-            iframe.width = "453";
-            iframe.height = "693";
-            iframe.style.border = "none";
-
-            // Append the iframe to the theme container
-            themeContainer.appendChild(iframe);
-        }
-
-        // Toggle the active class on color-switcher for styling
-        colorSwitcher.classList.toggle("active");
-    });
-});
-
 
 
 
