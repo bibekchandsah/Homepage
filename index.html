@@ -63,7 +63,7 @@
                 <li>Now the new chatbot is added at the bottom right corner. Through this chatbot you can ask any question. It is able to answer your all queries. It is powered by Google bard AI.</li>
             </ul>
             <div class="bts-popup-button">
-                <a href="#chatbot">Show me</a>
+                <a href="#updatechatbot">Show me</a>
             </div>
             <a href="#0" class="bts-popup-close img-replace">Close</a>
         </div>
@@ -142,7 +142,7 @@
     </button>
 
     <!-- chatbot -->
-    <button anim="ripple" class="chatbot-toggler" id="chatbot">
+    <button anim="ripple" class="chatbot-toggler" id="updatechatbot">
         <span class="material-symbols-rounded">mode_comment</span>
         <span class="material-symbols-outlined">close</span>
     </button>
@@ -170,7 +170,7 @@
         <i class="fa fa-times clear-icon" aria-hidden="true" onclick="clearSearchInput()"></i>
         <button anim="ripple" class="search-button" onclick="searchGoogle()">Search</button>
     </div> -->
-    <div class="search-box">
+    <div class="search-box" id="updatesearchbox">
         <div class="search-row">
             <input type="text" class="search-input" id="input-box" placeholder="Search anything here...."
                 autocompletes="off" oninput="toggleClearIcon()" onkeydown="searchOnEnter(event)" onkeyup="search()">
@@ -332,7 +332,7 @@
     <div id="dateDisplay"></div>
 
     <!-- most visited websites -->
-    <div class="most-visited-container">
+    <div class="most-visited-container" id="updatemostvisited">
         <div class="most-visited-title">Most Visited</div>
         <div class="icon-grid" id="sortable-list">
             <div class="icon-item" data-item-id="1">
@@ -939,7 +939,7 @@
                     <div class="icon-grid"> -->
 
 
-    <div class="imageCardText row row-cols-1 row-cols-md-4 g-4" id="updateImagePrompt">
+    <div class="imageCardText row row-cols-1 row-cols-md-4 g-4" id="updateimageprompt">
         
         <!--<div class="col">
             <div class="card h-100 text-bg-primary d-flex flex-column align-items-center justify-content-center">
