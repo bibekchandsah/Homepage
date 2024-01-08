@@ -114,6 +114,22 @@ body::before {
 
 
 
+/* preloading screen */
+#loading{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    background: #000 
+     /* url('https://bestof.nyc3.digitaloceanspaces.com/devsnap.me/sam/text-ring-loading-animation.gif') no-repeat center; */
+     url('trash/bin/recycle/downloads/preloading.gif') no-repeat center;
+    z-index: 99999;
+}
+
+
+
+
+
 /* update notification */
 .updateAlert {
     color: var(--green);
