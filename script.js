@@ -9,6 +9,15 @@
 
 
 
+// pre-loading screen
+var preloader = document.getElementById('loading');
+function myFunction(){
+    preloader.style.display = 'none';
+}
+
+
+
+
 //Execute after the page loaded
 // check either qr or link should be displayed
 window.addEventListener("load", () => {
