@@ -127,11 +127,11 @@ body::before {
 /*     background: #000 
     url('trash/bin/recycle/downloads/preloading.gif') no-repeat center; */
 /* computer & server */
-/*     background: rgb(27 27 27)
-    url('https://i.giphy.com/VX7yEoXAFf8as.webp') no-repeat center; */
+    background: rgb(27 27 27)
+    url('https://i.giphy.com/VX7yEoXAFf8as.webp') no-repeat center;
 /*     Spherical */
-    background: #fff
-    url('trash/bin/recycle/downloads/spherical.gif') no-repeat center;
+/*     background: #fff
+    url('trash/bin/recycle/downloads/spherical.gif') no-repeat center; */
 }
 
 
