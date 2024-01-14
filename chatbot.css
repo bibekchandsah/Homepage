@@ -8,7 +8,7 @@
     /*Purple 250 - Green 142 - Blue 230 - Pink 340  - RoyalBlue 600     -purple 255*/
 
     /* HSL color mode */
-    --container-color: hsl(var(--hue-color), 80%, 70%);
+/*     --container-color: hsl(var(--hue-color), 80%, 70%);
     --left-container-color: rgba(242, 242, 244);
     --left-container-color-offset: rgba(216, 210, 210);
     --left-text-color: rgba(89, 89, 89);
@@ -17,24 +17,24 @@
     --black-color: black;
     --red-color: #D92027;
     --pink-color: rgb(219, 23, 187);
-    --blue-color: rgba(0, 103, 192);
+    --blue-color: rgba(0, 103, 192); */
 
 
     /* --background-color: hsl(255, 100%, 50%); */
     /* background-color: #4100ff; */
     /* background-black: rgba(0, 0, 0, 0.7); */
-    --background-color: hsl(var(--hue-color), 100%, 50%);
+/*     --background-color: hsl(var(--hue-color), 100%, 50%);
     --background-black: #000000b3;
     --white: #ffffff;
-    --green: #0affd6;
+    --green: #0affd6; */
     /* --light-blue: #5a42f4; */
     /* --light-blue: #561dff; */
     /* --light-blue: #4000ff; */
-    --light-blue: #4e2bda;
+/*     --light-blue: #4e2bda;
     --dark-blue: #19123b;
     --hover-color: #3005f2;
     --hover-color2: #6709ff;
-    --hover-color3: #5a42f496;
+    --hover-color3: #5a42f496; */
     /* --hover-color3: #3105f258; */
 
     /*========== Font weight ==========*/
@@ -245,7 +245,8 @@ header h2 {
     /* color: #000; */
     color: var(--background-black);
     /* background: #f2f2f2; */
-    background: #5a42f496;
+/*     background: #5a42f496; */
+    background: hsla(var(--hue-color), 89%, 41%, 0.588);
 }
 
 .chatbot .chat-input {
