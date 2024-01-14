@@ -1340,7 +1340,8 @@ h1, #dateDisplay {
     text-align: center;
     /* color: #4000ff; */
     font-weight: bold;
-    background: linear-gradient(-45deg, #00eaff, #4800ff, #0105fa, #000000);
+/*     background: linear-gradient(-45deg, #00eaff, #4800ff, #0105fa, #000000); */
+    background: linear-gradient(-45deg, #00eaff, hsl(var(--hue-color), 100%, 50%), #0105fa, #000000);
     background-size: 400% 400%;
     /* fallback animation in case JavaScript does not load */
     animation: gradient 8s ease infinite;
