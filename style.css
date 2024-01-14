@@ -22,19 +22,30 @@
     /* --background-color: hsl(255, 100%, 50%); */
     /* background-color: #4100ff; */
     /* background-black: rgba(0, 0, 0, 0.7); */
-    --background-color: hsl(var(--hue-color), 100%, 50%);
+/*     --background-color: hsl(var(--hue-color), 100%, 50%);
     --background-black: #000000b3;
     --white: #ffffff;
-    --green: #0affd6;
+    --green: #0affd6; */
     /* --light-blue: #5a42f4; */
     /* --light-blue: #561dff; */
     /* --light-blue: #4000ff; */
-    --light-blue: #4e2bda;
+/*     --light-blue: #4e2bda;
     --dark-blue: #19123b;
     --hover-color: #3005f2;
     --hover-color2: #6709ff;
-    --hover-color3: #5a42f496;
+    --hover-color3: #5a42f496; */
     /* --hover-color3: #3105f258; */
+
+    /* root based color */
+    --background-color: hsl(var(--hue-color), 100%, 50%);
+    --background-black: hsla(var(--hue-color), 4%, 5%, 0.702);
+    --white: hsl(var(--hue-color), 0%, 100%);
+    --light-blue: hsl(var(--hue-color), 70%, 51%);
+    --dark-blue: hsl(var(--hue-color), 53%, 15%);
+    --hover-color: hsl(var(--hue-color), 96%, 48%);
+    --hover-color2: hsl(var(--hue-color), 100%, 52%);
+    --hover-color3: hsla(var(--hue-color), 89%, 61%, 0.588);
+    --green: #0affd6;
 
     /*========== Font weight ==========*/
     --font-medium: 500;
@@ -957,7 +968,7 @@ a {
 button {
     padding: 12px 20px;
     font-size: 16px;
-    border: none;
+/*     border: none; */
     border-radius: var(--very-low-border);
     background-color: var(--light-blue);
     color: var(--white);
@@ -968,6 +979,14 @@ button {
 button:hover {
     background-color: var(--hover-color);
     color: var(--white);
+}
+
+.bing-container button:hover,
+.browser-container button:hover,
+.search-button:hover{
+    background-color: var(--white);
+    color: var(--light-blue);
+    border: 1px solid var(--light-blue);
 }
 
 
