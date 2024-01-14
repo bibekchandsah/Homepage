@@ -273,7 +273,7 @@ jQuery(document).ready(function ($) {
         }
     });
     // Example usage: call clearPopupStatus() to clear stored status and time
-    clearPopupStatus();
+    // clearPopupStatus();
 });
 
 
