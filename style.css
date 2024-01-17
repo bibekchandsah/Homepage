@@ -1677,7 +1677,8 @@ a.linkUrl:hover {
 }
 
 .imageCardText .card:hover .card-img-top {
-    filter: blur(var(--normal-blur));
+/*     filter: blur(var(--normal-blur)); */
+     filter: brightness(15%) blur(var(--normal-blur));
     /* Adjust the blur strength as needed */
 }
 
