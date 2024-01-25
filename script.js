@@ -22,6 +22,7 @@ function myFunction(){
 // check either qr or link should be displayed
 window.addEventListener("load", () => {
     setWhatsappLink();
+    window.querySelector('#input-box').focus();
 });
 
 
