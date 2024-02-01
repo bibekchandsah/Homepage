@@ -79,6 +79,34 @@ function Copy(text) {
 
 
 
+// copy selected item
+function copySelected() {
+      const selectedText = window.getSelection().toString().trim();
+
+      if (selectedText !== '') {
+        // Create a temporary textarea element to hold the selected text
+        const textarea = document.createElement('textarea');
+        textarea.value = selectedText;
+
+        // Append the textarea to the document
+        document.body.appendChild(textarea);
+
+        // Select the text in the textarea
+        textarea.select();
+
+        // Execute the copy command
+        document.execCommand('copy');
+
+        // Remove the textarea
+        document.body.removeChild(textarea);
+
+        console.log('Text copied to clipboard: ' + selectedText);
+      }
+    }
+
+
+
+
 // disable right click for mobile devices
 document.addEventListener('DOMContentLoaded', function () {
   // Check if the device is a mobile device
