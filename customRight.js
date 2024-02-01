@@ -75,3 +75,19 @@ function Copy(text) {
   inputc.parentNode.removeChild(inputc);
   alert("URL Copied.");
 }
+
+
+
+
+// disable right click for mobile devices
+document.addEventListener('DOMContentLoaded', function () {
+  // Check if the device is a mobile device
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  // Disable the context menu if the device is mobile
+  if (isMobile) {
+    document.getElementById('context-menu').addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  }
+});
