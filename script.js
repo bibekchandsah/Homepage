@@ -27,17 +27,19 @@ window.addEventListener("load", () => {
 
 
 
-// disable copy option
-document.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-});
 
-document.addEventListener('keydown', function (e) {
-  // Disable Ctrl+C (Cmd+C on Mac) shortcut for copy
-  if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
-    e.preventDefault();
-  }
-});
+
+// disable copy option
+// document.addEventListener('contextmenu', function (e) {
+//   e.preventDefault();
+// });
+
+// document.addEventListener('keydown', function (e) {
+//   // Disable Ctrl+C (Cmd+C on Mac) shortcut for copy
+//   if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+//     e.preventDefault();
+//   }
+// });
 
 
 
