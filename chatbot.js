@@ -126,9 +126,9 @@ const focusChatInput = () => {
         chatInput.focus();
     }
 };
-// short cut key for chatbot "ctrl+b"
+// short cut key for chatbot "alt+b"
 document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey && event.key === 'b') {
+  if (event.altKey && event.key === 'b') {
     const chatbotToggler = document.querySelector('.chatbot-toggler');
     if (chatbotToggler) {
       document.body.classList.toggle('show-chatbot');
