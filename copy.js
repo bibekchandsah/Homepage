@@ -181,3 +181,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// short cut key for music "alt + m"
+document.addEventListener('keydown', function (event) {
+  // Check if ALt + M is pressed
+  if (event.altKey && event.key === 'm') {
+    const musicContainer = document.getElementById('theme-buttons-container-music');
+    if (musicContainer.style.display === 'none') {
+      musicContainer.style.display = 'flex';
+    } else {
+      musicContainer.style.display = 'none';
+    }
+  }
+});
+
+
+
+
+
+// short cut key for calendar "alt + c"
+document.addEventListener('keydown', function (event) {
+  // Check if alt + c is pressed
+  if (event.altKey && event.key === 'c') {
+    const calendarContainer = document.getElementById('theme-buttons-container-calendar');
+    if (calendarContainer.style.display === 'none') {
+      calendarContainer.style.display = 'flex';
+    } else {
+      calendarContainer.style.display = 'none';
+    }
+  }
+});
