@@ -533,10 +533,10 @@ function setWhatsappLink() {
 
 
 
-// short cut key for music "ctrl + m"
+// short cut key for music "alt + m"
 document.addEventListener('keydown', function (event) {
-  // Check if Ctrl + M is pressed
-  if (event.ctrlKey && event.key === 'm') {
+  // Check if ALt + M is pressed
+  if (event.altKey && event.key === 'm') {
     const musicContainer = document.getElementById('theme-buttons-container-music');
     if (musicContainer.style.display === 'none') {
       musicContainer.style.display = 'flex';
