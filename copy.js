@@ -186,7 +186,9 @@ document.addEventListener('keydown', function (event) {
   // Check if ALt + M is pressed
   if (event.altKey && event.key === 'm') {
     const musicContainer = document.getElementById('theme-buttons-container-music');
-    if (musicContainer.style.display === 'none') {
+    const musicButton = document.querySelector('.switcher-btn[title="music"]');
+    if (musicButton && musicContainer.style.display === 'none') {
+      musicButton.click(); // Simulate a click on the music button
       musicContainer.style.display = 'flex';
     } else {
       musicContainer.style.display = 'none';
@@ -198,12 +200,17 @@ document.addEventListener('keydown', function (event) {
 
 
 
+
+
+
 // short cut key for calendar "alt + c"
 document.addEventListener('keydown', function (event) {
   // Check if alt + c is pressed
   if (event.altKey && event.key === 'c') {
     const calendarContainer = document.getElementById('theme-buttons-container-calendar');
-    if (calendarContainer.style.display === 'none') {
+    const calendarButton = document.querySelector('.switcher-btn[title="calendar"]');
+    if (calendarButton && calendarContainer.style.display === 'none') {
+      calendarButton.click(); // Simulate a click on the calendar button
       calendarContainer.style.display = 'flex';
     } else {
       calendarContainer.style.display = 'none';
@@ -214,7 +221,7 @@ document.addEventListener('keydown', function (event) {
 
 
 
-// short cut key for calendar "alt + s"
+// short cut key for search "alt + s"
 document.addEventListener('keydown', function (event) {
   if (event.altKey && event.key === 's') {
     const resultBox = document.getElementById('ResultBox');
@@ -231,4 +238,3 @@ document.addEventListener('keydown', function (event) {
     inputBox.focus();
   }
 });
-
