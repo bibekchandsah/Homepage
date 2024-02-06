@@ -210,3 +210,25 @@ document.addEventListener('keydown', function (event) {
     }
   }
 });
+
+
+
+
+// short cut key for calendar "alt + s"
+document.addEventListener('keydown', function (event) {
+  if (event.altKey && event.key === 's') {
+    const resultBox = document.getElementById('ResultBox');
+    const inputBox = document.getElementById('input-box');
+
+    // Toggle display style for ResultBox
+    if (resultBox.style.display === 'none') {
+      resultBox.style.display = 'block';
+    } else {
+      resultBox.style.display = 'none';
+    }
+
+    // Focus on the input box
+    inputBox.focus();
+  }
+});
+
