@@ -550,6 +550,23 @@ document.addEventListener('keydown', function (event) {
 
 
 
+// short cut key for music "alt + c"
+document.addEventListener('keydown', function (event) {
+  // Check if alt + c is pressed
+  if (event.altKey && event.key === 'c') {
+    const calendarContainer = document.getElementById('theme-buttons-container-calendar');
+    if (calendarContainer.style.display === 'none') {
+      calendarContainer.style.display = 'flex';
+    } else {
+      calendarContainer.style.display = 'none';
+    }
+  }
+});
+
+
+
+
+
 
 // icon images stored locally
 // Data with website details
