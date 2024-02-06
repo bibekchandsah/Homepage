@@ -533,6 +533,22 @@ function setWhatsappLink() {
 
 
 
+// short cut key for music "ctrl + m"
+document.addEventListener('keydown', function (event) {
+  // Check if Ctrl + M is pressed
+  if (event.ctrlKey && event.key === 'm') {
+    const musicContainer = document.getElementById('theme-buttons-container-music');
+    if (musicContainer.style.display === 'none') {
+      musicContainer.style.display = 'flex';
+    } else {
+      musicContainer.style.display = 'none';
+    }
+  }
+});
+
+
+
+
 
 
 // icon images stored locally
