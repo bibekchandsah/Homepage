@@ -8,6 +8,10 @@ let userMessage = null; // Variable to store user's message
 const API_KEY = "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"; // Paste your API key here
 const inputInitHeight = chatInput.scrollHeight;
 
+
+
+
+
 const createChatLi = (message, className) => {
     // Create a chat <li> element with passed message and className
     const chatLi = document.createElement("li");
@@ -17,6 +21,11 @@ const createChatLi = (message, className) => {
     chatLi.querySelector("p").textContent = message;
     return chatLi; // return chat <li> element
 }
+
+
+
+
+
 
 const generateResponse = (chatElement, userMessage) => {
     const messageElement = chatElement.querySelector("p");
@@ -47,6 +56,10 @@ const generateResponse = (chatElement, userMessage) => {
         });
 
 }
+
+
+
+
 
 
 const handleChat = () => {
@@ -86,6 +99,11 @@ chatInput.addEventListener("input", () => {
     chatInput.style.height = `${inputInitHeight}px`;
     chatInput.style.height = `${chatInput.scrollHeight}px`;
 });
+
+
+
+
+
 // press enter key to search for the query
 chatInput.addEventListener("keydown", (e) => {
     // If Enter key is pressed without Shift key and the window 
@@ -96,15 +114,29 @@ chatInput.addEventListener("keydown", (e) => {
     }
 });
 
+
+
+
+
+
 sendChatBtn.addEventListener("click", handleChat);
 // closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 // chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
-
 const chatbotContainer = document.querySelector('.chatbot');
+
+
+
+
+
 // Function to close the chatbot
 const closeChatbot = () => {
     document.body.classList.remove('show-chatbot');
 };
+
+
+
+
+
 // Event listener for close button
 closeBtn.addEventListener('click', () => closeChatbot());
 // Event listener for chatbot toggler
@@ -114,25 +146,41 @@ chatbotToggler.addEventListener('click', () => {
         focusChatInput();
     }
 });
+
+
+
+
+
 // Event listener to close chatbot when clicked outside
 document.addEventListener('click', (event) => {
     if (!chatbotContainer.contains(event.target) && !chatbotToggler.contains(event.target)) {
         closeChatbot();
     }
 });
+
+
+
+
+
 // Function to focus on chat input textarea
 const focusChatInput = () => {
     if (chatInput) {
         chatInput.focus();
     }
 };
+
+
+
+
+
 // short cut key for chatbot "alt+b"
 document.addEventListener('keydown', function(event) {
   if (event.altKey && event.key === 'b') {
     const chatbotToggler = document.querySelector('.chatbot-toggler');
     if (chatbotToggler) {
       document.body.classList.toggle('show-chatbot');
-        console.log("button pressed");
+        focusChatInput();
+        console.log("chatbot button pressed");
     }
   }
 });
