@@ -224,17 +224,21 @@ document.addEventListener('keydown', function (event) {
 // short cut key for search "alt + s"
 document.addEventListener('keydown', function (event) {
   if (event.altKey && event.key === 's') {
+    const ResultsBox = document.querySelector(".result-box");
     const resultBox = document.getElementById('ResultBox');
     const inputBox = document.getElementById('input-box');
-
     // Toggle display style for ResultBox
     if (resultBox.style.display === 'none') {
-      resultBox.style.display = 'block';
+      // Focus on the input box
+      inputBox.click();
+      inputBox.focus();
+      // resultBox.style.display = 'block';
     } else {
-      resultBox.style.display = 'none';
+      ResultsBox.style.animation = "to-top 0.3s ease-in";
+      setTimeout(() => {
+        resultBox.style.display = 'none';
+        ResultsBox.style.animation = ""; // Reset animation property
+      }, 300);
     }
-
-    // Focus on the input box
-    inputBox.focus();
   }
 });
