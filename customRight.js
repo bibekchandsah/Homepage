@@ -80,42 +80,33 @@ function Copy(text) {
 
 
 // copy selected item
-function copySelected() {
-      const selectedText = window.getSelection().toString().trim();
+function copySelectedText() {
+    // Get the selected text
+    const selectedText = window.getSelection().toString().trim();
 
-      if (selectedText !== '') {
-        // Create a temporary textarea element to hold the selected text
+    // Check if any text is selected
+    if (selectedText !== '') {
+        // Create a new textarea element
         const textarea = document.createElement('textarea');
+
+        // Set the value of the textarea to the selected text
         textarea.value = selectedText;
 
-        // Append the textarea to the document
+        // Append the textarea to the body
         document.body.appendChild(textarea);
 
         // Select the text in the textarea
         textarea.select();
 
-        // Execute the copy command
+        // Copy the text in the textarea to the clipboard
         document.execCommand('copy');
 
-        // Remove the textarea
+        // Remove the textarea from the body
         document.body.removeChild(textarea);
 
         console.log('Text copied to clipboard: ' + selectedText);
-      }
+    } else {
+        console.log('No text selected');
     }
+}
 
-
-
-
-// disable right click for mobile devices
-document.addEventListener('DOMContentLoaded', function () {
-  // Check if the device is a mobile device
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-  // Disable the context menu if the device is mobile
-  if (isMobile) {
-    document.getElementById('context-menu').addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-    });
-  }
-});
