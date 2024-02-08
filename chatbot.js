@@ -176,6 +176,7 @@ const focusChatInput = () => {
 // short cut key for chatbot "alt+b"
 document.addEventListener('keydown', function(event) {
   if (event.altKey && event.key === 'b') {
+    event.preventDefault(); // Prevent default browser behavior
     const chatbotToggler = document.querySelector('.chatbot-toggler');
     if (chatbotToggler) {
       document.body.classList.toggle('show-chatbot');
