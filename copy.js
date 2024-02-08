@@ -183,18 +183,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // short cut key for music "alt + m"
 document.addEventListener('keydown', function (event) {
-  // Check if ALt + M is pressed
-  if (event.altKey && event.key === 'm') {
-    const musicContainer = document.getElementById('theme-buttons-container-music');
-    const musicButton = document.querySelector('.switcher-btn[title="music"]');
-    if (musicButton && musicContainer.style.display === 'none') {
-      musicButton.click(); // Simulate a click on the music button
-      musicContainer.style.display = 'flex';
+  // Check if Alt + M is pressed
+  if (event.altKey && event.key.toLowerCase() === 'm') {
+    event.preventDefault(); // Prevent default browser behavior
+
+    // Handle different platforms and browsers
+    const platform = navigator.platform.toLowerCase();
+    const browser = navigator.userAgent.toLowerCase();
+
+    if ((platform.includes('mac') || browser.includes('safari')) ||
+      (platform.includes('mac') || browser.includes('firefox'))) {
+      // For macOS Safari and Firefox
+      handleMusic();
+    } else if (platform.includes('win') || browser.includes('edge')) {
+      // For Windows Edge
+      handleMusic();
+    } else if (platform.includes('linux')) {
+      // For Linux
+      handleMusic();
     } else {
-      musicContainer.style.display = 'none';
+      // For other platforms and browsers
+      console.log('Alt + M shortcut not supported on this platform/browser.');
     }
   }
 });
+
+function handleMusic() {
+  const musicContainer = document.getElementById('theme-buttons-container-music');
+  const musicButton = document.querySelector('.switcher-btn[title="music"]');
+  if (musicButton && musicContainer.style.display === 'none') {
+    musicButton.click(); // Simulate a click on the music button
+    musicContainer.style.display = 'flex';
+  } else {
+    musicContainer.style.display = 'none';
+  }
+}
 
 
 
@@ -205,40 +228,84 @@ document.addEventListener('keydown', function (event) {
 
 // short cut key for calendar "alt + c"
 document.addEventListener('keydown', function (event) {
-  // Check if alt + c is pressed
-  if (event.altKey && event.key === 'c') {
-    const calendarContainer = document.getElementById('theme-buttons-container-calendar');
-    const calendarButton = document.querySelector('.switcher-btn[title="calendar"]');
-    if (calendarButton && calendarContainer.style.display === 'none') {
-      calendarButton.click(); // Simulate a click on the calendar button
-      calendarContainer.style.display = 'flex';
+  // Check if Alt + C is pressed
+  if (event.altKey && event.key.toLowerCase() === 'c') {
+    event.preventDefault(); // Prevent default browser behavior
+
+    // Handle different platforms and browsers
+    const platform = navigator.platform.toLowerCase();
+    const browser = navigator.userAgent.toLowerCase();
+
+    if ((platform.includes('mac') || browser.includes('safari')) ||
+        (platform.includes('mac') || browser.includes('firefox'))) {
+      // For macOS Safari and Firefox
+      handleCalendar();
+    } else if (platform.includes('win') || browser.includes('edge')) {
+      // For Windows Edge
+      handleCalendar();
+    } else if (platform.includes('linux')) {
+      // For Linux
+      handleCalendar();
     } else {
-      calendarContainer.style.display = 'none';
+      // For other platforms and browsers
+      console.log('Alt + C shortcut not supported on this platform/browser.');
     }
   }
 });
+
+function handleCalendar() {
+  const calendarContainer = document.getElementById('theme-buttons-container-calendar');
+  const calendarButton = document.querySelector('.switcher-btn[title="calendar"]');
+  if (calendarButton && calendarContainer.style.display === 'none') {
+    calendarButton.click(); // Simulate a click on the calendar button
+    calendarContainer.style.display = 'flex';
+  } else {
+    calendarContainer.style.display = 'none';
+  }
+}
 
 
 
 
 // short cut key for search "alt + s"
 document.addEventListener('keydown', function (event) {
-  if (event.altKey && event.key === 's') {
-    const ResultsBox = document.querySelector(".result-box");
-    const resultBox = document.getElementById('ResultBox');
-    const inputBox = document.getElementById('input-box');
-    // Toggle display style for ResultBox
-    if (resultBox.style.display === 'none') {
-      // Focus on the input box
-      inputBox.click();
-      inputBox.focus();
-      // resultBox.style.display = 'block';
+  // Check if Alt + S is pressed
+  if (event.altKey && event.key.toLowerCase() === 's') {
+    event.preventDefault(); // Prevent default browser behavior
+
+    // Handle different platforms and browsers
+    const platform = navigator.platform.toLowerCase();
+    const browser = navigator.userAgent.toLowerCase();
+
+    if ((platform.includes('mac') || browser.includes('safari')) ||
+      (platform.includes('mac') || browser.includes('firefox')) ||
+      (platform.includes('win') || browser.includes('edge')) ||
+      (platform.includes('linux'))) {
+      // Call the function to handle the "Alt + S" shortcut
+      handleResults();
     } else {
-      ResultsBox.style.animation = "to-top 0.3s ease-in";
-      setTimeout(() => {
-        resultBox.style.display = 'none';
-        ResultsBox.style.animation = ""; // Reset animation property
-      }, 300);
+      console.log('Alt + S shortcut not supported on this platform/browser.');
     }
   }
 });
+
+function handleResults() {
+  const ResultsBox = document.querySelector(".result-box");
+  const resultBox = document.getElementById('ResultBox');
+  const inputBox = document.getElementById('input-box');
+
+  if (resultBox.style.display === 'none') {
+    // Focus on the input box
+    inputBox.click();
+    inputBox.focus();
+    // Show the result box
+    resultBox.style.display = 'block';
+  } else {
+    // Hide the result box
+    ResultsBox.style.animation = "to-top 0.3s ease-in";
+    setTimeout(() => {
+      resultBox.style.display = 'none';
+      ResultsBox.style.animation = ""; // Reset animation property
+    }, 300);
+  }
+}
