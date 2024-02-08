@@ -80,7 +80,8 @@ function Copy(text) {
 
 
 // copy selected item
-function copySelectedText() {
+// function copySelectedText() {
+    document.addEventListener('mouseup', function () {
     // Get the selected text
     const selectedText = window.getSelection().toString().trim();
 
@@ -108,5 +109,6 @@ function copySelectedText() {
     } else {
         console.log('No text selected');
     }
-}
+         });
+// }
 
