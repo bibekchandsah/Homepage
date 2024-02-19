@@ -31,7 +31,9 @@ const createChatLi = (message, className) => {
 const generateResponse = (chatElement, userMessage) => {
     const messageElement = chatElement.querySelector("p");
     // Define the properties and message for the API request
-    const apiKey = 'AIzaSyC3v3xmOJKBZMBhW2lVC8pa4QzecMv1lGU';
+    // const apiKey = 'AIzaSyC3v3xmOJKBZMBhW2lVC8pa4QzecMv1lGU';
+    const apiKey = 'AIzaSyCBegjRuqLyty6ik4869MI0WxXQClrMJgo';
+    // const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey;
     const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey;
     const requestBody = {
         contents: [{
