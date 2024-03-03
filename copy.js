@@ -309,3 +309,15 @@ function handleResults() {
     }, 300);
   }
 }
+
+
+
+
+
+// circular menu
+document.addEventListener('click', function (event) {
+  var circularMenu = document.querySelector('.circular-menu.active');
+  if (circularMenu && !circularMenu.contains(event.target)) {
+    circularMenu.classList.remove('active');
+  }
+});
