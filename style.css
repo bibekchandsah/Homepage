@@ -1177,6 +1177,7 @@ button:hover {
 
 
 /* side button for social media */
+/* old menu bar switched to new circular menu */
 #switcher {
     position: absolute;
     /*     position: fixed; */
@@ -1228,6 +1229,169 @@ button:hover {
 .social-media-btn:hover a {
     font-size: 16px;
     /* Increase the font-size on hover */
+}
+
+
+
+
+/* circular menu */
+.circular-menu {
+    position: absolute;
+    top: 33%;
+    left: 3px;
+    z-index: var(--z-tooltip);
+}
+
+.floating-btn .btn {
+    border: none;
+}
+
+.floating-btn span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #333;
+    margin-bottom: 5px;
+    transition: background .3s, transform .3s;
+    outline: none;
+}
+
+.floating-btn span:last-child {
+    margin-bottom: 0;
+}
+
+.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+.circular-menu .floating-btn {
+    display: block;
+    width: 3.5em;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    background-color: var(--light-blue);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    line-height: 3.5;
+    cursor: pointer;
+    outline: none;
+}
+
+.circular-menu.active .floating-btn {}
+
+.circular-menu .floating-btn:active {}
+
+.circular-menu .floating-btn:before {}
+
+.circular-menu .floating-btn i {
+    font-size: 1.3em;
+    transition: transform .2s;
+}
+
+.circular-menu.active .floating-btn i {}
+
+
+
+.circular-menu.active:after {
+    transform: scale3d(5.5, 5.5, 1);
+    transition-timing-function: cubic-bezier(.68, 1.55, .265, 1);
+}
+
+.circular-menu .items-wrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.circular-menu .menu-item {
+    position: absolute;
+    top: .2em;
+    right: .2em;
+    z-index: -1;
+    display: block;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-size: 1em;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 3;
+    background-color: var(--dark-blue);
+    transition: transform .3s ease, background .2s ease;
+}
+
+.circular-menu .menu-item:hover {
+    background-color: var(--light-blue);
+}
+
+.circular-menu.active .menu-item {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.circular-menu.active .menu-item:nth-child(1) {
+    background-color: var(--dark-blue);
+    transform: translate3d(0em, -4.8em, 0);
+}
+
+.circular-menu.active .menu-item:nth-child(2) {
+    background-color: var(--dark-blue);
+    transform: translate3d(4.0em, -3.5em, 0);
+}
+
+.circular-menu.active .menu-item:nth-child(3) {
+    background-color: var(--dark-blue);
+    transform: translate3d(5.3em, 0.7em, 0);
+}
+
+.circular-menu.active .menu-item:nth-child(4) {
+    background-color: var(--dark-blue);
+    transform: translate3d(3.9em, 4.5em, 0);
+}
+
+.circular-menu.active .menu-item:nth-child(5) {
+    background-color: var(--dark-blue);
+    transform: translate3d(0em, 5.9em, 0);
+}
+
+.menu-item:nth-child(1) {
+    transition: background .3s, transform .3s .10s;
+}
+
+.menu-item:nth-child(2) {
+    transition: background .3s, transform .3s .15s;
+}
+
+.menu-item:nth-child(3) {
+    transition: background .3s, transform .3s .20s;
+}
+
+.menu-item:nth-child(4) {
+    transition: background .3s, transform .3s .25s;
+}
+
+.menu-item:nth-child(5) {
+    transition: background .3s, transform .3s .30s;
+}
+
+.menu-item:nth-child(6) {
+    transition: background .3s, transform .3s .35s;
+}
+
+.menu-item:nth-child(7) {
+    transition: background .3s, transform .3s .40s;
+}
+
+.menu-item:nth-child(8) {
+    transition: background .3s, transform .3s .45s;
 }
 
 
