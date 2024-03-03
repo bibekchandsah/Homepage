@@ -1284,6 +1284,9 @@ button:hover {
     line-height: 3.5;
     cursor: pointer;
     outline: none;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
 .circular-menu.active .floating-btn {}
@@ -1327,6 +1330,9 @@ button:hover {
     line-height: 3;
     background-color: var(--dark-blue);
     transition: transform .3s ease, background .2s ease;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
 .circular-menu .menu-item:hover {
