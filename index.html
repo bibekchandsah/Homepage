@@ -309,7 +309,8 @@
     </div>
 
     <!-- side button for social media -->
-    <div class="switcher" id="switcher">
+<!--     old menu bar switched to new circular menu -->
+<!--     <div class="switcher" id="switcher">
         <div class="social-media-btn" title="Facebook">
             <a href="https://www.facebook.com/bibek.sha.1432/" target="_blank">
                 <i class="fa fa-facebook change-color"></i>
@@ -325,7 +326,8 @@
             </a>
             </i>
         </div>
-        <div class="social-media-btn" title="Share">
+        <div class="social-media-btn" title="Share"> -->
+    
             <!-- <a href="https://wa.me/?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own."> -->
             <!-- This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own. -->
             <!-- This homepage is designed to suit your preferences and needs. It offers many features and useful items that you use every day. You can easily customize it to make it your own. -->
@@ -336,7 +338,8 @@
             <!-- <a href="qrcode.png" target="_blank">
                     <i class="fa fa-share-square-o share change-color"></i></a> -->
             <!-- <a id="whatsappLink" href="#" target="_blank"> -->
-            <div id="imagePreview" style="display: none;"></div>
+    
+<!--             <div id="imagePreview" style="display: none;"></div>
             <a href="#" id="whatsappLink" class="whatsappLink">
                 <i class="fa fa-share-square-o share change-color"></i>
             </a>
@@ -346,6 +349,26 @@
                 <i class="fa fa-address-card change-color"></i></a>
         </div>
 
+    </div> -->
+
+<!--     circular menu -->
+    <div id="circularMenu" class="circular-menu">
+        <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+            <!-- <i class="fa fa-plus"></i> -->
+            <div class="btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </a>
+        <menu class="items-wrapper">
+            <a href="https://www.facebook.com/bibek.sha.1432/" title="Facebook" class="menu-item fa fa-facebook"></a>
+            <a href="https://www.instagram.com/bibeksha1432/" title="Instagram" class="menu-item fa fa-instagram"></a>
+            <a href="mailto:bibeksha48@gmail.com" title="Send Mail" class="menu-item fa fa-envelope"></a>
+            <a href="#" title="Share" id="whatsappLink" class="menu-item whatsappLink fa fa-share-square-o share"></a>
+            <a href="https://bibek10550.github.io/feedback" title="Feedback" class="menu-item fa fa-address-card"></a>
+        </menu>
+        <div id="imagePreview" style="display: none;"></div>
     </div>
 
     <!-- greeting text -->
