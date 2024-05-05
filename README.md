@@ -7,7 +7,7 @@
 
 ## Website
 <h1>👉🏻 <a href="https://bibek10550.github.io/Homepage/">Homepage</a></h1>
-[chatGPT](https://chat.openai.com/share/6e655669-ade6-47f3-b7ba-dbc96a037d60)
+<h3><a href="https://chat.openai.com/share/6e655669-ade6-47f3-b7ba-dbc96a037d60">ChatGPT</a></h3>
 
 ## Features
 - Light/dark mode toggle
