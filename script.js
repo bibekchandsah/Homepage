@@ -488,7 +488,7 @@ function clearSearchInput() {
 //         whatsappLink.href = 'qrcode.png';
 //     } else {
 //         console.log("pc devices");
-//         whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
+//         whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibekchandsah.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
 //     }
 // }
 
@@ -523,7 +523,7 @@ function setWhatsappLink() {
         });
     } else {
         console.log("pc devices");
-        whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibek10550.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
+        whatsappLink.href = 'whatsapp://send?text=Go%20to%20Homepage-%20https://bibekchandsah.github.io/Homepage/%20This%20homepage%20is%20designed%20to%20suit%20your%20preferences%20and%20needs.%20It%20offers%20many%20features%20and%20useful%20items%20that%20you%20use%20every%20day.%20You%20can%20easily%20customize%20it%20to%20make%20it%20your%20own.';
         // Hide image preview if it's visible
         imagePreview.style.display = 'none';
         // imagePreview.style.animation = "zoomOut 0.3s ease-in";
