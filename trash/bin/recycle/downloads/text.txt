@@ -1,0 +1,6 @@
+✅turnoff auto fill in homepage, 
+✅add kiitcse in dropdown of search, 
+✅fix right click in homepage, 
+✅prevent inspect option, 
+✅disable the console unnecessary logs, 
+✅add visitor count in homepage

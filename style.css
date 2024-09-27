@@ -22,14 +22,14 @@
     /* --background-color: hsl(255, 100%, 50%); */
     /* background-color: #4100ff; */
     /* background-black: rgba(0, 0, 0, 0.7); */
-/*     --background-color: hsl(var(--hue-color), 100%, 50%);
+    /*     --background-color: hsl(var(--hue-color), 100%, 50%);
     --background-black: #000000b3;
     --white: #ffffff;
     --green: #0affd6; */
     /* --light-blue: #5a42f4; */
     /* --light-blue: #561dff; */
     /* --light-blue: #4000ff; */
-/*     --light-blue: #4e2bda;
+    /*     --light-blue: #4e2bda;
     --dark-blue: #19123b;
     --hover-color: #3005f2;
     --hover-color2: #6709ff;
@@ -89,9 +89,9 @@ body {
 
 body::before {
     content: "";
-/*     background-image: url("https://source.unsplash.com/1080x720/?tech,code, laptop, developer, ai, chatgpt, firefly, codebase, IDE (Integrated Development Environment), Algorithm, Version Control, Framework, API (Application Programming Interface), Machine Learning, Neural Network, Virtualization, Cloud Computing, Open Source, Backend, Frontend, Cybersecurity, API Gateway, Database, Docker, Microservices, DevOps, Continuous Integration, Continuous Deployment, Responsive Design, UI/UX, Scalability, Encryption, Data Science, Big Data, Internet of Things (IoT), Blockchain, Quantum Computing, Augmented Reality (AR), Virtual Reality (VR), Natural Language Processing (NLP), Cyber Threat Intelligence, 5G, Edge Computing, Biometrics, Robotics, Automation, Smart Contracts, Augmented Analytics, Cross-platform Development, Full Stack, Quantum Cryptography,automation, artificial intelligence, big data, blockchain, cloud computing, cybersecurity, data mining, encryption, internet of things (IoT), machine learning, mobile computing, network, open source, operating system, quantum computing, robotics, software, virtual reality, web development"); */
+    /*     background-image: url("https://source.unsplash.com/1080x720/?tech,code, laptop, developer, ai, chatgpt, firefly, codebase, IDE (Integrated Development Environment), Algorithm, Version Control, Framework, API (Application Programming Interface), Machine Learning, Neural Network, Virtualization, Cloud Computing, Open Source, Backend, Frontend, Cybersecurity, API Gateway, Database, Docker, Microservices, DevOps, Continuous Integration, Continuous Deployment, Responsive Design, UI/UX, Scalability, Encryption, Data Science, Big Data, Internet of Things (IoT), Blockchain, Quantum Computing, Augmented Reality (AR), Virtual Reality (VR), Natural Language Processing (NLP), Cyber Threat Intelligence, 5G, Edge Computing, Biometrics, Robotics, Automation, Smart Contracts, Augmented Analytics, Cross-platform Development, Full Stack, Quantum Cryptography,automation, artificial intelligence, big data, blockchain, cloud computing, cybersecurity, data mining, encryption, internet of things (IoT), machine learning, mobile computing, network, open source, operating system, quantum computing, robotics, software, virtual reality, web development"); */
     background-image: url("https://wallpaperaccess.com/full/2290971.jpg");
-/*     background-image: url("https://wallpaperaccess.com/full/4401218.jpg"); */
+    /*     background-image: url("https://wallpaperaccess.com/full/4401218.jpg"); */
     background-size: cover;
     position: fixed;
     top: 0;
@@ -110,19 +110,19 @@ body::before {
 /*========== SCROLL BAR ==========*/
 ::-webkit-scrollbar {
     width: .60rem;
-/*     background-color: hsla(259, 100%, 50%, 0.58); */
+    /*     background-color: hsla(259, 100%, 50%, 0.58); */
     background-color: hsla(var(--hue-color), 100%, 50%, 0.58);
     border-radius: .5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-/*     background-color: hsl(259, 100%, 50%); */
+    /*     background-color: hsl(259, 100%, 50%); */
     background-color: hsl(var(--hue-color), 100%, 50%);
     border-radius: .5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-/*     background-color: hsl(247, 100%, 50%); */
+    /*     background-color: hsl(247, 100%, 50%); */
     background-color: hsl(var(--hue-color), 80%, 40%);
 }
 
@@ -131,23 +131,22 @@ body::before {
 
 
 /* preloading screen */
-#loading{
+#loading {
     position: fixed;
     top: 0px;
     width: 100%;
     height: 100%;
     z-index: 99999;
-/* double loading */
-/*     background: #000 
+    /* double loading */
+    /*     background: #000 
     url('https://bestof.nyc3.digitaloceanspaces.com/devsnap.me/sam/text-ring-loading-animation.gif') no-repeat center; */
-/*     background: #fff 
+    /*     background: #fff 
     url('trash/bin/recycle/downloads/double-loading.gif') no-repeat center; */
-/* computer & server */
-/*     background: rgb(27 27 27)
+    /* computer & server */
+    /*     background: rgb(27 27 27)
     url('https://i.giphy.com/VX7yEoXAFf8as.webp') no-repeat center; */
-/*     Spherical */
-    background: #fff
-    url('trash/bin/recycle/downloads/spherical.gif') no-repeat center;
+    /*     Spherical */
+    background: #fff url('trash/bin/recycle/downloads/spherical.gif') no-repeat center;
 }
 
 
@@ -751,7 +750,7 @@ ul li {
 }
 
 .clear-icon:hover {
-/*     background-color: var(--white); */
+    /*     background-color: var(--white); */
     background-color: var(--light-blue);
     color: var(--white);
 }
@@ -784,7 +783,7 @@ ul li {
 }
 
 .search-input {
-/*     flex: 1; */
+    /*     flex: 1; */
     width: 300px;
     padding-right: 50px;
     height: 50px;
@@ -973,7 +972,7 @@ a {
 button {
     padding: 12px 20px;
     font-size: 16px;
-/*     border: none; */
+    /*     border: none; */
     border-radius: var(--very-low-border);
     background-color: var(--light-blue);
     color: var(--white);
@@ -988,7 +987,7 @@ button:hover {
 
 .bing-container button:hover,
 .browser-container button:hover,
-.search-button:hover{
+.search-button:hover {
     background-color: var(--white);
     color: var(--light-blue);
     border: 1px solid var(--light-blue);
@@ -1267,7 +1266,9 @@ button:hover {
 }
 
 .active span:nth-child(2) {
-    opacity: 0;
+    /* show context mennu text */
+    opacity: 1;
+    /* opacity: 0; */
 }
 
 .active span:nth-child(3) {
@@ -1492,7 +1493,7 @@ button:hover {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-/*     background: rgba(51, 0, 255, 0.5); */
+    /*     background: rgba(51, 0, 255, 0.5); */
     background: hsla(var(--hue-color), 100%, 50%, 0.5);
     color: var(--white);
     line-height: 30px;
@@ -1513,7 +1514,7 @@ h1, #dateDisplay {
     text-align: center;
     /* color: #4000ff; */
     font-weight: bold;
-/*     background: linear-gradient(-45deg, #00eaff, #4800ff, #0105fa, #000000); */
+    /*     background: linear-gradient(-45deg, #00eaff, #4800ff, #0105fa, #000000); */
     background: linear-gradient(-45deg, #00eaff, hsl(var(--hue-color), 100%, 50%), #0105fa, #000000);
     background-size: 400% 400%;
     /* fallback animation in case JavaScript does not load */
@@ -1849,13 +1850,25 @@ a.linkUrl:hover {
 }
 
 .imageCardText .card:hover .card-img-top {
-/*     filter: blur(var(--normal-blur)); */
-     filter: brightness(15%) blur(var(--normal-blur));
+    /*     filter: blur(var(--normal-blur)); */
+    filter: brightness(15%) blur(var(--normal-blur));
     /* Adjust the blur strength as needed */
 }
 
 
 
+/* visit counter */
+.visitcount img {
+    position: absolute;
+    clip: rect(0, 120px, 50px, 80px);
+    scale: 1.3;
+    margin: 10px;
+}
+
+.bg-primary-subtle {
+    background-color: var(--light-blue) !important;
+    border-color: var(--dark-blue) !important;
+}
 
 
 /* Add media query for screen width less than 1310px */
@@ -2012,7 +2025,7 @@ a.linkUrl:hover {
         right: -70px;
     }
 
-/*     .search-input {
+    /*     .search-input {
         width: 0px;
     } */
 }
