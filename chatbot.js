@@ -5,14 +5,24 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; // Variable to store user's message
-// const API_KEY = "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"; // Paste your API key here
-const API_KEY = "AIzaSyCBegjRuqLyty6ik4869MI0WxXQClrMJgo"; // Paste your API key here
 const inputInitHeight = chatInput.scrollHeight;
+let apiKey = localStorage.getItem('apiKey'); // Retrieve the API key from local storage
+
+// Function to prompt for API key if not already stored
+const promptForApiKey = () => {
+    if (!apiKey) {
+        apiKey = prompt('Open "https://aistudio.google.com/", Create APi key and Enter your API key:');
+        if (apiKey) {
+            localStorage.setItem('apiKey', apiKey); // Save the API key in local storage
+        } else {
+            alert('API key is required to use the chatbot.');
+        }
+    }
+};
 
 
 
-
-
+// Function to create a chat <li> element
 const createChatLi = (message, className) => {
     // Create a chat <li> element with passed message and className
     const chatLi = document.createElement("li");
@@ -27,14 +37,19 @@ const createChatLi = (message, className) => {
 
 
 
-
+// Function to generate response using the API
 const generateResponse = (chatElement, userMessage) => {
     const messageElement = chatElement.querySelector("p");
     // Define the properties and message for the API request
-    // const apiKey = 'AIzaSyC3v3xmOJKBZMBhW2lVC8pa4QzecMv1lGU';
-    const apiKey = 'AIzaSyCBegjRuqLyty6ik4869MI0WxXQClrMJgo';
+    // const apiKey = 'AIzaSyBenOByFdE0HykRMOqpSSobuxc4ds3iJGU';
+    // const apiKey = 'AIzaSyBOUtCHCIjDouEeBDvjugj5c-Mm0kAAOh8';
+    if (!apiKey) {
+        messageElement.textContent = "API key not provided.";
+        return;
+    }
     // const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey;
-    const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey;
+    // const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey;
+    const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' + apiKey;
     const requestBody = {
         contents: [{
             parts: [{
@@ -51,10 +66,11 @@ const generateResponse = (chatElement, userMessage) => {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             messageElement.textContent = data.candidates[0].content.parts[0].text;
         })
         .catch(error => {
+            // console.error(error);
             messageElement.textContent = "I cannot respond to that!";
         });
 
@@ -64,7 +80,7 @@ const generateResponse = (chatElement, userMessage) => {
 
 
 
-
+// Function to handle user chat
 const handleChat = () => {
     userMessage = chatInput.value.trim(); // Get user entered message and remove extra whitespace
     if (!userMessage) return;
@@ -83,14 +99,14 @@ const handleChat = () => {
             "height": "20px",
             "width": "20px",
             "cursor": "pointer"
-        })
+        });
         copyButton.addEventListener("click", function () {
             navigator.clipboard.writeText(incomingChatLi.textContent.replace("COPY", "").replace("smart_toy", ""));
             copyButton.src = "https://cdn-icons-png.flaticon.com/128/5610/5610944.png";
             setTimeout(function () {
                 copyButton.src = "https://cdn-icons-png.flaticon.com/128/1828/1828249.png";
             }, 3000);
-        })
+        });
         incomingChatLi.appendChild(copyButton)
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -121,7 +137,7 @@ chatInput.addEventListener("keydown", (e) => {
 
 
 
-
+// Add click event listener to send chat button
 sendChatBtn.addEventListener("click", handleChat);
 // closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 // chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
@@ -146,6 +162,7 @@ closeBtn.addEventListener('click', () => closeChatbot());
 chatbotToggler.addEventListener('click', () => {
     document.body.classList.toggle('show-chatbot');
     if (document.body.classList.contains('show-chatbot')) {
+        promptForApiKey(); // Prompt for API key if chatbot is opened
         focusChatInput();
     }
 });
@@ -183,6 +200,7 @@ document.addEventListener('keydown', function(event) {
     const chatbotToggler = document.querySelector('.chatbot-toggler');
     if (chatbotToggler) {
       document.body.classList.toggle('show-chatbot');
+        promptForApiKey(); // Prompt for API key if chatbot is opened
         focusChatInput();
         console.log("chatbot button pressed");
     }
