@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // music: { container: document.getElementById("theme-buttons-container-music"), url: "https://bibekchandsah.github.io/bibeksha/music.html", mobileWidth: 376, desktopWidth: 420, mobileHeight: 762, desktopHeight: 762 },
         music: { container: document.getElementById("theme-buttons-container-music"), url: "https://bibekchandsah.github.io/Music/", mobileWidth: 376, desktopWidth: 420, mobileHeight: 762, desktopHeight: 762 },
         linksaver: { container: document.getElementById("theme-buttons-container-linksaver"), url: "https://bibekchandsah.github.io/linksaver/", mobileWidth: 330, desktopWidth: 330, mobileHeight: 456, desktopHeight: 456 },
+        todolist: { container: document.getElementById("theme-buttons-container-todolist"), url: "https://bibekchandsah.github.io/todolist/", mobileWidth: 380, desktopWidth: 608, mobileHeight: 762, desktopHeight: 762 },
     };
     // Function to close all theme containers
     function closeAllThemeContainers() {

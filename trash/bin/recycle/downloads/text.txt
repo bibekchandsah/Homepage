@@ -4,3 +4,6 @@
 ✅prevent inspect option, 
 ✅disable the console unnecessary logs, 
 ✅add visitor count in homepage
+✅ressolved chatbot API key issue
+✅added todo task
+

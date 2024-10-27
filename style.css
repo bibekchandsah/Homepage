@@ -1139,6 +1139,15 @@ button:hover {
     padding: 10px 0px;
 }
 
+#theme-buttons-container-todolist {
+    width: 625px;
+    right: -437px;
+    height: 760px;
+    backdrop-filter: blur(var(--normal-blur));
+    background: hsl(0deg 0% 100% / 23%);
+    padding: 10px 0px;
+}
+
 #theme-buttons-container-commenting {
     width: 660px;
     right: -660px;
@@ -1169,6 +1178,7 @@ button:hover {
 #theme-buttons-container-calendar,
 #theme-buttons-container-commenting,
 #theme-buttons-container-music,
+#theme-buttons-container-todolist,
 #theme-buttons-container-linksaver {
     display: none;
 }
@@ -1955,6 +1965,11 @@ a.linkUrl:hover {
     }
 
     #theme-buttons-container-commenting {
+        width: 395px;
+        height: 590px;
+    }
+    
+    #theme-buttons-container-todolist {
         width: 395px;
         height: 590px;
     }
